@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: {enabled: true},
+    css: [
+        '@/assets/scss/variables.scss',
+        '@/assets/css/reset.css'
+    ],
     modules: [
         ['@nuxtjs/google-fonts', {
             families: {
@@ -8,7 +12,4 @@ export default defineNuxtConfig({
             }
         }],
     ],
-    css: [
-        '@/assets/css/reset.css'
-    ]
 })

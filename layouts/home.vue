@@ -36,5 +36,6 @@
 body {
   background: #FCF9EF;
   font-family: 'Noto Sans JP', sans-serif;
+  color: var(--thick-font-color);
 }
 </style>

@@ -83,6 +83,7 @@ useHead({
   font-size: min(10em, 15vw);
   color: var(--thick-font-color);
   transform: translateX(-10%);
+  font-weight: 600;
 }
 
 #schedule {

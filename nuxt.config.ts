@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     modules: [
         ['@nuxtjs/google-fonts', {
             families: {
-                'Noto+Sans+JP': [300, 400, 500],
+                'Noto+Sans+JP': [300, 400, 500, 600],
             }
         }],
     ],

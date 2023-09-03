@@ -2,9 +2,12 @@
 </script>
 
 <template>
-  <div>
+  <div id="layout-root">
     <slot/>
-    <WaveBackground/>
+    <div id="background-container">
+      <!--      <WaveBackground/>-->
+      <img src="@/assets/svg/color_smoke.svg" id="wave-background"/>
+    </div>
   </div>
 
 </template>
@@ -12,29 +15,31 @@
 <style scoped lang="scss">
 @import "assets/scss/_breakpoint.scss";
 
-#wave-background {
-  z-index: -100;
+#layout-root {
+  position: relative;
+}
+
+#background-container {
   position: absolute;
-  width: 100%;
-  object-fit: cover;
-  aspect-ratio: 1440 / 1339;
   top: 0;
   left: 0;
+  bottom: 0;
   right: 0;
-}
-
-@include sm {
-
+  min-height: 100svh;
+  overflow: hidden;
+  z-index: -100;
+  background: var(--background-color);
 }
 
 #wave-background {
   aspect-ratio: 1440 / 1339;
+  width: 100%;
 }
 </style>
 
 <style lang="scss">
 body {
-  background: #FCF9EF;
+  background: var(--background-color);
   font-family: 'Noto Sans JP', sans-serif;
   color: var(--thick-font-color);
 }

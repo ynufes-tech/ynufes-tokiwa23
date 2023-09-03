@@ -2,6 +2,12 @@
 definePageMeta({
   layout: 'home'
 })
+useHead({
+  title: "Top | 常盤祭2023公式HP~未来航路~",
+  meta: [
+    {name: "description", content: "11/3~5に開催される常盤祭2023の公式HPです!! 最新情報を随時更新していきます!!"},
+  ],
+});
 </script>
 
 <template>
@@ -42,6 +48,8 @@ definePageMeta({
           </tr>
         </table>
       </div>
+      <BouncingText text="※只今製作中..."/>
+      <p id="upcoming-notify"><span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span></p>
     </div>
   </div>
 </template>
@@ -75,6 +83,7 @@ definePageMeta({
   font-size: min(10em, 15vw);
   color: var(--thick-font-color);
   transform: translateX(-10%);
+  font-weight: 600;
 }
 
 #schedule {
@@ -83,6 +92,7 @@ definePageMeta({
   box-sizing: border-box;
   padding: 0 1.5em;
   width: min(60vw, 20em);
+  animation: fade-in-from-right 1s ease-in-out;
 
   h2 {
     text-decoration: underline;
@@ -113,10 +123,38 @@ definePageMeta({
   }
 }
 
+@keyframes fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @include md {
 
   #schedule {
     width: 100vw;
+  }
+}
+
+.bouncing-text {
+  margin: .4em auto 0;
+  font-size: 3em;
+}
+
+#upcoming-notify {
+  margin: 0 auto;
+  padding: 0 1em 2em;
+  font-size: 1.5em;
+  line-height: 1.3;
+
+  span {
+    display: block;
   }
 }
 </style>

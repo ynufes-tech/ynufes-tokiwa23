@@ -42,6 +42,8 @@ definePageMeta({
           </tr>
         </table>
       </div>
+      <BouncingText text="※只今製作中..."/>
+      <p id="upcoming-notify"><span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span></p>
     </div>
   </div>
 </template>
@@ -130,6 +132,22 @@ definePageMeta({
 
   #schedule {
     width: 100vw;
+  }
+}
+
+.bouncing-text {
+  margin: .4em auto 0;
+  font-size: 3em;
+}
+
+#upcoming-notify {
+  margin: 0 auto;
+  padding: 0 1em 2em;
+  font-size: 1.5em;
+  line-height: 1.3;
+
+  span {
+    display: block;
   }
 }
 </style>

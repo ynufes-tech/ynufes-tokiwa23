@@ -2,6 +2,12 @@
 definePageMeta({
   layout: 'home'
 })
+useHead({
+  title: "Top | 常盤祭2023公式HP~未来航路~",
+  meta: [
+    {name: "description", content: "11/3~5に開催される常盤祭2023の公式HPです!! 最新情報を随時更新していきます!!"},
+  ],
+});
 </script>
 
 <template>

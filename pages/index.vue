@@ -83,6 +83,7 @@ definePageMeta({
   box-sizing: border-box;
   padding: 0 1.5em;
   width: min(60vw, 20em);
+  animation: fade-in-from-right 1s ease-in-out;
 
   h2 {
     text-decoration: underline;
@@ -110,6 +111,18 @@ definePageMeta({
     td:nth-child(2) {
       padding-right: .2em;
     }
+  }
+}
+
+@keyframes fade-in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

@@ -48,6 +48,17 @@ useHead({
           </tr>
         </table>
       </div>
+        <div class="pre-guest-event">
+            <h1>大物ゲストが来校決定！詳しくはコチラ</h1>
+            <div class="pre-guest-event-button">
+                <NuxtLink to="/sp/voice-actor">
+                    <PreGuestEventButton text="声優ゲスト企画詳細"/>
+                </NuxtLink>
+                <NuxtLink to="/sp/comedian">
+                    <PreGuestEventButton text="芸人ゲスト企画詳細"/>
+                </NuxtLink>
+            </div>
+        </div>
       <BouncingText text="※只今製作中..."/>
       <p id="upcoming-notify"><span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span></p>
     </div>
@@ -156,5 +167,26 @@ useHead({
   span {
     display: block;
   }
+}
+
+.pre-guest-event{
+    > h1 {
+        text-align: center;
+        padding-top: 3em;
+        font-size: 2em;
+    }
+    .pre-guest-event-button{
+        display: flex;
+        justify-content: center;
+        padding: 2em 0;
+        text-decoration: none;
+        > a {
+            text-decoration: none;
+            color: var(--thick-font-color);
+            font-size: 1.5em;
+            padding: 0 1em;
+        }
+    }
+
 }
 </style>

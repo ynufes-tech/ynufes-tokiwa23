@@ -182,11 +182,15 @@ useHead({
         text-decoration: none;
         > a {
             text-decoration: none;
-            color: var(--thick-font-color);
-            font-size: 1.5em;
+            color: #8CB6DE;
             padding: 0 1em;
+          &:hover {
+            color: #ffffff;
+            .pre-guest-event-button{
+              background-color: #8CB6DE;
+            }
+          }
         }
     }
-
 }
 </style>

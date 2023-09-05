@@ -18,14 +18,14 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .pre-guest-event-button {
-  height: 1em;
-  width: 15em;
-  background-color: #8CB6DE;
-  border-radius: 1.5em;
+    height: 1em;
+    width: 15em;
+    background-color: #8CB6DE;
+    border-radius: 1.5em;
 
-  .pre-guest-event-button-text {
-    text-align: center;
-    justify-content: center;
-  }
+    .pre-guest-event-button-text {
+        text-align: center;
+        justify-content: center;
+    }
 }
 </style>

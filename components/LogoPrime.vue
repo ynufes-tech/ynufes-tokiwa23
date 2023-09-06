@@ -12,11 +12,11 @@
 
 <style lang="scss" scoped>
 .logo-prime {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: flex-start;
-  margin: .6em;
 
   > h1 {
     font-size: 2.5em;

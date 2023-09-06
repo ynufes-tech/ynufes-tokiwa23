@@ -1,8 +1,4 @@
-<script lang="ts" setup>
-definePageMeta({
-  layout: "voice-actor",
-});
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="page-root">
@@ -67,11 +63,25 @@ definePageMeta({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use "assets/scss/variables.scss" as *;
 * {
-  // outline: 1px solid red;
   box-sizing: border-box;
+}
+.layout-root {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/images/voice-actor/sp-background.webp) no-repeat center center fixed;
+}
+.logo-prime {
+  color: white;
+  margin: 0;
+
+  > h1 {
+    color: white !important;
+  }
+  > hr {
+    border-color: white !important;
+  }
 }
 .page-root {
   .page-title {
@@ -98,18 +108,18 @@ definePageMeta({
     }
   }
 
-    .button-wrapper {
+  .button-wrapper {
+    width: fit-content;
+    margin: 0 auto;
+    > a {
+      display: block;
       width: fit-content;
-      margin: 0 auto;
-      > a {
-        display: block;
-        width: fit-content;
-        text-decoration: none;
-        .dark-button {
-          margin: 1rem;
-        }
+      text-decoration: none;
+      .dark-button {
+        margin: 1rem;
       }
     }
+  }
 }
 /* ユーティリティークラス */
 .section-paragraph {

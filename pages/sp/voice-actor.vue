@@ -8,10 +8,10 @@ definePageMeta({
   <div class="page-root">
     <PageTitle :title="'声優トークライブ in YNU 2023'" />
     <div class="main-stamp-wrapper">
-      <img src="/images/main-stamp.svg" />
+      <img src="/images/voice-actor/main-stamp.webp" />
     </div>
     <div class="icon-wrapper">
-      <img src="/images/voice-actor-icon.jpg" />
+      <img src="/images/voice-actor/voice-actor-icon.webp" />
     </div>
     <div class="section-wrapper">
       <h2 class="section-title">企画説明</h2>

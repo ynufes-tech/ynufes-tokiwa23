@@ -11,7 +11,6 @@ const unit = 100;
 const adjustment = 0.1;
 const info = {
   times: 1,
-  shift: adjustment,
   pos: 0,
 }; // 全キャンバス共通の描画情報
 let contextCache: CanvasRenderingContext2D;

@@ -160,6 +160,7 @@ useHead({
 .layout-root {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/images/voice-actor/sp-background.webp) no-repeat center center fixed;
+  background-size: cover;
 }
 .logo-prime {
   color: white;

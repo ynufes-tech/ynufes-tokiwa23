@@ -84,6 +84,7 @@
   }
 }
 .page-root {
+  overflow: hidden;
   .page-title {
     width: 100vw;
     @media screen and (max-width: 768px) {

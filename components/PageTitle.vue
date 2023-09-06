@@ -12,12 +12,15 @@ const adjustment = 0.1;
 const info = {
   times: 1,
   pos: 0,
+  canvasWidth: 0,
 }; // 全キャンバス共通の描画情報
 let contextCache: CanvasRenderingContext2D;
 let canvas: HTMLCanvasElement;
+
 function startAnimation() {
   canvas = <HTMLCanvasElement>document.getElementById("waveCanvas");
   canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
+  info.canvasWidth = document.documentElement.clientWidth;
   canvas.height = 200; //波の高さ
 
   contextCache = canvas.getContext("2d") ?? new CanvasRenderingContext2D();
@@ -26,6 +29,7 @@ function startAnimation() {
 
 const update = (canvas: HTMLCanvasElement) => {
   // 各キャンバスの描画
+  canvas.width = info.canvasWidth;
   draw(canvas, colorList);
   // 共通の描画情報の更新
 
@@ -106,7 +110,7 @@ function drawSine(
 onMounted(() => {
   startAnimation();
   window.onresize = () => {
-    canvas.width = document.documentElement.clientWidth;
+    info.canvasWidth = document.documentElement.clientWidth;
   };
 });
 </script>

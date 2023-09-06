@@ -11,7 +11,6 @@
 
 <style lang="scss">
 .layout-root {
-  min-width: 100svw;
   min-height: 100vh;
   .logo-wrapper {
     width: min(1024px, 100vw);

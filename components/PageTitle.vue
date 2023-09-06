@@ -3,8 +3,8 @@ const props = defineProps({
   title: {
     type: String,
     required: true,
-  }
-})
+  },
+});
 const colorList: string[] = ["#8AC6D6", "#87C8A0", "#FDFEB8", "#8CB6DE"]; // 各キャンバスの色情報
 
 const unit = 100;
@@ -14,9 +14,9 @@ const info = {
   pos: 0,
 }; // 全キャンバス共通の描画情報
 let contextCache: CanvasRenderingContext2D;
-
+let canvas: HTMLCanvasElement;
 function startAnimation() {
-  const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("waveCanvas");
+  canvas = <HTMLCanvasElement>document.getElementById("waveCanvas");
   canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
   canvas.height = 200; //波の高さ
 
@@ -31,7 +31,7 @@ const update = (canvas: HTMLCanvasElement) => {
 
   if (info.times < 5) {
     info.pos = 1 / info.times;
-    info.times += .05;
+    info.times += 0.05;
   } else {
     info.pos -= Math.PI / 1000;
   }
@@ -65,7 +65,7 @@ const drawWave = (
   alpha: number,
   zoom: number,
   delay: number,
-  multi: number = 1,
+  multi: number = 1
 ) => {
   contextCache.strokeStyle = color; //線の色
   contextCache.lineWidth = 100; //線の幅
@@ -105,8 +105,10 @@ function drawSine(
 
 onMounted(() => {
   startAnimation();
+  window.onresize = () => {
+    canvas.width = document.documentElement.clientWidth;
+  };
 });
-
 </script>
 
 <template>

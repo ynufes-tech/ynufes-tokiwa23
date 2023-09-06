@@ -4,7 +4,7 @@
 
 <template>
   <div class="logo-prime">
-    <h1>常盤祭2023</h1>
+    <h1>23常盤祭</h1>
     <h2>横浜国立大学 常盤祭</h2>
     <hr/>
   </div>

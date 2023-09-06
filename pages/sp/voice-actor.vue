@@ -26,7 +26,9 @@ definePageMeta({
     <div class="section-wrapper">
       <h2 class="section-title">日時</h2>
       <h3 class="section-emphasize">11月4日(土) 14:00～15:15 (75分)</h3>
-      <p class="section-annotation">※開場13:15 13：55～14：00の間一時的に入場を制限(109教室のみ)</p>
+      <p class="section-annotation">
+        ※開場13:15 13：55～14：00の間一時的に入場を制限(109教室のみ)
+      </p>
       <h2 class="section-title">企画説明</h2>
       <SectionParagraph
         :textList="[
@@ -40,14 +42,24 @@ definePageMeta({
       <h2 class="section-title">チケット代金</h2>
       <h3 class="section-emphasize">特設ステージ 4500円</h3>
       <h3 class="section-emphasize">ライブビューイング会場 2300円</h3>
-      <p class="section-annotation">※購入に関しまして、注意事項が多くございます。<br>よくご確認を頂いた上でお買い求めいただけますと幸いです。</p>
+      <div class="button-wrapper">
+        <a href="https://eplus.jp/sf/detail/3954400001-P0030001">
+          <DarkButton text="特設ステージチケット購入ページへ移動" :mode="0" />
+        </a>
+        <a href="https://eplus.jp/sf/detail/3954460001-P0030001">
+          <DarkButton text="ライブビューチケット購入ページへ移動" :mode="1" />
+        </a>
+      </div>
+      <p class="section-annotation">
+        ※購入に関しまして、注意事項が多くございます。<br />よくご確認を頂いた上でお買い求めいただけますと幸いです。
+      </p>
       <h2 class="section-title">⚠注意事項⚠</h2>
       <SectionParagraph
         :textList="[
           '※1 企画内容について、予告なく変更・中止になる場合がございます。',
           '※2 中止の場合、チケットに関しまして返金対応いたします。',
           '※3 参加の際、持ち物検査等安全に関わるお願いに従っていただけない場合、参加をお断りする場合がございます。内容につきましてはチケット購入ページを御覧ください。',
-          '※4 お問い合わせにつきましては当該HPでは対応いたしかねます。チケット販売ページのお問合せ先までお問い合わせお願い致します。'
+          '※4 お問い合わせにつきましては当該HPでは対応いたしかねます。チケット販売ページのお問合せ先までお問い合わせお願い致します。',
         ]"
       />
     </div>
@@ -85,6 +97,19 @@ definePageMeta({
       border-radius: 36px;
     }
   }
+
+    .button-wrapper {
+      width: fit-content;
+      margin: 0 auto;
+      > a {
+        display: block;
+        width: fit-content;
+        text-decoration: none;
+        .dark-button {
+          margin: 1rem;
+        }
+      }
+    }
 }
 /* ユーティリティークラス */
 .section-paragraph {

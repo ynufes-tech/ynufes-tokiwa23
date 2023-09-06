@@ -1,4 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useHead({
+  title: "声優トークライブ in YNU 2023",
+  meta: [
+    {
+      name: "description",
+      content:
+        "2023年常盤祭に大人気声優の岡本信彦さん、梶裕貴さんが登壇します！！",
+    },
+  ]
+});
+</script>
 
 <template>
   <div class="page-root">
@@ -63,25 +74,10 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @use "assets/scss/variables.scss" as *;
 * {
   box-sizing: border-box;
-}
-.layout-root {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/images/voice-actor/sp-background.webp) no-repeat center center fixed;
-}
-.logo-prime {
-  color: white;
-  margin: 0;
-
-  > h1 {
-    color: white !important;
-  }
-  > hr {
-    border-color: white !important;
-  }
 }
 .page-root {
   overflow: hidden;
@@ -158,5 +154,22 @@
 }
 .spacer {
   height: 10vh;
+}
+</style>
+<style lang="scss">
+.layout-root {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/images/voice-actor/sp-background.webp) no-repeat center center fixed;
+}
+.logo-prime {
+  color: white;
+  margin: 0;
+
+  > h1 {
+    color: white !important;
+  }
+  > hr {
+    border-color: white !important;
+  }
 }
 </style>

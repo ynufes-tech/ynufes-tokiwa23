@@ -31,33 +31,32 @@ const defineMode = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.positive-button {
+.dark-button {
   font-weight: bold;
   letter-spacing: 2px;
-  background-color: #d98a59;
-  color: #fff;
   width: fit-content;
   padding: 1rem 2rem;
   border-radius: 2rem;
   transition: 1 all;
+  color: #fff;
+}
+.positive-button {
+  background-color: #d98a59;
   &:hover {
     background-color: #FFF;
     color: #d98a59;
   }
 }
 .negative-button {
-  font-weight: bold;
-  letter-spacing: 2px;
   outline: 1px solid #FFF;
-  color: #fff;
-  width: fit-content;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  transition: 1 all;
   &:hover {
     background-color: #fff;
     color: #3b3b3b;
     border: none;
   }
+}
+.disabled-button {
+  outline: 1px solid #5f5f5f;
+  color: #5f5f5f;
 }
 </style>

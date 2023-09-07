@@ -3,19 +3,20 @@ const props = defineProps({
     title: {
         type: String,
         required: true,
-    }
-})
+    },
+});
 const colorList: string[] = ["#8AC6D6", "#87C8A0", "#FDFEB8", "#8CB6DE"]; // 各キャンバスの色情報
 
 const unit = 100;
+const adjustment = 0.1;
 const info = {
-    seconds: 0,
-    t: 0,
+    times: 1,
+    pos: 0,
 }; // 全キャンバス共通の描画情報
 let contextCache: CanvasRenderingContext2D;
-
+let canvas: HTMLCanvasElement;
 function startAnimation() {
-    const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("waveCanvas");
+    canvas = <HTMLCanvasElement>document.getElementById("waveCanvas");
     canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
     canvas.height = 200; //波の高さ
 
@@ -27,10 +28,15 @@ const update = (canvas: HTMLCanvasElement) => {
     // 各キャンバスの描画
     draw(canvas, colorList);
     // 共通の描画情報の更新
-    info.seconds = info.seconds + 0.014;
-    info.t = info.seconds * Math.PI;
+
+    if (info.times < 5) {
+        info.pos = 1 / info.times;
+        info.times += 0.05;
+    } else {
+        info.pos -= Math.PI / 1000;
+    }
     // 自身の再起呼び出し
-    setTimeout(update, 35, canvas);
+    setTimeout(update, 30, canvas);
 };
 
 /**
@@ -44,10 +50,10 @@ const draw = (canvas: HTMLCanvasElement, colors: string[]) => {
     contextCache.clearRect(0, 0, canvas.width, canvas.height);
 
     //波を描画 drawWave(canvas, color[数字（波の数を0から数えて指定）], 透過, 波の幅のzoom,波の開始位置の遅れ )
-    drawWave(canvas, colors[0], 0.7, 3, 5);
-    drawWave(canvas, colors[1], 0.7, 4, 1.3);
-    drawWave(canvas, colors[2], 0.7, 1.6, 0);
-    drawWave(canvas, colors[3], 0.7, 3, 0);
+    drawWave(canvas, colors[0], 0.7, 3, 5, 1);
+    drawWave(canvas, colors[1], 0.7, 4, 1.3, -1);
+    drawWave(canvas, colors[2], 0.7, 1.6, 0, 1);
+    drawWave(canvas, colors[3], 0.7, 3, 0, -1);
 };
 /**
  * 波を描画
@@ -58,13 +64,14 @@ const drawWave = (
     color: string,
     alpha: number,
     zoom: number,
-    delay: number
+    delay: number,
+    multi: number = 1
 ) => {
     contextCache.strokeStyle = color; //線の色
     contextCache.lineWidth = 100; //線の幅
     contextCache.globalAlpha = alpha;
     contextCache.beginPath(); //パスの開始
-    drawSine(canvas, info.t / 0.5, zoom, delay);
+    drawSine(canvas, info.pos * multi, zoom, delay);
     contextCache.stroke(); //線
 };
 
@@ -98,8 +105,10 @@ function drawSine(
 
 onMounted(() => {
     startAnimation();
+    window.onresize = () => {
+        canvas.width = document.documentElement.clientWidth;
+    };
 });
-
 </script>
 
 <template>
@@ -109,20 +118,19 @@ onMounted(() => {
     </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .page-title {
-  position: relative;
+    position: relative;
 
-  > p {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
-    color: #444455;
-  }
+    > p {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        color: #444455;
+    }
 }
 </style>
-

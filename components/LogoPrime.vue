@@ -12,6 +12,7 @@
 
 <style lang="scss" scoped>
 .logo-prime {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;

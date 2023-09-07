@@ -5,47 +5,48 @@
 <template>
     <div class="about-page">
         <div class="about-title">
-            <page-title title="ABOUT"/>
-            <a href="/"><img src="/images/logo.webp" alt="ynufes-logo" class="logo-image"></a>
-            <p class="menu-button">MENU</p>
+            <PageTitle title="ABOUT"/>
         </div>
-        <div class="tokiwa-about">
-            <section-title text="常盤祭について" class="upper-title" />
-            <h1 class="child-title">常盤祭とは何か</h1>
-            <div class="upper-dashed-line">
-                <a class="line-message">説明文</a>
+        <div class="inner-about-page">
+            <div class="tokiwa-about">
+                <sectionTitle text="常盤祭について" class="upper-title"/>
+                <h1 class="child-title">常盤祭とは何か</h1>
+                <hr class="dashed-line">
+                <SectionParagraph
+                    :textList="[
+                        '適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章\n',
+                        '適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章\n'
+                        ]"
+                />
+                <hr class="dashed-line">
             </div>
-            <p class="main-script">
-                適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章
-            </p>
-            <hr class="dashed-line">
-        </div>
-        <div class="theme-about">
-            <section-title text="テーマについて" class="upper-title" />
-            <h1 class="child-title">未来航路</h1>
-            <div class="upper-dashed-line">
-                <a class="line-message">説明文</a>
+            <div class="theme-about">
+                <SectionTitle text="テーマについて" class="upper-title"/>
+                <h1 class="child-title">未来航路</h1>
+                <hr class="dashed-line">
+                <SectionParagraph
+                    :textList="[
+                        '適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章\n',
+                        '適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章\n'
+                        ]"
+                />
+                <hr class="dashed-line">
             </div>
-            <p class="main-script">
-                適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章
-            </p>
-            <hr class="dashed-line">
-        </div>
-        <div class="committee-about">
-            <section-title text="実行委員会について" class="upper-title" />
-            <div class="last-upper-line">
-                <div class="upper-dashed-line">
-                    <a class="line-message">説明文</a>
+            <div class="committee-about">
+                <SectionTitle text="実行委員会について" class="upper-title"/>
+                <hr class="dashed-line">
+                <SectionParagraph
+                    :textList="[
+                        '適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章\n',
+                        '適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章\n'
+                        ]"
+                />
+                <hr class="dashed-line">
+                <div class="ynufes-photo">
+                    <img src="https://placehold.jp/350x350.png" alt="pleceholder" class="committee-photo">
+                    <img src="https://placehold.jp/350x350.png" alt="pleceholder" class="committee-photo">
                 </div>
-            </div>
-            <p class="main-script">
-                適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章、適当な文章
-            </p>
-            <hr class="dashed-line">
-            <div class="ynufes-photo">
-                <img src="https://placehold.jp/350x350.png" alt="pleceholder" class="committee-photo">
-                <img src="https://placehold.jp/350x350.png" alt="pleceholder" class="committee-photo">
-            </div>
+        </div>
         </div>
         <div class="scroll-button">
             <a href="#" class="gotop">top</a>
@@ -54,78 +55,45 @@
 </template>
 
 <style scoped>
-html{
+html {
     scroll-behavior: smooth;
 }
-.about-page{
-    background-color: #FCF9EF;
-    width: 100vw;
+
+.inner-about-page{
+    width: min(1024px,100svw);
+    margin: 0 auto;
 }
-.logo-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: min( 15em , 40svw);
-}
-.menu-button{
-    position: fixed;
-    top: 5svw;
-    right: 5svw;
-    color: #FCF9EF;
-    font-size: 2rem;
-    font-weight: bolder;
-    background-color: #da8080;
-    width: min(4em,30svw);
-    text-align: center;
-    padding:  0.3em 0 ;
-    border-radius: 0.5em;
-}
-.dashed-line{
+.dashed-line {
     border: none;
     border-top: #575F6A 2px dashed;
-    width: 75%;
+    width: 90%;
+    margin: 1.2rem auto;
 }
-.upper-dashed-line{
-    width: 75%;
-    display: flex;
-    align-items: center;
-    margin: 1em auto;
-}
-.upper-dashed-line:after {
-    content:"";
-    border-top: #575F6A 2px dashed;
-    flex-grow: 1
-}
-.last-upper-line{
-    margin: 3em 0 1em;
-}
-.line-message{
-    text-align: center;
-    color: #575F6A;
-    font-size: 1rem;
-    font-weight: inherit;
-}
-.child-title{
+
+.child-title {
     color: #575F6A;
     font-size: 2rem;
     font-weight: bold;
-    margin: 0.75em 0 0.75em 12.5%;
+    margin: 0.75em 0 0.75em 5%;
 }
-.main-script{
-    width: 75svw;
+
+.section-paragraph {
+    width: 90%;
     margin: 1rem auto;
-    font-size: 16px;
 }
-.ynufes-photo{
+
+.ynufes-photo {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.committee-photo{
+
+.committee-photo {
     margin: 3em 1.5em;
     border-radius: 1em;
 }
-.gotop{
+
+.gotop {
     display: block;
     width: 60px;
     height: 60px;
@@ -145,7 +113,8 @@ html{
     right: 20px;
     z-index: 10000;
 }
-.gotop::before{
+
+.gotop::before {
     content: "";
     display: block;
     border-top: 2px solid #333;
@@ -159,11 +128,13 @@ html{
     position: absolute;
     transform: rotate(-45deg);
 }
-.gotop:hover{
+
+.gotop:hover {
     opacity: 1;
 }
-@media(max-width:750px){
-    .gotop{
+
+@media (max-width: 750px) {
+    .gotop {
         width: 40px;
         height: 40px;
         text-indent: -9999px;
@@ -173,7 +144,8 @@ html{
         bottom: 10px;
         right: 10px;
     }
-    .gotop::before{
+
+    .gotop::before {
         bottom: 0;
     }
 }

@@ -22,6 +22,10 @@ useHead({
     </div>
     <div class="section-wrapper">
       <h2 class="section-title">企画説明</h2>
+      <div class="profile-image-wrapper">
+        <img src="/images/voice-actor/okamoto-nobuhiko.webp" alt="" class="actor-image" /> 
+        <img src="/images/voice-actor/kaji-yuki.webp" alt="" class="actor-image" /> 
+      </div>
       <SectionParagraph
         :textList="[
           '2023年常盤祭に大人気声優の岡本信彦さん、梶裕貴さんが登壇します！！',
@@ -78,6 +82,7 @@ useHead({
 @use "assets/scss/variables.scss" as *;
 * {
   box-sizing: border-box;
+  // outline: 1px solid red !important;
 }
 .page-root {
   overflow: hidden;
@@ -102,6 +107,26 @@ useHead({
       display: block;
       margin: 0 auto;
       border-radius: 36px;
+    }
+  }
+
+  .profile-image-wrapper {
+    width: min(450px, 90vw);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    .actor-image {
+      display: block;
+      width: min(180px, 40vw); 
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      // display: block;
+      .actor-image {
+        // margin-bottom: 1rem
+      }
     }
   }
 
@@ -160,8 +185,7 @@ useHead({
 .layout-root {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/images/voice-actor/sp-background.webp) no-repeat center center fixed;
-  background-size: cover;
-}
+    background-size: cover;
 .logo-prime {
   color: white;
   margin: 0;

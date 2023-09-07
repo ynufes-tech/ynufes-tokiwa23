@@ -7,7 +7,7 @@ useHead({
       content:
         "2023年常盤祭に大人気声優の岡本信彦さん、梶裕貴さんが登壇します！！",
     },
-  ]
+  ],
 });
 </script>
 
@@ -23,8 +23,16 @@ useHead({
     <div class="section-wrapper">
       <h2 class="section-title">企画説明</h2>
       <div class="profile-image-wrapper">
-        <img src="/images/voice-actor/okamoto-nobuhiko.webp" alt="" class="actor-image" /> 
-        <img src="/images/voice-actor/kaji-yuki.webp" alt="" class="actor-image" /> 
+        <img
+          src="/images/voice-actor/okamoto-nobuhiko.webp"
+          alt=""
+          class="actor-image"
+        />
+        <img
+          src="/images/voice-actor/kaji-yuki.webp"
+          alt=""
+          class="actor-image"
+        />
       </div>
       <SectionParagraph
         :textList="[
@@ -40,14 +48,16 @@ useHead({
       <p class="section-annotation">
         ※開場13:15 13：55～14：00の間一時的に入場を制限(109教室のみ)
       </p>
-      <h2 class="section-title">企画説明</h2>
-      <SectionParagraph
-        :textList="[
-          '2023年常盤祭にあの大人気声優のお二人が登壇します！！',
-          '様々なコーナーで皆さまと楽しい時間を作っていきます！来場者全員に限定グッズのプレゼントやサイン色紙が当たるかも!?',
-          'チケットの購入はお早めに！',
-        ]"
-      />
+      <h2 class="section-title">会場</h2>
+      <p class="section-emphasize">
+        横浜国立大学経営学部棟2号館109特設ステージ
+      </p>
+      <p class="section-emphasize">
+        経営学部講義棟1号館106教室ライブビューイング会場
+      </p>
+      <p class="section-emphasize">
+        中央図書館メディアホールライブビューイング会場
+      </p>
     </div>
     <div class="section-wrapper">
       <h2 class="section-title">チケット代金</h2>
@@ -82,7 +92,6 @@ useHead({
 @use "assets/scss/variables.scss" as *;
 * {
   box-sizing: border-box;
-  // outline: 1px solid red !important;
 }
 .page-root {
   overflow: hidden;
@@ -118,15 +127,9 @@ useHead({
 
     .actor-image {
       display: block;
-      width: min(180px, 40vw); 
+      width: min(180px, 40vw);
       margin: 0 auto;
-    }
-
-    @media screen and (max-width: 768px) {
-      // display: block;
-      .actor-image {
-        // margin-bottom: 1rem
-      }
+      border-radius: 1rem;
     }
   }
 
@@ -137,6 +140,7 @@ useHead({
       display: block;
       width: fit-content;
       text-decoration: none;
+      text-align: center;
       .dark-button {
         margin: 1rem;
       }
@@ -172,6 +176,11 @@ useHead({
   font-size: 1.5rem;
   letter-spacing: 1px;
   font-weight: bold;
+  line-height: 1.6;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 .section-annotation {
   color: #fff;

@@ -28,7 +28,7 @@
   min-height: 100svh;
   overflow: hidden;
   z-index: -100;
-  background: var(--background-color);
+  background: var(--main-background-color);
 }
 
 #wave-background {
@@ -39,7 +39,7 @@
 
 <style lang="scss">
 body {
-  background: var(--background-color);
+  background: var(--main-background-color);
   font-family: 'Noto Sans JP', sans-serif;
   color: var(--thick-font-color);
 }

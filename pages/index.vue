@@ -176,9 +176,9 @@ useHead({
         font-size: 2em;
     }
     .pre-guest-event-button{
+      margin-top: .7rem;
         display: flex;
         justify-content: center;
-        padding: 2em 0;
         text-decoration: none;
         > a {
             text-decoration: none;
@@ -190,6 +190,13 @@ useHead({
               background-color: #8CB6DE;
             }
           }
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            margin: .7rem auto 0;
+            > a {
+                margin-bottom: 1em;
+            }
         }
     }
 }

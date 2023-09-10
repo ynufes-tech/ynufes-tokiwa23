@@ -18,8 +18,8 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .pre-guest-event-button {
-    height: 1em;
-    width: 15em;
+    width: fit-content;
+    padding: 1rem 2rem;
     background-color: #ffffff;
     border-radius: 1.5em;
     border: solid 2px #8CB6DE;
@@ -27,6 +27,7 @@ const props = defineProps({
     transition: .7s;
 
     .pre-guest-event-button-text {
+        font-weight: bold;
         text-align: center;
         justify-content: center;
     }

@@ -11,11 +11,10 @@
 
 <style lang="scss">
 .layout-root {
-  min-height: 100vh;
   background: var(--main-background-color);
 
   .logo-wrapper {
-    width: min(1024px, 100vw);
+    width: min(1024px, 100%);
     margin: 0 auto;
   }
 }

@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .layout-root {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),

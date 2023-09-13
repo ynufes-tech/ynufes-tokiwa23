@@ -3,58 +3,60 @@ definePageMeta({
   layout: 'home'
 })
 useHead({
-  title: "Top | 常盤祭2023公式HP~未来航路~",
+    title: "Top | 23常盤祭公式HP~未来航路~",
   meta: [
-    {name: "description", content: "11/3~5に開催される常盤祭2023の公式HPです!! 最新情報を随時更新していきます!!"},
+      {name: "description", content: "11/3~5に開催される23常盤祭 公式HPです!! 最新情報を随時更新していきます!!"},
   ],
 });
 </script>
 
 <template>
   <div class="page-root">
-    <div class="logo-wrapper">
-       <div class="logo">
-           <LogoPrime/>
-       </div>
-    </div>
-    <div class="top-wrapper">
-
-    </div>
+    <LogoPrime/>
     <div id="top-pane">
       <h1 id="top-title">未来航路</h1>
-        <div class="schedule-wrapper">
-            <div id="schedule">
-                <h2>開催日時</h2>
-                <table>
-                    <!--          <tr>-->
-                    <!--            <th>日付</th>-->
-                    <!--            <th>時間</th>-->
-                    <!--          </tr>-->
-                    <tr>
-                        <td colspan="3">～Day1～</td>
-                    </tr>
-                    <tr>
-                        <td>11/3</td>
-                        <td>(Fri)</td>
-                        <td>13:00～21:00</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">～Day2～</td>
-                    </tr>
-                    <tr>
-                        <td>11/4</td>
-                        <td>(Sat)</td>
-                        <td>&ensp;9:00～21:00</td>
-                    </tr>
-                    <tr>
-                        <td colspan="3">～Day3～</td>
-                    </tr>
-                    <tr>
-                        <td>11/5</td>
-                        <td>(Sun)</td>
-                        <td>&ensp;9:00～15:00</td>
-                    </tr>
-                </table>
+      <div id="schedule">
+        <h2>開催日時</h2>
+        <table>
+          <!--          <tr>-->
+          <!--            <th>日付</th>-->
+          <!--            <th>時間</th>-->
+          <!--          </tr>-->
+          <tr>
+            <td colspan="3">～Day1～</td>
+          </tr>
+          <tr>
+            <td>11/3</td>
+            <td>(Fri)</td>
+            <td>13:00～21:00</td>
+          </tr>
+          <tr>
+            <td colspan="3">～Day2～</td>
+          </tr>
+          <tr>
+            <td>11/4</td>
+            <td>(Sat)</td>
+            <td>&ensp;9:00～21:00</td>
+          </tr>
+          <tr>
+            <td colspan="3">～Day3～</td>
+          </tr>
+          <tr>
+            <td>11/5</td>
+            <td>(Sun)</td>
+            <td>&ensp;9:00～15:00</td>
+          </tr>
+        </table>
+      </div>
+        <div class="pre-guest-event">
+            <h1>大物ゲストが来校決定！詳しくはコチラ</h1>
+            <div class="pre-guest-event-button">
+                <NuxtLink to="/sp/voice-actor">
+                    <PreGuestEventButton text="声優ゲスト企画詳細"/>
+                </NuxtLink>
+                <NuxtLink to="/sp/comedian">
+                    <PreGuestEventButton text="芸人ゲスト企画詳細"/>
+                </NuxtLink>
             </div>
         </div>
       <BouncingText text="※只今製作中..."/>
@@ -69,26 +71,10 @@ useHead({
 .logo-prime {
   font-size: min(16px, 3.5vw);
 }
-.logo{
-  width: fit-content;
-}
-@media screen and (min-width:768px){
-  .logo-wrapper{
-    width: 90svw;
-    margin: 0 auto;
-  }
-  .schedule-wrapper{
-    width: 90svw;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-}
 
 .page-root {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 #top-pane {
@@ -180,6 +166,38 @@ useHead({
 
   span {
     display: block;
+  }
+}
+
+.pre-guest-event{
+  > h1 {
+    text-align: center;
+    padding-top: 3em;
+    font-size: 2em;
+  }
+  .pre-guest-event-button{
+    margin-top: .7rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    > a {
+      text-decoration: none;
+      color: #8CB6DE;
+      padding: 0 1em;
+      &:hover {
+        color: #ffffff;
+        .pre-guest-event-button{
+          background-color: #8CB6DE;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      margin: .7rem auto 0;
+      > a {
+        margin-bottom: 1em;
+      }
+    }
   }
 }
 </style>

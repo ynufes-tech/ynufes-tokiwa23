@@ -4,7 +4,7 @@
 
 <template>
   <div class="logo-prime">
-    <h1>常盤祭2023</h1>
+    <h1>23常盤祭</h1>
     <h2>横浜国立大学 常盤祭</h2>
     <hr/>
   </div>
@@ -12,11 +12,11 @@
 
 <style lang="scss" scoped>
 .logo-prime {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: flex-start;
-  margin: .6em;
 
   > h1 {
     font-size: 2.5em;

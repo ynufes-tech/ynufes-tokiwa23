@@ -3,9 +3,9 @@ definePageMeta({
   layout: 'home'
 })
 useHead({
-  title: "Top | 23常盤祭公式HP~未来航路~",
+    title: "Top | 23常盤祭公式HP~未来航路~",
   meta: [
-    {name: "description", content: "11/3~5に開催される23常盤祭 公式HPです!! 最新情報を随時更新していきます!!"},
+      {name: "description", content: "11/3~5に開催される23常盤祭 公式HPです!! 最新情報を随時更新していきます!!"},
   ],
 });
 </script>
@@ -170,34 +170,34 @@ useHead({
 }
 
 .pre-guest-event{
-    > h1 {
-        text-align: center;
-        padding-top: 3em;
-        font-size: 2em;
-    }
-    .pre-guest-event-button{
-      margin-top: .7rem;
-        display: flex;
-        justify-content: center;
-        text-decoration: none;
-        > a {
-            text-decoration: none;
-            color: #8CB6DE;
-            padding: 0 1em;
-          &:hover {
-            color: #ffffff;
-            .pre-guest-event-button{
-              background-color: #8CB6DE;
-            }
-          }
+  > h1 {
+    text-align: center;
+    padding-top: 3em;
+    font-size: 2em;
+  }
+  .pre-guest-event-button{
+    margin-top: .7rem;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    > a {
+      text-decoration: none;
+      color: #8CB6DE;
+      padding: 0 1em;
+      &:hover {
+        color: #ffffff;
+        .pre-guest-event-button{
+          background-color: #8CB6DE;
         }
-        @media screen and (max-width: 768px) {
-            flex-direction: column;
-            margin: .7rem auto 0;
-            > a {
-                margin-bottom: 1em;
-            }
-        }
+      }
     }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      margin: .7rem auto 0;
+      > a {
+        margin-bottom: 1em;
+      }
+    }
+  }
 }
 </style>

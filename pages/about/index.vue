@@ -120,7 +120,6 @@ html{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0;
 }
 .committee-photo{
     margin: 1.5em 1.5em;

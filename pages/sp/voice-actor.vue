@@ -9,6 +9,10 @@ useHead({
     },
   ],
 });
+
+definePageMeta({
+  layout: "voice-actor",
+});
 </script>
 
 <template>
@@ -50,7 +54,7 @@ useHead({
       </p>
       <h2 class="section-title">会場</h2>
       <p class="section-emphasize">
-        横浜国立大学経営学部棟2号館109特設ステージ
+        横浜国立大学経営学部棟2号館109教室特設ステージ
       </p>
       <p class="section-emphasize">
         経営学部講義棟1号館106教室ライブビューイング会場
@@ -80,7 +84,7 @@ useHead({
           '※1 企画内容について、予告なく変更・中止になる場合がございます。',
           '※2 中止の場合、チケットに関しまして返金対応いたします。',
           '※3 参加の際、持ち物検査等安全に関わるお願いに従っていただけない場合、参加をお断りする場合がございます。内容につきましてはチケット購入ページを御覧ください。',
-          '※4 お問い合わせにつきましては当該HPでは対応いたしかねます。チケット販売ページのお問合せ先までお問い合わせお願い致します。',
+          '※4 お問い合わせにつきましては当該HPでは対応いたしかねます。ynu23kikaku@gmail.com までお問い合わせお願い致します。',
         ]"
       />
     </div>
@@ -188,23 +192,5 @@ useHead({
 }
 .spacer {
   height: 10vh;
-}
-</style>
-<style lang="scss">
-.layout-root {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(/images/voice-actor/sp-background.webp) no-repeat center center fixed;
-  background-size: cover;
-}
-.logo-prime {
-  color: white;
-  margin: 0;
-
-  > h1 {
-    color: white !important;
-  }
-  > hr {
-    border-color: white !important;
-  }
 }
 </style>

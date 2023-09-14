@@ -118,19 +118,25 @@ onMounted(() => {
 <template>
   <div class="page-title">
     <canvas id="waveCanvas" class="wave"></canvas>
-    <p>{{ props.title }}</p>
+    <h1 v-text="props.title"/>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .page-title {
   position: relative;
+  height: 200px;
 
-  > p {
+  > h1 {
     position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-wrap;
+    top: 0;
+    line-height: 1.3;
     text-align: center;
     font-size: 3em;
     font-weight: bold;

@@ -6,7 +6,6 @@
     <div class="about-page">
         <div class="about-title">
             <page-title title="ABOUT"/>
-            <a href="/"><img src="/images/logo.webp" alt="ynufes-logo" class="logo-image"></a>
             <p class="menu-button">MENU</p>
         </div>
         <div class="tokiwa-about">
@@ -53,7 +52,8 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 html{
     scroll-behavior: smooth;
 }
@@ -118,12 +118,13 @@ html{
 }
 .ynufes-photo{
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .committee-photo{
-    margin: 3em 1.5em;
+    margin: 1.5em 1.5em;
     border-radius: 1em;
+    max-width: 80svw;
 }
 .gotop{
     display: block;

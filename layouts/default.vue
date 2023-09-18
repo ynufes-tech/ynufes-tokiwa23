@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: min(1024px, 100%);
+    width: min(1024px, 95%);
     margin: 0 auto;
     .navigation-menu {
       text-align: right;

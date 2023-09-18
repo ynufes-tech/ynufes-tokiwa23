@@ -59,7 +59,10 @@ const close = () => {
 .navigation-menu {
   position: relative;
 }
-.navigation-menu-button-title {
+
+>>>>>>>814f982
+  (ナビゲーションメニューの配置の修正)
+  .navigation-menu-button-title {
   display: inline-block;
   width: 6rem;
   text-align: center;

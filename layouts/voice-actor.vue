@@ -22,6 +22,8 @@
     margin: 0 auto;
   }
 }
+</style>
+<style lang="scss" >
 .logo-prime {
   color: white;
   margin: 0;

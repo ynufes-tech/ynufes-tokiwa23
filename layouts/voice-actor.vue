@@ -4,7 +4,7 @@
 <template>
   <div class="layout-root">
     <div class="logo-wrapper">
-      <LogoPrime/>
+      <WhiteLogoPrime/>
     </div>
     <slot/>
   </div>
@@ -22,6 +22,7 @@
     margin: 0 auto;
   }
 }
+
 .logo-prime {
   color: white;
   margin: 0;

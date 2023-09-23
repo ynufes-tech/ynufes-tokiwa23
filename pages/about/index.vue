@@ -54,8 +54,9 @@
     </div>
 </template>
 
-<style scoped>
-html {
+<style lang="scss" scoped>
+
+html{
     scroll-behavior: smooth;
 }
 
@@ -84,13 +85,13 @@ html {
 
 .ynufes-photo {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
-
-.committee-photo {
-    margin: 3em 1.5em;
+.committee-photo{
+    margin: 1.5em;
     border-radius: 1em;
+    max-width: 80svw;
 }
 
 .gotop {

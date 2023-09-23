@@ -21,7 +21,7 @@
   > h1 {
     font-size: 2.5em;
     font-weight: 500;
-    color: #1d2630;
+    color: white;
     margin: .5em .5em .2em;
   }
 
@@ -29,12 +29,13 @@
     font-size: 1.2em;
     font-weight: 400;
     margin: .5em 1em 1em 1em;
+    color: white;
   }
 
   > hr {
     width: 100%;
     margin: 0;
-    border: 1px solid var(--thick-font-color);
+    border: 1px solid white;
   }
 }
 </style>

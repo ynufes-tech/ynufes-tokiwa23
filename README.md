@@ -43,6 +43,13 @@ PrimaryCard.vue なら、クラス名は primary-card とする。
 
 - コンポーネントに margin を持たせない
 
+### ブランチ管理
+
+- 開発はmainからbranchを切って行う
+- mainに直接pushはしない
+- 本番環境に関してはrelease-branchを使う
+- mainの状態を反映させるときにはmainからreleaseにPRを出す
+
 ### その他
 
 - inline css は使用しない

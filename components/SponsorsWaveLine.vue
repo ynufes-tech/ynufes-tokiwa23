@@ -10,14 +10,14 @@
 
 <style scoped lang="scss">
 .sponsors-wave-line{
-    width: 50%;
+    width: 70vw;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2em;
 .sponsors-wave-line-img{
-    width: 60em;
+    width: 100%;
     height: auto;
     }
 }

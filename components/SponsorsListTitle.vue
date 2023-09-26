@@ -16,16 +16,16 @@ const props = defineProps({
 <style scoped>
 .sponsors-list-title {
   background: url("/images/sponsors/sponsors-list-title.webp") no-repeat left/contain;
-  width: min(768px, 100svw);
+  width: 20em;
   height: 130px;
   text-align: center;
   display: flex;
   align-items: center;
 
   > h2 {
-    font-size: min(2.5rem, 5svw);
+    font-size: 2em;
     font-weight: bold;
-    margin: 0 0 0 25%;
+      width: 100%;
     color: var(--thick-font-color);
   }
 }

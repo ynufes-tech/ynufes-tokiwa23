@@ -24,42 +24,92 @@
             <div class="ads-sponsor">
                 <SponsorsListTitle text="広告協賛"/>
                 <ul class="ads-sponsors-list">
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
+                    <li>ユニゾン英語学院　横浜綱島校</li>
+                    <li>寺田倉庫株式会社</li>
+                    <li>ファミーユデンタルクリニック</li>
+                    <li>横浜国立大学生活共同組合</li>
+                    <li>羽沢くぼた眼科</li>
+                    <li>JOINUS</li>
+                    <li>株式会社ねぎしフードサービス</li>
+                    <li>株式会社ロフトシステムズ</li>
+                    <li>ソフィアアカデミー</li>
+                    <li>サンデーペイント株式会社</li>
+                    <li>株式会社ライブパワー</li>
+                    <li>昭和建設株式会社</li>
+                    <li>マセマ出版社</li>
+                    <li>株式会社カレッジヤード</li>
+                    <li>ときた内科クリニック</li>
+                    <li>ホームステーションらいふ羽沢横浜国大</li>
+                    <li>オーラルプラン歯科クリニック</li>
+                    <li>トラベルクリニック新横浜</li>
+                    <li>Mare Profondo</li>
+                    <li>横浜ベイシェラトン ホテル＆タワーズ</li>
+                    <li>横浜そごう写真館</li>
+                    <li>株式会社トモノカイ</li>
+                    <li>ナッジカード</li>
+                    <li>横浜モアーズ</li>
+                    <li>アルムナイ株式会社</li>
+                    <li>株式会社アゴス・ジャパン</li>
+                    <li>佐野塾</li>
                 </ul>
                 <SponsorsWaveLine/>
             </div>
             <div class="donation">
                 <SponsorsListTitle text="寄付"/>
                 <ul class="donation-sponsors-list">
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
+                    <li>sample</li>
+                    <li>sample</li>
+                    <li>sample</li>
+                    <li>sample</li>
                 </ul>
                 <SponsorsWaveLine/>
             </div>
             <div class="booth-sponsor">
                 <SponsorsListTitle text="ブース協賛"/>
                 <ul class="booth-sponsors-list">
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
+                    <li>株式会社ミニミニ神奈川　横浜西口店</li>
+                    <li>株式会社アットヨコハマ</li>
+                    <li>医療社団法人　伊純会　介護老人保険施設スカイ</li>
+                    <li>東洋水産株式会社</li>
+                    <li>保土ヶ谷区福祉保健課</li>
                 </ul>
                 <SponsorsWaveLine/>
             </div>
             <div class="goods-sponsor">
                 <SponsorsListTitle text="物品協賛"/>
                 <ul class="goods-sponsors-list">
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
-                    <li>test----</li>
+                    <li>株式会社ミツヱ</li>
+                    <li>コヤマドライビングスクール横浜校</li>
+                    <li>シーラン株式会社</li>
+                    <li>株式会社ウイッシュボン</li>
+                    <li>アンカー・ジャパン株式会社</li>
+                    <li>アンブリオス・ジャパン株式会社</li>
+                    <li>伯方塩業株式会社</li>
+                    <li>イオンシネマみなとみらい</li>
+                    <li>明治神宮外苑　聖徳記念絵画館</li>
+                    <li>横須賀美術館</li>
+                    <li>株式会社デルタインナール</li>
+                    <li>株式会社新潟味のれん本舗</li>
+                    <li>一般財団法人 そごう美術館</li>
+                    <li>株式会社RQ芦ノ湖リゾートHOTEL RaKuun</li>
+                    <li>株式会社タスカジ</li>
+                    <li>相田みつを美術館</li>
+                    <li>株式会社伊豆シャボテン公園</li>
+                    <li>アルペンローゼ株式会社</li>
+                    <li>横浜人形の家</li>
+                    <li>ニベア花王株式会社</li>
                 </ul>
                 <SponsorsWaveLine/>
+            </div>
+            <div class="other-sponsor">
+                <SponsorsListTitle text="その他のご協賛"/>
+                <ul class="other-sponsor-list">
+                    <li>株式会社ネオ倶楽部</li>
+                    <li>ダイヤモンド・ヒューマンリソース</li>
+                    <li>株式会社スプリングエステート</li>
+                    <li>有限会社現代不動産</li>
+                    <li>横浜銀行和田町支店</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -81,7 +131,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin-top: 4em;
     .text{
         width: min(70vw, 50em);
         color: var(--thick-font-color);
@@ -97,14 +147,14 @@
         margin-top: 2em;
      }
 }
-.ads-sponsor,.donation,.booth-sponsor,.goods-sponsor{
+.ads-sponsor,.donation,.booth-sponsor,.goods-sponsor,.other-sponsor{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 2em;
     > ul {
-        width: 40svw;
+        width: 60svw;
         flex-wrap: wrap;
         > li {
             display: inline-block;

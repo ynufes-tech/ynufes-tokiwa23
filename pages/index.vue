@@ -68,10 +68,6 @@ useHead({
 <style lang="scss" scoped>
 @use "assets/scss/variables.scss" as *;
 
-.logo-prime {
-  font-size: min(16px, 3.5vw);
-}
-
 .page-root {
   display: flex;
   flex-direction: column;

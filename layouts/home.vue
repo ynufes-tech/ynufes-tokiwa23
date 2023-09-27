@@ -42,5 +42,8 @@ body {
   background: var(--main-background-color);
   font-family: 'Noto Sans JP', sans-serif;
   color: var(--thick-font-color);
+  .logo-prime {
+  font-size: min(12px, 3vw);
+}
 }
 </style>

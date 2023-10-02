@@ -24,7 +24,7 @@
         <div class="inner-pamphlet">
             <SectionTitle text="常盤祭パンフレット" class="upper-title"/>
             <div class="pamphlet-items">
-                <img src="/images/pamphlet/pamphlet-face.webp" alt="pamphlet" class="map-img"/>
+                <img src="/images/pamphlet/pamphlet-face.webp" alt="pamphlet" class="pamphlet-img"/>
                 <div class="pamphlet-text">
                     <p>下のボタンからパンフレットをダウンロードできます</p>
                     <div class="pamphlet-download">
@@ -79,9 +79,9 @@
         width: 80svw;
         margin-top: 2em;
         margin-left: 10svw;
-        .map-img{
-            width: 30svw;
-            height: auto;
+        .pamphlet-img{
+            width: 40svw;
+            height: 31.46svw;/*縦横比固定*/
         }
         .pamphlet-text{
             flex-direction: column;
@@ -108,11 +108,31 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
-
       .dark-button {
           margin: 1em auto;
           cursor: pointer;
       }
-  }
+}
+@media screen and (max-width: 768px){
+    .inner-pamphlet{
+        .pamphlet-items{
+            width: 100svw;
+            margin-left: 0  ;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .pamphlet-text{
+                margin-left: 0;
+                width: 100%;
+                .pamphlet-download{
+                    margin-top: 1em;
+                }
+                > p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
 </style>

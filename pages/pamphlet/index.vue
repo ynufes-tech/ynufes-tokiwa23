@@ -29,13 +29,13 @@
                     <p>下のボタンからパンフレットをダウンロードできます</p>
                     <div class="pamphlet-download">
                         <p>通常版（ーーM)</p>
-                        <NuxtLink to="">
+                        <NuxtLink link="ここに通常版アドレスを置換">
                             <DarkButton text="DOWNLOAD"/>
                         </NuxtLink>
                     </div>
                     <div class="pamphlet-download">
                         <p>軽量版（ーーM）</p>
-                        <NuxtLink to="">
+                        <NuxtLink link="ここに軽量版アドレスを置換">
                             <DarkButton text="DOWNLOAD"/>
                         </NuxtLink>
                     </div>

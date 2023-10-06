@@ -1,5 +1,14 @@
 <script lang="ts" setup>
-
+const donationList: Array<{
+  name: string
+}> = [
+  // {
+  //   name: "Donation1"
+  // },
+  // {
+  //   name: "Donation2"
+  // },
+]
 </script>
 
 <template>
@@ -55,13 +64,10 @@
           </ul>
           <SponsorsWaveLine/>
         </div>
-        <div class="donation">
+        <div v-if="donationList.length>0" class="donation">
           <SponsorsListTitle text="寄付"/>
           <ul class="donation-sponsors-list">
-            <li>sample</li>
-            <li>sample</li>
-            <li>sample</li>
-            <li>sample</li>
+            <li v-for="d in donationList">{{ d.name }}</li>
           </ul>
           <SponsorsWaveLine/>
         </div>

@@ -1,21 +1,20 @@
 <script lang="ts" setup>
 
 // 来年の1月1日00:00:00のDateオブジェクトを取得
-  const newYearTime = new Date(`November 03 2023 13:00:00`).getTime();
+const newYearTime = new Date(`November 03 2023 13:00:00`).getTime();
 onMounted(() => {
-  const days = document.getElementById('days');
-  const hours = document.getElementById('hours');
-  const minutes = document.getElementById('minutes');
-  const seconds = document.getElementById('seconds');
-
+  const days = document.getElementById('days')!!;
+  const hours = document.getElementById('hours')!!;
+  const minutes = document.getElementById('minutes')!!;
+  const seconds = document.getElementById('seconds')!!;
 
   updateCountdown({
     days, hours, minutes, seconds
   })
 
 // 1秒ごとに関数を実行
-setInterval(updateCountdown, 1000,{
-  days, hours, minutes, seconds
+  setInterval(updateCountdown, 1000, {
+    days, hours, minutes, seconds
   });
 })
 
@@ -24,20 +23,20 @@ setInterval(updateCountdown, 1000,{
 
 // カウントダウンの関数
 function updateCountdown(
-    elements:
-        {
-          days: HTMLElement,
-          hours: HTMLElement,
-          minutes: HTMLElement,
-          seconds: HTMLElement,
-        }
+  elements:
+    {
+      days: HTMLElement,
+      hours: HTMLElement,
+      minutes: HTMLElement,
+      seconds: HTMLElement,
+    }
 ) {
   // 現在の時刻情報を取得する
   const currentTime = new Date().getTime();
   // 現在の時間と新年の時間の差を計算する（ミリ秒単位）
   const diff = newYearTime - currentTime;
 
-  // 現在から新年までの日数を計算
+  // 現在から新年までの日数を計算
   const d = Math.floor(diff / 1000 / 60 / 60 / 24);
   // 時間を計算
   const h = Math.floor(diff / 1000 / 60 / 60) % 24;
@@ -57,25 +56,25 @@ function updateCountdown(
 
 <template>
   <div class="Countdown">
-      <div class="countdown">
-        <h1 class="countdown-title">常盤祭2023</h1>
-        <h2 class="countdown-sub-title">まで...</h2>
-        <div class="time-container">
-          <div class="time-wrapper"><p class="time"><span id="days" class="time-num">--</span>days</p></div>
-          <div class="time-wrapper"><p class="time"><span id="hours" class="time-num">--</span>hours</p></div>
-          <div class="time-wrapper"><p class="time"><span id="minutes" class="time-num">--</span>minutes</p></div>
-          <div class="time-wrapper"><p class="time"><span id="seconds" class="time-num">--</span>seconds</p></div>
-        </div>
+    <div class="countdown">
+      <h1 class="countdown-title">常盤祭2023</h1>
+      <h2 class="countdown-sub-title">まで...</h2>
+      <div class="time-container">
+        <div class="time-wrapper"><p class="time"><span id="days" class="time-num">--</span>days</p></div>
+        <div class="time-wrapper"><p class="time"><span id="hours" class="time-num">--</span>hours</p></div>
+        <div class="time-wrapper"><p class="time"><span id="minutes" class="time-num">--</span>minutes</p></div>
+        <div class="time-wrapper"><p class="time"><span id="seconds" class="time-num">--</span>seconds</p></div>
       </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.Countdown{
+.Countdown {
   position: relative;
   display: flex;
   align-items: center;
-  width:max(340px,35svw);
+  width: max(340px, 35svw);
 }
 
 /* カウントダウンタイマー本体 */
@@ -92,30 +91,34 @@ function updateCountdown(
   padding: 30px 0 0 0;
   background-color: #8CB6DE;
   color: #444455;
-  border-radius: 25px 25px 0 0 ;
-  width:max(340px,35svw);
+  border-radius: 25px 25px 0 0;
+  width: max(340px, 35svw);
 }
-.countdown-sub-title{
-  text-indent:40%;
+
+.countdown-sub-title {
+  text-indent: 40%;
   font-size: 1rem;
   font-weight: bolder;
   background-color: #8CB6DE;
   padding: 15px 0;
   text-align: center;
   color: #444455;
-  width:max(340px,35svw);
+  width: max(340px, 35svw);
 }
+
 /* タイマー部分を囲うコンテナー */
 .time-container {
   display: flex;
   justify-content: center;
   background-color: #FFFFFF;
   border-radius: 0 0 25px 25px;
-  width:max(340px,35svw);
+  width: max(340px, 35svw);
 }
-.time-wrapper{
-  width:25%;
+
+.time-wrapper {
+  width: 25%;
 }
+
 /* hours, minutes, secondsの共通スタイル */
 .time {
   display: flex;

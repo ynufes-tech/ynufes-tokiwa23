@@ -10,7 +10,8 @@ const props = defineProps({
   },
   mode: {
     type: Number,
-    required: true
+    required: false,
+    default: ButtonMode.Positive
   }
 })
 const defineMode = computed(() => {

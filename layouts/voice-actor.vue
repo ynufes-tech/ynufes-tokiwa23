@@ -11,6 +11,10 @@
 </template>
 
 <style lang="scss" scoped>
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .layout-root {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),

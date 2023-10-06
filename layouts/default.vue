@@ -10,6 +10,10 @@
 </template>
 
 <style lang="scss">
+body{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 .layout-root {
   background: var(--main-background-color);
 

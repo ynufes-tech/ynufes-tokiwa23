@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 useHead({
   title: "東京ホテイソン降臨！横浜ナショナルクラッシュ！",
   meta: [
     {
       name: "description",
       content:
-          "今年の常盤祭にあのお笑い芸人「東京ホテイソン」が降臨!!チケットはお早めに！",
+        "今年の常盤祭にあのお笑い芸人「東京ホテイソン」が降臨!!チケットはお早めに！",
     },
   ]
 });
@@ -35,11 +35,11 @@ useHead({
       </StripedSection>
       <StripedSection base-color="#fca14c44">
         <a href="https://eplus.jp/sf/detail/3954430001-P0030001"
-           target="_blank" rel="noopener noreferrer">チケット購入ページはこちら</a><br/>
+           rel="noopener noreferrer" target="_blank">チケット購入ページはこちら</a><br/>
         <br/>
         ※必ず注意事項をご確認の上、お買い求め下さい。
       </StripedSection>
-      <StripedSection base-color="#a8f59588" id="section-caution">
+      <StripedSection id="section-caution" base-color="#a8f59588">
         【⚠注意事項⚠】<br/>
         <ol>
           <li>企画内容について、予告なく変更・中止になる場合がございます。</li>
@@ -53,11 +53,13 @@ useHead({
         </ol>
       </StripedSection>
     </div>
-    <DarkButton @click="useRouter().push('/')" text="⇐ ホームに戻る"/>
+    <NuxtLink to="/">
+      <DarkButton text="⇐ ホームに戻る"/>
+    </NuxtLink>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use "assets/scss/_breakpoint.scss" as *;
 
 .page-root {
@@ -130,5 +132,7 @@ useHead({
   cursor: pointer;
 }
 
-
+a {
+  text-decoration: unset;
+}
 </style>

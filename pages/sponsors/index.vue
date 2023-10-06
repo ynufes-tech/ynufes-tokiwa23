@@ -120,7 +120,9 @@ const donationList: Array<{
         </div>
       </div>
     </div>
-    <DarkButton text="⇐ ホームに戻る" @click="useRouter().push('/')"/>
+    <NuxtLink to="/">
+      <DarkButton text="⇐ ホームに戻る"/>
+    </NuxtLink>
   </div>
 </template>
 
@@ -188,6 +190,10 @@ const donationList: Array<{
       }
     }
   }
+}
+
+a {
+  text-decoration: unset;
 }
 
 .dark-button {

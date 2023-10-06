@@ -9,6 +9,12 @@ const donationList: Array<{
   //   name: "Donation2"
   // },
 ]
+ useHead({
+     title: "Sponsors | 23常盤祭公式HP~未来航路~",
+  meta: [
+      {name: "description", content: "23常盤祭のご協賛団体、個人の一覧です"},
+  ],
+ })
 </script>
 
 <template>
@@ -23,7 +29,7 @@ const donationList: Array<{
           <p class="text">
             「23常盤祭」を開催するにあたり、多くの企業の皆様より多大なご協力を賜りました。この場をお借りいたしまして、心より感謝申し上げます。</p>
           <p class="text">ご協賛いただきました企業を以下に掲載させていただきます。</p>
-          <div class="banner-ads">
+          <div class="banner-ads" style="display: none">
             <p>バナー広告</p>
           </div>
           <SponsorsWaveLine/>
@@ -147,6 +153,7 @@ const donationList: Array<{
   .text {
     width: min(70vw, 50em);
     color: var(--thick-font-color);
+    line-height: 1.5em;
   }
 
   .banner-ads {

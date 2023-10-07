@@ -42,7 +42,7 @@ const donationList: Array<{
         <div class="ads-sponsor">
           <SponsorsListTitle text="広告協賛" />
           <ul class="ads-sponsors-list">
-            <li>ユニゾン英語学院　横浜綱島校</li>
+            <li>ユニゾン英語学院 横浜綱島校</li>
             <li>寺田倉庫株式会社</li>
             <li>ファミーユデンタルクリニック</li>
             <li>横浜国立大学生活共同組合</li>
@@ -74,17 +74,17 @@ const donationList: Array<{
         </div>
         <div v-if="donationList.length > 0" class="donation">
           <SponsorsListTitle text="寄付" />
-          <ul class="donation-sponsors-list">
+          <!-- <ul class="donation-sponsors-list">
             <li v-for="d in donationList">{{ d.name }}</li>
-          </ul>
+          </ul> -->
           <SponsorsWaveLine />
         </div>
         <div class="booth-sponsor">
           <SponsorsListTitle text="ブース協賛" />
           <ul class="booth-sponsors-list">
-            <li>株式会社ミニミニ神奈川　横浜西口店</li>
+            <li>株式会社ミニミニ神奈川 横浜西口店</li>
             <li>株式会社アットヨコハマ</li>
-            <li>医療社団法人　伊純会　介護老人保険施設スカイ</li>
+            <li>医療社団法人 伊純会 介護老人保険施設スカイ</li>
             <li>東洋水産株式会社</li>
             <li>保土ヶ谷区福祉保健課</li>
           </ul>
@@ -101,7 +101,7 @@ const donationList: Array<{
             <li>アンブリオス・ジャパン株式会社</li>
             <li>伯方塩業株式会社</li>
             <li>イオンシネマみなとみらい</li>
-            <li>明治神宮外苑　聖徳記念絵画館</li>
+            <li>明治神宮外苑 聖徳記念絵画館</li>
             <li>横須賀美術館</li>
             <li>株式会社デルタインナール</li>
             <li>株式会社新潟味のれん本舗</li>

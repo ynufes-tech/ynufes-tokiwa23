@@ -1,28 +1,28 @@
 <script lang="ts" setup>
 enum ButtonMode {
   Positive = 0,
-  Negative = 1
+  Negative = 1,
 }
 const props = defineProps({
   text: {
     type: String,
-    required: true
+    required: true,
   },
   mode: {
     type: Number,
     required: false,
-    default: ButtonMode.Positive
-  }
-})
+    default: 0,
+  },
+});
 const defineMode = computed(() => {
   if (props.mode === ButtonMode.Positive) {
-    return 'positive'
-  } else if(props.mode === ButtonMode.Negative) {
-    return 'negative'
+    return "positive";
+  } else if (props.mode === ButtonMode.Negative) {
+    return "negative";
   } else {
-    return 'disabled'
+    return "disabled";
   }
-})
+});
 </script>
 
 <template>
@@ -44,12 +44,12 @@ const defineMode = computed(() => {
 .positive-button {
   background-color: #d98a59;
   &:hover {
-    background-color: #FFF;
+    background-color: #fff;
     color: #d98a59;
   }
 }
 .negative-button {
-  outline: 1px solid #FFF;
+  outline: 1px solid #fff;
   &:hover {
     background-color: #fff;
     color: #3b3b3b;

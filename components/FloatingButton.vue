@@ -1,13 +1,9 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 <template>
-    <div class="floating-button">
-        <a href="#" class="go-top">top</a>
-    </div>
-
-
+  <div class="floating-button">
+    <a href="#" class="go-top">top</a>
+  </div>
 </template>
-
 
 <style lang="scss" scoped>
 @import "assets/scss/_breakpoint.scss";
@@ -17,7 +13,7 @@
   width: 60px;
   height: 60px;
   box-sizing: border-box;
-  background: #FFF;
+  background: #fff;
   border: 1px solid #999;
   border-radius: 1em;
   padding-top: 30px;
@@ -52,7 +48,6 @@
   opacity: 1;
 }
 
-
 @include md {
   .go-top {
     width: 40px;
@@ -68,6 +63,5 @@
   .go-top::before {
     bottom: 0;
   }
-
 }
 </style>

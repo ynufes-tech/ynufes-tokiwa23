@@ -3,8 +3,8 @@ const props = defineProps({
   text: {
     type: String,
     required: true,
-  }
-})
+  },
+});
 </script>
 
 <template>
@@ -15,7 +15,8 @@ const props = defineProps({
 
 <style scoped>
 .sponsors-list-title {
-  background: url("/images/sponsors/sponsors-list-title.webp") no-repeat left/contain;
+  background: url("/images/sponsors/sponsors-list-title.webp") no-repeat
+    left/contain;
   width: 20em;
   height: 130px;
   text-align: center;

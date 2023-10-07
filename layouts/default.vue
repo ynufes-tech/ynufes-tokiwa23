@@ -3,15 +3,15 @@
 <template>
   <div class="layout-root">
     <div class="logo-wrapper">
-      <LogoPrime/>
+      <LogoPrime />
     </div>
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <style lang="scss">
-body{
-  font-family: 'Noto Sans JP', sans-serif;
+body {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .layout-root {

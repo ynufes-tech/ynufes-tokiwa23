@@ -7,54 +7,59 @@ useHead({
       content:
         "今年の常盤祭にあのお笑い芸人「東京ホテイソン」が降臨!!チケットはお早めに！",
     },
-  ]
+  ],
 });
 </script>
 
 <template>
   <div class="page-root">
-    <PageTitle :title="'東京ホテイソン降臨！\n横浜ナショナルクラッシュ！'"/>
+    <PageTitle :title="'東京ホテイソン降臨！\n横浜ナショナルクラッシュ！'" />
     <div class="top-images">
-      <img src="/images/comedian/logo.webp"/>
-      <img src="/images/comedian/guest.webp"/>
+      <img src="/images/comedian/logo.webp" />
+      <img src="/images/comedian/guest.webp" />
     </div>
     <div class="striped-sections">
       <StripedSection base-color="#fca14c44">
-        今年の常盤祭にあのお笑い芸人「東京ホテイソン」が降臨！！<br/>
+        今年の常盤祭にあのお笑い芸人「東京ホテイソン」が降臨！！<br />
         漫才や様々なコーナーで皆さまと楽しい時間を作っていきます！
-        チケットはお早めに！
-        秋を笑いで飾りましょう。
+        チケットはお早めに！ 秋を笑いで飾りましょう。
       </StripedSection>
       <StripedSection base-color="#a8f59588">
-        【日時】<br/>
-        11月3日（金祝）14:10～15:20 70分<br/>
-        【会場】<br/>
-        横浜国立大学 経営学部棟2号館 109教室特設ステージ<br/>
-        【チケット代金】<br/>
+        【日時】<br />
+        11月3日（金祝）14:10～15:20 70分<br />
+        【会場】<br />
+        横浜国立大学 経営学部棟2号館 109教室特設ステージ<br />
+        【チケット代金】<br />
         一律1600円
       </StripedSection>
       <StripedSection base-color="#fca14c44">
-        <a href="https://eplus.jp/sf/detail/3954430001-P0030001"
-           rel="noopener noreferrer" target="_blank">チケット購入ページはこちら</a><br/>
-        <br/>
+        <a
+          href="https://eplus.jp/sf/detail/3954430001-P0030001"
+          rel="noopener noreferrer"
+          target="_blank"
+          >チケット購入ページはこちら</a
+        ><br />
+        <br />
         ※必ず注意事項をご確認の上、お買い求め下さい。
       </StripedSection>
       <StripedSection id="section-caution" base-color="#a8f59588">
-        【⚠注意事項⚠】<br/>
+        【⚠注意事項⚠】<br />
         <ol>
           <li>企画内容について、予告なく変更・中止になる場合がございます。</li>
           <li>中止の場合、チケットに関しまして返金対応いたします。</li>
-          <li>参加の際、持ち物検査等安全に関わるお願いに従っていただけない場合、参加をお断りする場合がございます。内容につきましてはチケット購入ページを御覧ください。
+          <li>
+            参加の際、持ち物検査等安全に関わるお願いに従っていただけない場合、参加をお断りする場合がございます。内容につきましてはチケット購入ページを御覧ください。
           </li>
-          <li>お問い合わせにつきましては当該HPでは対応いたしかねます。<br/>
-            ynu23kikaku@gmail.com<br/>
+          <li>
+            お問い合わせにつきましては当該HPでは対応いたしかねます。<br />
+            ynu23kikaku@gmail.com<br />
             までお問い合わせお願い致します。
           </li>
         </ol>
       </StripedSection>
     </div>
     <NuxtLink to="/">
-      <DarkButton text="⇐ ホームに戻る"/>
+      <DarkButton text="⇐ ホームに戻る" />
     </NuxtLink>
   </div>
 </template>
@@ -102,7 +107,7 @@ useHead({
       width: min(75vw, 35em);
       color: black;
 
-      &:nth-child(2n+1) {
+      &:nth-child(2n + 1) {
         transform: translateX(-10%);
       }
 

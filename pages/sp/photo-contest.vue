@@ -21,7 +21,9 @@
           <p class="photo-thick-font">
             <span>10月7日（土）</span>
             <span>～10月20日（金）</span>
-            <br />X(旧Twitter)で募集！
+            <br />
+            <span>X(旧Twitter)</span>
+            <span>で募集！</span>
           </p>
         </div>
       </div>
@@ -66,6 +68,13 @@
 </template>
 
 <style scoped lang="scss">
+.content-root {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 h2 {
   margin-bottom: 1em;
   color: var(--thick-font-color);
@@ -88,16 +97,21 @@ li {
 }
 
 .photo-contents {
-  margin-top: 2em;
-  margin-left: 10svw;
-  width: 80svw;
+  // 左右に10%ずつ
+  margin: 2em 10% 0;
+  width: 80%;
   justify-content: center;
   align-items: center;
 }
 
 .photo-thick-font {
   font-size: 2em;
+  line-height: 1.3;
   font-weight: bold;
+
+  > span {
+    display: inline-block;
+  }
 }
 
 .back-button {

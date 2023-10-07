@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: "東京ホテイソン降臨！横浜ナショナルクラッシュ！",
+  meta: [
+    {
+      name: "description",
+      content:
+        "本学の学生が撮影した友人や動物の写真を使ったフォトコンテスト企画です!Xにて「#23常盤フォトコンテスト」で写真を投稿して応募しよう!",
+    },
+  ],
+});
+</script>
 
 <template>
   <div class="page-root">

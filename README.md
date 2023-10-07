@@ -1,3 +1,10 @@
+# フォーマットガイド
+
+このリポジトリは、以下の記事を参考にprettier eslint を導入しました。
+
+https://dev.to/tao/adding-eslint-and-prettier-to-nuxt-3-2023-5bg
+
+
 # コーディングガイドライン
 
 ## サイトの breakpoint

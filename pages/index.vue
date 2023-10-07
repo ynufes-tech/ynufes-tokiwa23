@@ -1,18 +1,22 @@
 <script lang="ts" setup>
 definePageMeta({
-  layout: 'home'
-})
+  layout: "home",
+});
 useHead({
-    title: "Top | 23常盤祭公式HP~未来航路~",
+  title: "Top | 23常盤祭公式HP~未来航路~",
   meta: [
-      {name: "description", content: "11/3~5に開催される23常盤祭 公式HPです!! 最新情報を随時更新していきます!!"},
+    {
+      name: "description",
+      content:
+        "11/3~5に開催される23常盤祭 公式HPです!! 最新情報を随時更新していきます!!",
+    },
   ],
 });
 </script>
 
 <template>
   <div class="page-root">
-    <LogoPrime/>
+    <LogoPrime />
     <div id="top-pane">
       <h1 id="top-title">未来航路</h1>
       <div id="schedule">
@@ -48,19 +52,21 @@ useHead({
           </tr>
         </table>
       </div>
-        <div class="pre-guest-event">
-            <h1>大物ゲストが来校決定！詳しくはコチラ</h1>
-            <div class="pre-guest-event-button">
-                <NuxtLink to="/sp/voice-actor">
-                    <PreGuestEventButton text="声優ゲスト企画詳細"/>
-                </NuxtLink>
-                <NuxtLink to="/sp/comedian">
-                    <PreGuestEventButton text="芸人ゲスト企画詳細"/>
-                </NuxtLink>
-            </div>
+      <div class="pre-guest-event">
+        <h1>大物ゲストが来校決定！詳しくはコチラ</h1>
+        <div class="pre-guest-event-button">
+          <NuxtLink to="/sp/voice-actor">
+            <PreGuestEventButton text="声優ゲスト企画詳細" />
+          </NuxtLink>
+          <NuxtLink to="/sp/comedian">
+            <PreGuestEventButton text="芸人ゲスト企画詳細" />
+          </NuxtLink>
         </div>
-      <BouncingText text="※只今製作中..."/>
-      <p id="upcoming-notify"><span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span></p>
+      </div>
+      <BouncingText text="※只今製作中..." />
+      <p id="upcoming-notify">
+        <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>
+      </p>
     </div>
   </div>
 </template>
@@ -107,7 +113,7 @@ useHead({
     font-weight: 700;
     font-size: 1.5em;
     text-align: center;
-    padding-bottom: .2em;
+    padding-bottom: 0.2em;
   }
 
   table {
@@ -117,7 +123,7 @@ useHead({
     border-collapse: collapse;
 
     td {
-      padding: .2em 0;
+      padding: 0.2em 0;
     }
 
     tr:nth-child(odd) {
@@ -125,7 +131,7 @@ useHead({
     }
 
     td:nth-child(2) {
-      padding-right: .2em;
+      padding-right: 0.2em;
     }
   }
 }
@@ -143,14 +149,13 @@ useHead({
 }
 
 @include md {
-
   #schedule {
     width: 100vw;
   }
 }
 
 .bouncing-text {
-  margin: .4em auto 0;
+  margin: 0.4em auto 0;
   font-size: 3em;
 }
 
@@ -165,31 +170,31 @@ useHead({
   }
 }
 
-.pre-guest-event{
+.pre-guest-event {
   > h1 {
     text-align: center;
     padding-top: 3em;
     font-size: 2em;
   }
-  .pre-guest-event-button{
-    margin-top: .7rem;
+  .pre-guest-event-button {
+    margin-top: 0.7rem;
     display: flex;
     justify-content: center;
     text-decoration: none;
     > a {
       text-decoration: none;
-      color: #8CB6DE;
+      color: #8cb6de;
       padding: 0 1em;
       &:hover {
         color: #ffffff;
-        .pre-guest-event-button{
-          background-color: #8CB6DE;
+        .pre-guest-event-button {
+          background-color: #8cb6de;
         }
       }
     }
     @media screen and (max-width: 768px) {
       flex-direction: column;
-      margin: .7rem auto 0;
+      margin: 0.7rem auto 0;
       > a {
         margin-bottom: 1em;
       }

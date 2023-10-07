@@ -1,15 +1,15 @@
 <script setup>
-
 const props = defineProps({
   text: {
-    type: String
+    type: String,
+    required: true,
   },
   color: {
     type: String,
     required: false,
-    default: "#2c3e50"
-  }
-})
+    default: "#2c3e50",
+  },
+});
 </script>
 <template>
   <div class="bouncing-text">
@@ -20,13 +20,14 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
-
 .character {
   display: flex;
   line-height: 2;
-  animation: bounce 4s ease infinite,
-  gradient 20s ease alternate infinite;
+  animation:
+    bounce 4s ease infinite,
+    gradient 20s ease alternate infinite;
   background: var(--thick-font-color);
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   background-size: 400% 400%;
@@ -42,19 +43,18 @@ const props = defineProps({
   }
 }
 
-
 @keyframes bounce {
   0% {
     transform: scale(1, 1) translateY(0);
   }
   2% {
-    transform: scale(1.1, .85) translateY(0);
+    transform: scale(1.1, 0.85) translateY(0);
   }
   7% {
-    transform: scale(.85, 1.2) translateY(-0.5em);
+    transform: scale(0.85, 1.2) translateY(-0.5em);
   }
   13% {
-    transform: scale(1.05, .95) translateY(0);
+    transform: scale(1.05, 0.95) translateY(0);
   }
   18% {
     transform: scale(1, 1) translateY(-0.25em);
@@ -64,10 +64,9 @@ const props = defineProps({
   }
   25% {
     transform: scale(1, 1) translateY(0);
-
-    100% {
-      transform: scale(1, 1) translateY(0);
-    }
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
   }
 }
 

@@ -25,7 +25,7 @@ const props = defineProps({
   > h2 {
     font-size: 2em;
     font-weight: bold;
-      width: 100%;
+    width: 100%;
     color: var(--thick-font-color);
   }
 }

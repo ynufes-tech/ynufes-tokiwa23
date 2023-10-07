@@ -57,10 +57,10 @@ useHead({
           </li>
         </ol>
       </StripedSection>
+      <NuxtLink to="/">
+        <DarkButton text="⇐ ホームに戻る" />
+      </NuxtLink>
     </div>
-    <NuxtLink to="/">
-      <DarkButton text="⇐ ホームに戻る" />
-    </NuxtLink>
   </div>
 </template>
 

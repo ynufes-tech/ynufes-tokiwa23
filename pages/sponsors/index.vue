@@ -1,6 +1,12 @@
 <script lang="ts" setup>
+useHead({
+  title: "Sponsors | 23常盤祭公式HP~未来航路~",
+  meta: [
+    { name: "description", content: "23常盤祭のご協賛団体、個人の一覧です" },
+  ],
+});
 const donationList: Array<{
-  name: string
+  name: string;
 }> = [
   // {
   //   name: "Donation1"
@@ -8,37 +14,33 @@ const donationList: Array<{
   // {
   //   name: "Donation2"
   // },
-]
- useHead({
-     title: "Sponsors | 23常盤祭公式HP~未来航路~",
-  meta: [
-      {name: "description", content: "23常盤祭のご協賛団体、個人の一覧です"},
-  ],
- })
+];
 </script>
 
 <template>
   <div class="page-root">
     <div class="sponsors-title">
-      <PageTitle title="SPONSORS"/>
+      <PageTitle title="SPONSORS" />
     </div>
     <div class="inner-sponsors-page">
       <div class="sponsors-about">
-        <section-title class="upper-title" text="ご協賛について"/>
+        <section-title class="upper-title" text="ご協賛について" />
         <div class="sponsors-about-contents">
           <p class="text">
-            「23常盤祭」を開催するにあたり、多くの企業の皆様より多大なご協力を賜りました。この場をお借りいたしまして、心より感謝申し上げます。</p>
-          <p class="text">ご協賛いただきました企業を以下に掲載させていただきます。</p>
+            「23常盤祭」を開催するにあたり、多くの企業の皆様より多大なご協力を賜りました。この場をお借りいたしまして、心より感謝申し上げます。
+          </p>
+          <p class="text">
+            ご協賛いただきました企業を以下に掲載させていただきます。
+          </p>
           <div class="banner-ads" style="display: none">
             <p>バナー広告</p>
           </div>
-          <SponsorsWaveLine/>
+          <SponsorsWaveLine />
         </div>
-
       </div>
       <div class="sponsors-list">
         <div class="ads-sponsor">
-          <SponsorsListTitle text="広告協賛"/>
+          <SponsorsListTitle text="広告協賛" />
           <ul class="ads-sponsors-list">
             <li>ユニゾン英語学院　横浜綱島校</li>
             <li>寺田倉庫株式会社</li>
@@ -68,17 +70,17 @@ const donationList: Array<{
             <li>株式会社アゴス・ジャパン</li>
             <li>佐野塾</li>
           </ul>
-          <SponsorsWaveLine/>
+          <SponsorsWaveLine />
         </div>
-        <div v-if="donationList.length>0" class="donation">
-          <SponsorsListTitle text="寄付"/>
+        <div v-if="donationList.length > 0" class="donation">
+          <SponsorsListTitle text="寄付" />
           <ul class="donation-sponsors-list">
             <li v-for="d in donationList">{{ d.name }}</li>
           </ul>
-          <SponsorsWaveLine/>
+          <SponsorsWaveLine />
         </div>
         <div class="booth-sponsor">
-          <SponsorsListTitle text="ブース協賛"/>
+          <SponsorsListTitle text="ブース協賛" />
           <ul class="booth-sponsors-list">
             <li>株式会社ミニミニ神奈川　横浜西口店</li>
             <li>株式会社アットヨコハマ</li>
@@ -86,10 +88,10 @@ const donationList: Array<{
             <li>東洋水産株式会社</li>
             <li>保土ヶ谷区福祉保健課</li>
           </ul>
-          <SponsorsWaveLine/>
+          <SponsorsWaveLine />
         </div>
         <div class="goods-sponsor">
-          <SponsorsListTitle text="物品協賛"/>
+          <SponsorsListTitle text="物品協賛" />
           <ul class="goods-sponsors-list">
             <li>株式会社ミツヱ</li>
             <li>コヤマドライビングスクール横浜校</li>
@@ -112,10 +114,10 @@ const donationList: Array<{
             <li>横浜人形の家</li>
             <li>ニベア花王株式会社</li>
           </ul>
-          <SponsorsWaveLine/>
+          <SponsorsWaveLine />
         </div>
         <div class="other-sponsor">
-          <SponsorsListTitle text="その他のご協賛"/>
+          <SponsorsListTitle text="その他のご協賛" />
           <ul class="other-sponsor-list">
             <li>株式会社ネオ倶楽部</li>
             <li>ダイヤモンド・ヒューマンリソース</li>
@@ -127,7 +129,7 @@ const donationList: Array<{
       </div>
     </div>
     <NuxtLink to="/">
-      <DarkButton text="⇐ ホームに戻る"/>
+      <DarkButton text="⇐ ホームに戻る" />
     </NuxtLink>
   </div>
 </template>
@@ -159,7 +161,7 @@ const donationList: Array<{
   .banner-ads {
     width: min(50vw, 500px);
     height: min(15vw, 150px);
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -168,7 +170,11 @@ const donationList: Array<{
   }
 }
 
-.ads-sponsor, .donation, .booth-sponsor, .goods-sponsor, .other-sponsor {
+.ads-sponsor,
+.donation,
+.booth-sponsor,
+.goods-sponsor,
+.other-sponsor {
   display: flex;
   flex-direction: column;
   justify-content: center;

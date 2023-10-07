@@ -11,14 +11,15 @@ const close = () => {
 
 <template>
   <div class="navigation-menu">
-    <div
+    <a
       :class="{
         'navigation-menu-button-title': !showMenu,
         'under-hover-button': showMenu,
       }"
+      @click="toggleMenu"
     >
-      <span @click="toggleMenu">MENU</span>
-    </div>
+      MENU
+    </a>
     <div v-show="showMenu">
       <nav class="nav-list-wrapper">
         <ul class="nav-list">
@@ -58,11 +59,10 @@ const close = () => {
 <style scoped lang="scss">
 .navigation-menu {
   position: relative;
+  z-index: 10000;
 }
 
->>>>>>>814f982
-  (ナビゲーションメニューの配置の修正)
-  .navigation-menu-button-title {
+.navigation-menu-button-title {
   display: inline-block;
   width: 6rem;
   text-align: center;
@@ -77,6 +77,7 @@ const close = () => {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: underline;
+  cursor: pointer;
 }
 .under-hover-button {
   display: inline-block;
@@ -92,6 +93,7 @@ const close = () => {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .nav-list-wrapper {

@@ -6,7 +6,7 @@ import BackToHome from "~/components/BackToHome.vue";
 <template>
     <div class="page-root">
         <div class="pamphlet-title">
-            <PageTitle title="MAP"/>
+            <PageTitle title="学内マップ&パンフレット"/>
         </div>
         <div class="inner-map">
             <SectionTitle text="学内MAP" class="upper-title"/>
@@ -30,14 +30,14 @@ import BackToHome from "~/components/BackToHome.vue";
                     <p>下のボタンからパンフレットをダウンロードできます</p>
                     <div class="pamphlet-download">
                         <p>通常版（ーーM)</p>
-                        <NuxtLink link="ここに通常版アドレスを置換">
-                            <DarkButton text="DOWNLOAD"/>
+                        <NuxtLink to="" class="pamphlet-button">
+                            <DownloadButton/>
                         </NuxtLink>
                     </div>
                     <div class="pamphlet-download">
                         <p>軽量版（ーーM）</p>
-                        <NuxtLink link="ここに軽量版アドレスを置換">
-                            <DarkButton text="DOWNLOAD"/>
+                        <NuxtLink to="" class="pamphlet-button">
+                            <DownloadButton/>
                         </NuxtLink>
                     </div>
                 </div>
@@ -97,6 +97,10 @@ import BackToHome from "~/components/BackToHome.vue";
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                .pamphlet-button{
+                    color: var(--thick-font-color);
+                    text-decoration: none;
+                }
                 > p {
                     margin-bottom: 1em;
                 }

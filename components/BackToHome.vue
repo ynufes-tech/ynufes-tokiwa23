@@ -17,6 +17,10 @@
 <style scoped lang="scss">
 .back-to-home {
   margin: 2em 0;
+    transition: .3s;
+    &:active{
+        padding-top: 0.3em;
+    }
 
   .back-to-home-button-border {
     text-decoration: none;
@@ -38,7 +42,7 @@
 .back-to-home-button:hover {
   background-color: var(--thick-font-color);
 
-  .back-to-home-button-text {
+  .back-to-home-button-text:hover{
     color: #fff;
   }
 }

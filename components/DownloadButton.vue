@@ -14,10 +14,9 @@
 .download-button {
   border-radius: 2em;
   border: solid 1.5px var(--thick-font-color);
-  width: 11em;
+  width: 15em;
   height: 3em;
   text-align: center;
-  margin: 2em 0;
 
   &:hover {
     background-color: var(--thick-font-color);
@@ -40,4 +39,9 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .download-button {
+    width: 11em;
+  }
+}
 </style>

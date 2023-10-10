@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import BackToHome from "~/components/BackToHome.vue";
 </script>
 
 <template>
@@ -43,7 +44,7 @@
             </div>
         </div>
         <div class="bottom-button">
-            <DarkButton @click="useRouter().push('/')" text="⇐ ホームに戻る"/>
+            <BackToHome/>
         </div>
     </div>
 </template>
@@ -108,10 +109,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      .dark-button {
-          margin: 1em auto;
-          cursor: pointer;
-      }
 }
 @media screen and (max-width: 768px){
     .inner-pamphlet{
@@ -129,6 +126,8 @@
                 }
                 > p {
                     text-align: center;
+                    width: 80svw;
+                    margin-left: 10svw;
                 }
             }
         }

@@ -1,20 +1,24 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="layout-root">
     <div class="logo-wrapper">
-      <WhiteLogoPrime/>
+      <WhiteLogoPrime />
     </div>
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <style lang="scss" scoped>
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
 .layout-root {
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-  url(/images/voice-actor/sp-background.webp) no-repeat center center fixed !important;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/images/voice-actor/sp-background.webp) no-repeat center center fixed !important;
   background-size: cover;
 
   .logo-wrapper {
@@ -34,5 +38,4 @@
     border-color: white !important;
   }
 }
-
 </style>

@@ -1,3 +1,10 @@
+# フォーマットガイド
+
+このリポジトリは、以下の記事を参考にprettier eslint を導入しました。
+
+https://dev.to/tao/adding-eslint-and-prettier-to-nuxt-3-2023-5bg
+
+
 # コーディングガイドライン
 
 ## サイトの breakpoint
@@ -42,6 +49,13 @@ template タグ直下のタグにファイル名のケバブケースをクラ�
 PrimaryCard.vue なら、クラス名は primary-card とする。
 
 - コンポーネントに margin を持たせない
+
+### ブランチ管理
+
+- 開発はmainからbranchを切って行う
+- mainに直接pushはしない
+- 本番環境に関してはrelease-branchを使う
+- mainの状態を反映させるときにはmainからreleaseにPRを出す
 
 ### その他
 

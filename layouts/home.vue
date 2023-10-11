@@ -2,6 +2,10 @@
 
 <template>
   <div id="layout-root">
+    <div class="header">
+      <LogoPrime />
+      <NavigationMenu />
+    </div>
     <slot />
     <div id="background-container">
       <!--      <WaveBackground/>-->
@@ -15,6 +19,16 @@
 
 #layout-root {
   position: relative;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(1024px, 95%);
+    margin: 0 auto;
+    .navigation-menu {
+      text-align: right;
+    }
+  }
 }
 
 #background-container {

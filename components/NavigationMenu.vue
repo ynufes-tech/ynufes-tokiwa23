@@ -39,17 +39,17 @@ const close = () => {
               >ご協賛企業・個人一覧</NuxtLink
             >
           </li>
-          <li>
+          <!-- <li>
             <NuxtLink to="/events" @click="close">企画一覧</NuxtLink>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <NuxtLink to="/events/time-table" @click="close"
               >タイムテーブル</NuxtLink
             >
           </li>
           <li>
             <NuxtLink to="/sp" @click="close">本部企画一覧</NuxtLink>
-          </li>
+          </li> -->
         </ul>
       </nav>
     </div>

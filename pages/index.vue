@@ -16,7 +16,6 @@ useHead({
 
 <template>
   <div class="page-root">
-    <LogoPrime />
     <div id="top-pane">
       <h1 id="top-title">未来航路</h1>
       <div id="schedule">

@@ -2,8 +2,9 @@
 
 <template>
   <div class="layout-root">
-    <div class="logo-wrapper">
+    <div class="header">
       <LogoPrime />
+      <NavigationMenu />
     </div>
     <slot />
   </div>
@@ -17,9 +18,15 @@ body {
 .layout-root {
   background: var(--main-background-color);
 
-  .logo-wrapper {
-    width: min(1024px, 100%);
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(1024px, 95%);
     margin: 0 auto;
+    .navigation-menu {
+      text-align: right;
+    }
   }
 }
 </style>

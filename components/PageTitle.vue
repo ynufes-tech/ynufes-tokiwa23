@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const waveCanvas = ref();
 const props = defineProps({
   title: {
     type: String,
@@ -8,20 +9,18 @@ const props = defineProps({
 const colorList: string[] = ["#8AC6D6", "#87C8A0", "#FDFEB8", "#8CB6DE"]; // 各キャンバスの色情報
 
 const unit = 100;
-const adjustment = 0.1;
+// const adjustment = 0.1;
 const info = {
   times: 1,
   pos: 0,
   canvasWidth: 0,
 }; // 全キャンバス共通の描画情報
 let contextCache: CanvasRenderingContext2D;
-let canvas: HTMLCanvasElement;
 
-function startAnimation() {
-  canvas = <HTMLCanvasElement>document.getElementById("waveCanvas");
-  canvas.width = document.documentElement.clientWidth; //Canvasのwidthをウィンドウの幅に合わせる
+function startAnimation(canvas: HTMLCanvasElement) {
+  canvas.width = document.documentElement.clientWidth; // Canvasのwidthをウィンドウの幅に合わせる
   info.canvasWidth = document.documentElement.clientWidth;
-  canvas.height = 200; //波の高さ
+  canvas.height = 200; // 波の高さ
 
   contextCache = canvas.getContext("2d") ?? new CanvasRenderingContext2D();
   update(canvas);
@@ -53,7 +52,7 @@ const draw = (canvas: HTMLCanvasElement, colors: string[]) => {
   // キャンバスの描画をクリア
   contextCache.clearRect(0, 0, canvas.width, canvas.height);
 
-  //波を描画 drawWave(canvas, color[数字（波の数を0から数えて指定）], 透過, 波の幅のzoom,波の開始位置の遅れ )
+  // 波を描画 drawWave(canvas, color[数字（波の数を0から数えて指定）], 透過, 波の幅のzoom,波の開始位置の遅れ )
   drawWave(canvas, colors[0], 0.7, 3, 5, 1);
   drawWave(canvas, colors[1], 0.7, 4, 1.3, -1);
   drawWave(canvas, colors[2], 0.7, 1.6, 0, 1);
@@ -69,14 +68,14 @@ const drawWave = (
   alpha: number,
   zoom: number,
   delay: number,
-  multi: number = 1
+  multi: number = 1,
 ) => {
-  contextCache.strokeStyle = color; //線の色
-  contextCache.lineWidth = 100; //線の幅
+  contextCache.strokeStyle = color; // 線の色
+  contextCache.lineWidth = 100; // 線の幅
   contextCache.globalAlpha = alpha;
-  contextCache.beginPath(); //パスの開始
+  contextCache.beginPath(); // パスの開始
   drawSine(canvas, info.pos * multi, zoom, delay);
-  contextCache.stroke(); //線
+  contextCache.stroke(); // 線
 };
 
 /**
@@ -89,15 +88,15 @@ function drawSine(
   canvas: HTMLCanvasElement,
   t: number,
   zoom: number,
-  delay: number
+  delay: number,
 ) {
   const xAxis = Math.floor(canvas.height / 2);
   const yAxis = 0;
   // Set the initial x and y, starting at 0,0 and translating to the origin on
   // the canvas.
-  let x = t; //時間を横の位置とする
+  let x = t; // 時間を横の位置とする
   let y = Math.sin(x) / zoom;
-  contextCache.moveTo(yAxis, unit * y + xAxis); //スタート位置にパスを置く
+  contextCache.moveTo(yAxis, unit * y + xAxis); // スタート位置にパスを置く
 
   // Loop to draw segments (横幅の分、波を描画)
   for (let i = yAxis; i <= canvas.width + 10; i += 10) {
@@ -108,7 +107,7 @@ function drawSine(
 }
 
 onMounted(() => {
-  startAnimation();
+  startAnimation(waveCanvas.value);
   window.onresize = () => {
     info.canvasWidth = document.documentElement.clientWidth;
   };
@@ -117,8 +116,8 @@ onMounted(() => {
 
 <template>
   <div class="page-title">
-    <canvas id="waveCanvas" class="wave"></canvas>
-    <h1 v-text="props.title"/>
+    <canvas id="waveCanvas" ref="waveCanvas" class="wave"></canvas>
+    <h1 v-text="props.title" />
   </div>
 </template>
 

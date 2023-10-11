@@ -1,15 +1,13 @@
-<script lang="ts" setup>
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <div id="layout-root">
-    <slot/>
+    <slot />
     <div id="background-container">
       <!--      <WaveBackground/>-->
-      <img src="@/assets/svg/color_smoke.svg" id="wave-background"/>
+      <img id="wave-background" src="@/assets/svg/color_smoke.svg" />
     </div>
   </div>
-
 </template>
 
 <style scoped lang="scss">
@@ -40,7 +38,7 @@
 <style lang="scss">
 body {
   background: var(--main-background-color);
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   color: var(--thick-font-color);
 }
 </style>

@@ -8,11 +8,10 @@ const props = defineProps({
 </script>
 
 <template>
-<div class="section-paragraph">
-  <p v-for="(text, index) in props.textList" :key="index">{{ text }}</p>
-</div>
+  <div class="section-paragraph">
+    <p v-for="(text, index) in props.textList" :key="index">{{ text }}</p>
+  </div>
 </template>
-
 
 <style scoped>
 .section-paragraph {
@@ -30,7 +29,6 @@ const props = defineProps({
     > p {
       font-size: 1rem;
     }
-    
   }
 }
 </style>

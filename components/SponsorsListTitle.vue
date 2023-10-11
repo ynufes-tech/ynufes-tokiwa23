@@ -8,24 +8,25 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="section-title">
+  <div class="sponsors-list-title">
     <h2>{{ props.text }}</h2>
   </div>
 </template>
 
 <style scoped>
-.section-title {
-  background: url("/images/section-title.webp") no-repeat left/contain;
-  width: min(768px, 100svw);
+.sponsors-list-title {
+  background: url("/images/sponsors/sponsors-list-title.webp") no-repeat
+    left/contain;
+  width: 20em;
   height: 130px;
   text-align: center;
   display: flex;
   align-items: center;
 
   > h2 {
-    font-size: min(2.5rem, 5svw);
+    font-size: 2em;
     font-weight: bold;
-    margin: 5% 0 0 25%;
+    width: 100%;
     color: var(--thick-font-color);
   }
 }

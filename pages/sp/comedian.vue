@@ -57,10 +57,10 @@ useHead({
           </li>
         </ol>
       </StripedSection>
-      <NuxtLink to="/">
-        <DarkButton text="⇐ ホームに戻る" />
-      </NuxtLink>
     </div>
+   <div class="bottom-button-holder">
+       <BackToHome class="bottom-button"/>
+   </div>
   </div>
 </template>
 
@@ -132,12 +132,14 @@ useHead({
   }
 }
 
-.dark-button {
-  margin: 1em auto;
-  cursor: pointer;
-}
+.bottom-button-holder {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
 
-a {
-  text-decoration: unset;
+  .bottom-button{
+    width: 10em;
+  }
+
 }
 </style>

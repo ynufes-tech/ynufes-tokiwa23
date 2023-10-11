@@ -28,16 +28,20 @@ function getTagInfo(type: EventType): string {
   }
   return ""
 }
+const tagStyle = computed(() => {
+  return {
+background: '${getTagColor(props.eventType)}'
+  }
+}
 </script>
 
 <template>
-  <p class="event-tag">{{ getTagInfo(props.eventType) }}</p>
+  <p class="event-tag" :style="tagStyle">{{ getTagInfo(props.eventType) }}</p>
 </template>
 
 <style scoped>
 .event-tag {
   >p {
-    background: getTagColor(props.eventType);
     font-size: 1.2em;
     line-height: 1.3em;
     font-weight: 400;

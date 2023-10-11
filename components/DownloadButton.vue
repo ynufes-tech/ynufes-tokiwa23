@@ -5,7 +5,7 @@
 <template>
     <div class="download-button">
         <div class="download-button-text">
-            <p>DOWNLOAD</p>
+            <p>ー準備中ー</p>
         </div>
     </div>
 </template>
@@ -17,6 +17,7 @@
   width: 15em;
   height: 3em;
   text-align: center;
+    opacity: 50%;
 
   &:hover {
     background-color: var(--thick-font-color);

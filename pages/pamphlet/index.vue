@@ -5,20 +5,18 @@ import BackToHome from "~/components/BackToHome.vue";
 
 <template>
     <div class="page-root">
-        <div class="pamphlet-title">
-            <PageTitle title="学内マップ&パンフレット"/>
-        </div>
+            <PageTitle title="学内マップ&amp;パンフレット"/>
         <div class="inner-map">
             <SectionTitle text="学内MAP" class="upper-title"/>
             <div class="inner-map-items">
                 <p class="inner-map-text">PDFファイルはこちらからダウンロードできます</p>
-                <NuxtLink to="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf">
+                <a herf="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf">
                     <div class="map-download">
                         <p>・学内MAPのダウンロード</p>
                         <img src="/images/pamphlet/PDF-icon.webp" alt="" class="pdf-icon"/>
                     </div>
                     <img class="map-img" src="/images/pamphlet/map-face.webp" alt=""/>
-                </NuxtLink>
+                </a>
 
             </div>
         </div>
@@ -30,15 +28,15 @@ import BackToHome from "~/components/BackToHome.vue";
                     <p>下のボタンからパンフレットをダウンロードできます</p>
                     <div class="pamphlet-download">
                         <p>通常版（ーーM)</p>
-                        <NuxtLink to="" class="pamphlet-button">
+                        <a href="" class="pamphlet-button">
                             <DownloadButton/>
-                        </NuxtLink>
+                        </a>
                     </div>
                     <div class="pamphlet-download">
                         <p>軽量版（ーーM）</p>
-                        <NuxtLink to="" class="pamphlet-button">
+                        <a href="" class="pamphlet-button">
                             <DownloadButton/>
-                        </NuxtLink>
+                        </a>
                     </div>
                 </div>
             </div>

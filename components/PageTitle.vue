@@ -18,9 +18,17 @@ const info = {
 let contextCache: CanvasRenderingContext2D;
 
 function startAnimation(canvas: HTMLCanvasElement) {
-  canvas.width = document.documentElement.clientWidth; // Canvasのwidthをウィンドウの幅に合わせる
-  info.canvasWidth = document.documentElement.clientWidth;
-  canvas.height = 200; // 波の高さ
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    // スマホ処理
+    canvas.width = document.documentElement.clientWidth; // Canvasのwidthをウィンドウの幅に合わせる
+    info.canvasWidth = document.documentElement.clientWidth;
+    canvas.height = 100; // 波の高さ
+  } else if (window.matchMedia("(min-width:768px)").matches) {
+    // PC処理
+    canvas.width = document.documentElement.clientWidth; // Canvasのwidthをウィンドウの幅に合わせる
+    info.canvasWidth = document.documentElement.clientWidth;
+    canvas.height = 200; // 波の高さ
+  }
 
   contextCache = canvas.getContext("2d") ?? new CanvasRenderingContext2D();
   update(canvas);
@@ -70,12 +78,23 @@ const drawWave = (
   delay: number,
   multi: number = 1,
 ) => {
-  contextCache.strokeStyle = color; // 線の色
-  contextCache.lineWidth = 100; // 線の幅
-  contextCache.globalAlpha = alpha;
-  contextCache.beginPath(); // パスの開始
-  drawSine(canvas, info.pos * multi, zoom, delay);
-  contextCache.stroke(); // 線
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    // スマホ処理
+    contextCache.strokeStyle = color; // 線の色
+    contextCache.lineWidth = 65; // 線の幅
+    contextCache.globalAlpha = alpha;
+    contextCache.beginPath(); // パスの開始
+    drawSine(canvas, info.pos * multi, zoom, delay);
+    contextCache.stroke(); // 線
+  } else if (window.matchMedia("(min-width:768px)").matches) {
+    // PC処理
+    contextCache.strokeStyle = color; // 線の色
+    contextCache.lineWidth = 100; // 線の幅
+    contextCache.globalAlpha = alpha;
+    contextCache.beginPath(); // パスの開始
+    drawSine(canvas, info.pos * multi, zoom, delay);
+    contextCache.stroke(); // 線
+  }
 };
 
 /**
@@ -122,9 +141,13 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@use "assets/scss/_breakpoint.scss";
 .page-title {
   position: relative;
   height: 200px;
+  @include breakpoint.md {
+    height: 100px;
+  }
 
   > h1 {
     position: absolute;
@@ -140,6 +163,10 @@ onMounted(() => {
     font-size: 3em;
     font-weight: bold;
     color: #444455;
+    @include breakpoint.md {
+      font-size: 2rem;
+      height: 100px;
+    }
   }
 }
 </style>

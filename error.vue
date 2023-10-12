@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+useHead({
+    title: "error-page",
+});
 definePageMeta({
   layout: 'default'
 })
@@ -31,23 +34,44 @@ defineProps({
     height: 100vh;
 }
 .error-number{
-  font-size: 240px;
+  font-size: 160px;
   font-weight: bolder;
   color: #575F6A;
   justify-content: center;
   text-align: center;
-  margin: 0.5em auto;
+  margin: 20px auto;
   @include md {
-    font-size: 120px;
+    font-size: 100px;
   }
   @include sm{
-    font-size: 64px;
+    font-size: 48px;
   }
 }
 .main{
-  font-size: 64px;
+  font-size: 48px;
   color: #575F6A;
-  margin: 150px auto;
+  margin: 20px auto;
+  text-align: center;
+  @include md {
+    font-size: 24px;
+  }
+  @include sm{
+    font-size: 12px;
+  }
+}
+.home{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto;
+  background: url(/images/wave-underline.svg) bottom repeat-x;
+}
+
+.go-home{
+  font-size: 56px;
+  color: #575F6A;
+  justify-content: center;
   text-align: center;
   @include md {
     font-size: 32px;
@@ -56,34 +80,13 @@ defineProps({
     font-size: 16px;
   }
 }
-.home{
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 100px auto;
-  background: url(/images/wave-underline.svg) bottom repeat-x;
-}
-
-.go-home{
-  font-size: 88px;
-  color: #575F6A;
-  justify-content: center;
-  text-align: center;
-  @include md {
-    font-size: 48px;
-  }
-  @include sm{
-    font-size: 24px;
-  }
-}
 .button-side{
-    width: 88px;
+    width: 56px;
     @include md {
-        width: 48px;
+        width: 32px;
     }
     @include sm{
-        width: 24px;
+        width: 16px;
     }
 }
 </style>

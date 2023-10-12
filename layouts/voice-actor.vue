@@ -4,6 +4,7 @@
   <div class="layout-root">
     <div class="logo-wrapper">
       <WhiteLogoPrime />
+      <NavigationMenu />
     </div>
     <slot />
   </div>
@@ -22,8 +23,15 @@ body {
   background-size: cover;
 
   .logo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: min(1024px, 100vw);
     margin: 0 auto;
+
+    .navigation-menu {
+      text-align: right;
+    }
   }
 }
 
@@ -31,10 +39,11 @@ body {
   color: white;
   margin: 0;
 
-  > h1 {
+  >h1 {
     color: white !important;
   }
-  > hr {
+
+  >hr {
     border-color: white !important;
   }
 }

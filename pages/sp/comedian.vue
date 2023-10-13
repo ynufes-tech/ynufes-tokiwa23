@@ -52,6 +52,7 @@ useHead({
           </li>
         </ol>
       </StripedSection>
+      <ProjectCard title="kikakudanntai" group="kikakudanntaimei" genre="syokuji" place="TBK"/>
     </div>
     <DarkButton @click="useRouter().push('/')" text="⇐ ホームに戻る"/>
   </div>

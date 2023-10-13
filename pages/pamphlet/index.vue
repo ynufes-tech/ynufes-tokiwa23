@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import BackToHome from "~/components/BackToHome.vue";
+useHead({
+  title: "学内マップ&パンフレット | 23常盤祭公式HP~未来航路~",
+});
 </script>
 
 <template>

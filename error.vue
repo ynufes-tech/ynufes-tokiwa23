@@ -73,6 +73,7 @@ defineProps({
   color: #575F6A;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
   @include md {
     font-size: 32px;
   }

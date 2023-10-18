@@ -1,38 +1,38 @@
 <script setup lang="ts">
-import { EventType } from "~/.nuxt/types/event";
+import { Genre } from "~/model/genre";
 
 export type Props = {
-  eventType: EventType
-}
-const props = defineProps<Props>()
+  eventType: Genre;
+};
+const props = defineProps<Props>();
 
-function getTagColor(type: EventType): string {
+function getTagColor(type: Genre): string {
   switch (type) {
-    case EventType.FOOD:
-      return "#FFC107"
-    case EventType.EXHIBITION:
-      return "#FF5722"
-    case EventType.PERFORMANCE:
-      return "#4CAF50"
+    case Genre.FOOD:
+      return "#FFC107";
+    case Genre.EXHIBITION:
+      return "#FF5722";
+    case Genre.PERFORMANCE:
+      return "#4CAF50";
   }
-  return "#000000"
+  return "#000000";
 }
-function getTagInfo(type: EventType): string {
+function getTagInfo(type: Genre): string {
   switch (type) {
-    case EventType.FOOD:
-      return "食事"
-    case EventType.EXHIBITION:
-      return "展示"
-    case EventType.PERFORMANCE:
-      return "パフォーマンス"
+    case Genre.FOOD:
+      return "食事";
+    case Genre.EXHIBITION:
+      return "展示";
+    case Genre.PERFORMANCE:
+      return "パフォーマンス";
   }
-  return ""
+  return "";
 }
 const tagStyle = computed(() => {
   return {
-    background: '${getTagColor(props.eventType)}'
-  }
-}
+    background: "${getTagColor(props.eventType)}",
+  };
+});
 </script>
 
 <template>
@@ -41,7 +41,7 @@ const tagStyle = computed(() => {
 
 <style scoped>
 .event-tag {
-  >p {
+  > p {
     font-size: 1.2em;
     line-height: 1.3em;
     font-weight: 400;

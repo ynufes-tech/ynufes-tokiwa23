@@ -74,7 +74,7 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   z-index: 1;
 
   &:hover {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
     transition: 0.2s;
   }
 

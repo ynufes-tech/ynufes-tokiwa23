@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { EventType } from "~/.nuxt/types/event";
+import { EventType } from "~/types/event";
 
 export type Props = {
   eventType: EventType
@@ -32,7 +32,7 @@ const tagStyle = computed(() => {
   return {
     background: '${getTagColor(props.eventType)}'
   }
-}
+})
 </script>
 
 <template>

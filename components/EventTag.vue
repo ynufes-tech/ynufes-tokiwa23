@@ -30,7 +30,7 @@ function getTagInfo(type: Genre): string {
 }
 const tagStyle = computed(() => {
   return {
-    background: "${getTagColor(props.eventType)}",
+    background: getTagColor(props.eventType),
   };
 });
 </script>

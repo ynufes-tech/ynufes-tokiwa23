@@ -24,10 +24,10 @@ jobs:
           echo "short_ref=${formatted_ref}" >> $GITHUB_ENV
       - name: configure service name
         run: |
-          if [[ "${{ github.short_ref }}" == "release" ]]; then
+          if [[ "${{ env.short_ref }}" == "release" ]]; then
             sed -i 's/{{service_name}}/tokiwa23/' app.yaml
             echo "BASE_URL=/23/tokiwa/" >> .env
-          elif [[ "${{ github.short_ref }}" == "stg" ]]; then
+          elif [[ "${{ env.short_ref }}" == "stg" ]]; then
             sed -i 's/{{service_name}}/tokiwa23-stg/' app.yaml
             echo "BASE_URL=/stg/23/tokiwa/" >> .env
           fi

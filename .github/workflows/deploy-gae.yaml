@@ -15,9 +15,6 @@ jobs:
         with:
           node-version: 18
       - uses: actions/checkout@v2
-      - name: "Generate .env"
-        run: |
-          echo "${{ secrets.ENV_CONTENTS }}" > .env
       - name: "Extract branch name"
         id: branch-name
         shell: bash
@@ -27,10 +24,12 @@ jobs:
           echo "short_ref=${formatted_ref}" >> $GITHUB_ENV
       - name: configure service name
         run: |
-          if [[ "${{ github.short_ref }}" == "release" ]]; then
+          if [[ "${{ env.short_ref }}" == "release" ]]; then
             sed -i 's/{{service_name}}/tokiwa23/' app.yaml
-          elif [[ "${{ github.short_ref }}" == "stg" ]]; then
+            echo "BASE_URL=/23/tokiwa/" >> .env
+          elif [[ "${{ env.short_ref }}" == "stg" ]]; then
             sed -i 's/{{service_name}}/tokiwa23-stg/' app.yaml
+            echo "BASE_URL=/stg/23/tokiwa/" >> .env
           fi
         # switch service name to configure deployment target appropriately
       - name: Download events.json from external URL

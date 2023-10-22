@@ -3,6 +3,12 @@ import BackToHome from "~/components/BackToHome.vue";
 
 useHead({
   title: "学内マップ&パンフレット | 23常盤祭公式HP~未来航路~",
+  meta: [
+    {
+      name: "description",
+      content: "学内マップとパンフレットのダウンロードはこちらから!!",
+    },
+  ],
 });
 </script>
 

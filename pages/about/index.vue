@@ -1,4 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useHead({
+  title: "About | 23常盤祭公式HP~未来航路~",
+  meta: [
+    { name: "description", content: "23常盤祭についての情報を掲載しています" },
+  ],
+});
+</script>
 
 <template>
   <div class="about-page">
@@ -7,11 +14,11 @@
     </div>
     <div class="inner-about-page">
       <div class="tokiwa-about">
-        <sectionTitle text="常盤祭について" class="upper-title" />
+        <sectionTitle class="upper-title" text="常盤祭について" />
         <h1 class="child-title">常盤祭とは</h1>
         <SectionParagraph
           :text-list="[
-            '常盤祭は横浜国立大学の年2回の学園祭のうち、秋に開催される大学祭です。',
+            '常盤祭は横浜国立大学の年2回の大学祭のうち、秋に開催される大学祭です。',
             '3日間を通して、ミスミスターコンをはじめとして様々なイベントが盛りだくさんです。また、本年度は有料ステージにてお笑い芸人の「東京ホテイソン」さんと、声優の梶裕貴さん・岡本信彦さんがゲストとしていらっしゃいます！',
             '例年以上に盛り上がること間違いなしの３日間、ぜひ足を運んでみてください！',
           ]"
@@ -26,7 +33,7 @@
         />
       </div>
       <div class="theme-about">
-        <SectionTitle text="テーマについて" class="upper-title" />
+        <SectionTitle class="upper-title" text="テーマについて" />
         <h1 class="child-title">未来航路</h1>
         <SectionParagraph
           :text-list="[
@@ -35,7 +42,7 @@
         />
       </div>
       <div class="committee-about">
-        <SectionTitle text="実行委員会について" class="upper-title" />
+        <SectionTitle class="upper-title" text="実行委員会について" />
         <h1 class="child-title">大学祭実行委員会とは</h1>
         <SectionParagraph
           :text-list="[
@@ -47,14 +54,14 @@
         />
         <div class="ynufes-photo" style="display: none">
           <img
-            src="https://placehold.jp/350x350.png"
             alt="pleceholder"
             class="committee-photo"
+            src="https://placehold.jp/350x350.png"
           />
           <img
-            src="https://placehold.jp/350x350.png"
             alt="pleceholder"
             class="committee-photo"
+            src="https://placehold.jp/350x350.png"
           />
         </div>
       </div>

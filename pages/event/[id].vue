@@ -96,7 +96,7 @@ for (let i = 0; i < event?.activity_images; i++) {
             :href="event.instagram_id"
             v-if="event?.instagram_id"
           >
-            <img src="/images/icons/Instagram-logo.webp" alt="instagram" />
+            <img src="/images/icons/instagram-logo.webp" alt="instagram" />
           </a>
           <a
             class="link-icon"

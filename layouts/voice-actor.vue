@@ -3,7 +3,9 @@
 <template>
   <div class="layout-root">
     <div class="logo-wrapper">
-      <WhiteLogoPrime />
+      <NuxtLink to="/">
+        <WhiteLogoPrime />
+      </NuxtLink>
       <NavigationMenu />
     </div>
     <slot />
@@ -32,6 +34,11 @@ body {
     .navigation-menu {
       text-align: right;
     }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 
@@ -39,11 +46,11 @@ body {
   color: white;
   margin: 0;
 
-  >h1 {
+  > h1 {
     color: white !important;
   }
 
-  >hr {
+  > hr {
     border-color: white !important;
   }
 }

@@ -107,6 +107,7 @@ h1 {
     box-sizing: border-box;
     font-size: 18px;
     line-height: 1.2;
+    font-weight: bolder;
 
     span {
       display: inline-block;

@@ -2,10 +2,10 @@
 
 <template>
   <HomeWidget>
-    <template v-slot:title>
+    <template #title>
       <h1>各種SNS紹介</h1>
     </template>
-    <template v-slot:content>
+    <template #content>
       <div class="sns-area">
         <div class="sns-field">
           <a

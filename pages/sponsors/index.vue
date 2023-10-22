@@ -136,6 +136,7 @@ const donationList: Array<{
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
+
 .inner-sponsors-page {
   display: flex;
   flex-direction: column;

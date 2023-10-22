@@ -73,6 +73,7 @@ html {
   width: min(1024px, 100svw);
   margin: 0 auto;
 }
+
 .dashed-line {
   border: none;
   border-top: #575f6a 2px dashed;
@@ -86,6 +87,7 @@ html {
   font-weight: bold;
   margin: 0.75em 0 0.75em 5%;
 }
+
 .section-paragraph {
   width: 90%;
   margin: 1rem auto;
@@ -96,16 +98,19 @@ html {
   border-top: #575f6a 2px dashed;
   width: 75%;
 }
+
 .ynufes-photo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   .committee-photo {
     margin: 1.5em;
     border-radius: 1em;
     max-width: 80svw;
   }
 }
+
 .spacer {
   width: 100%;
   height: 120px;

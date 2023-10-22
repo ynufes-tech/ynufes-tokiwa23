@@ -17,6 +17,7 @@ const props = defineProps({
 .section-paragraph {
   line-height: 1.7;
   font-size: 1.2rem;
+
   > p {
     margin-bottom: 1rem;
     text-align: justify;
@@ -25,6 +26,7 @@ const props = defineProps({
       margin-bottom: 0;
     }
   }
+
   @media screen and (max-width: 30rem) {
     > p {
       font-size: 1rem;

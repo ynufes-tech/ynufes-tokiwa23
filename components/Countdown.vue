@@ -2,10 +2,10 @@
 // 当日までの時間を取得
 const eventTime = new Date(`November 03 2023 13:00:00`).getTime();
 onMounted(() => {
-  const days = document.getElementById("days")!!;
-  const hours = document.getElementById("hours")!!;
-  const minutes = document.getElementById("minutes")!!;
-  const seconds = document.getElementById("seconds")!!;
+  const days = document.getElementById("days")!;
+  const hours = document.getElementById("hours")!;
+  const minutes = document.getElementById("minutes")!;
+  const seconds = document.getElementById("seconds")!;
 
   updateCountdown({
     days,

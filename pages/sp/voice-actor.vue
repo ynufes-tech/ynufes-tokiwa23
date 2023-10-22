@@ -94,27 +94,34 @@ definePageMeta({
 
 <style scoped lang="scss">
 @use "assets/scss/variables.scss" as *;
+
 * {
   box-sizing: border-box;
 }
+
 .page-root {
   overflow: hidden;
+
   .page-title {
     width: 100vw;
     @media screen and (max-width: 768px) {
       font-size: 0.8rem;
     }
   }
+
   .main-stamp-wrapper {
     width: min(1024px, 80vw);
     margin: 0 auto;
+
     > img {
       width: 30vw;
     }
   }
+
   .icon-wrapper {
     display: block;
     margin: 0 auto;
+
     > img {
       width: min(360px, 50vw);
       display: block;
@@ -140,22 +147,26 @@ definePageMeta({
   .button-wrapper {
     width: fit-content;
     margin: 0 auto;
+
     > a {
       display: block;
       width: fit-content;
       text-decoration: none;
       text-align: center;
+
       .dark-button {
         margin: 1rem;
       }
     }
   }
 }
+
 /* ユーティリティークラス */
 .section-paragraph {
   margin-top: 2rem;
   color: #fff;
 }
+
 .section-title {
   color: #fff;
   font-size: 2rem;
@@ -164,6 +175,7 @@ definePageMeta({
   margin: 1em auto;
   text-align: center;
 }
+
 .section-wrapper {
   width: min(768px, 100vw);
   margin: 36px auto 0;
@@ -175,6 +187,7 @@ definePageMeta({
     padding: 1rem;
   }
 }
+
 .section-emphasize {
   color: #fff;
   font-size: 1.5rem;
@@ -186,10 +199,12 @@ definePageMeta({
     font-size: 1.2rem;
   }
 }
+
 .section-annotation {
   color: #fff;
   padding: 0.2rem;
 }
+
 .spacer {
   height: 10vh;
 }

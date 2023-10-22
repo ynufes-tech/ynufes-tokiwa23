@@ -58,9 +58,9 @@ useHead({
         </ol>
       </StripedSection>
     </div>
-   <div class="bottom-button-holder">
-       <BackToHome class="bottom-button"/>
-   </div>
+    <div class="bottom-button-holder">
+      <BackToHome class="bottom-button" />
+    </div>
   </div>
 </template>
 
@@ -137,9 +137,8 @@ useHead({
   display: flex;
   justify-content: center;
 
-  .bottom-button{
+  .bottom-button {
     width: 10em;
   }
-
 }
 </style>

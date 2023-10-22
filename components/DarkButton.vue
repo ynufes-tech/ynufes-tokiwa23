@@ -3,6 +3,7 @@ enum ButtonMode {
   Positive = 0,
   Negative = 1,
 }
+
 const props = defineProps({
   text: {
     type: String,
@@ -41,21 +42,26 @@ const defineMode = computed(() => {
   transition: 1 all;
   color: #fff;
 }
+
 .positive-button {
   background-color: #d98a59;
+
   &:hover {
     background-color: #fff;
     color: #d98a59;
   }
 }
+
 .negative-button {
   outline: 1px solid #fff;
+
   &:hover {
     background-color: #fff;
     color: #3b3b3b;
     border: none;
   }
 }
+
 .disabled-button {
   outline: 1px solid #5f5f5f;
   color: #5f5f5f;

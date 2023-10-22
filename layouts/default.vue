@@ -3,7 +3,9 @@
 <template>
   <div class="layout-root">
     <div class="header">
-      <LogoPrime />
+      <NuxtLink to="/">
+        <LogoPrime />
+      </NuxtLink>
       <NavigationMenu />
     </div>
     <slot />
@@ -24,8 +26,14 @@ body {
     align-items: center;
     width: min(1024px, 95%);
     margin: 0 auto;
+
     .navigation-menu {
       text-align: right;
+    }
+
+    a {
+      text-decoration: none;
+      color: #1d2630;
     }
   }
 }

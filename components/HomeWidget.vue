@@ -15,7 +15,7 @@
 .home-widget {
   color: #444455;
   text-align: center;
-  width: max(340px, 35svw);
+  width: min(340px, 90svw);
   display: flex;
   flex-direction: column;
   background: white;

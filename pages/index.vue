@@ -62,6 +62,11 @@ useHead({
           </NuxtLink>
         </div>
       </div>
+      <PageTitle title="Service" />
+      <div class="service-section home-column">
+        <Countdown />
+        <HomeSNS />
+      </div>
       <BouncingText text="※只今製作中..." />
       <p id="upcoming-notify">
         <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>
@@ -80,6 +85,7 @@ useHead({
 
 #top-pane {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
 }
@@ -175,22 +181,27 @@ useHead({
     padding-top: 3em;
     font-size: 2em;
   }
+
   .pre-guest-event-button {
     margin-top: 0.7rem;
     display: flex;
     justify-content: center;
     text-decoration: none;
+
     > a {
       text-decoration: none;
       color: #8cb6de;
       padding: 0 1em;
+
       &:hover {
         color: #ffffff;
+
         .pre-guest-event-button {
           background-color: #8cb6de;
         }
       }
     }
+
     @media screen and (max-width: 768px) {
       flex-direction: column;
       margin: 0.7rem auto 0;
@@ -199,5 +210,18 @@ useHead({
       }
     }
   }
+}
+
+.home-column {
+  width: min(1024px, 90vw);
+  margin: 0 auto;
+}
+
+.service-section {
+  margin: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 </style>

@@ -31,6 +31,7 @@ const sectionStyle = computed(() => {
 .striped-section {
   border-radius: 2em;
 }
+
 .striped-section__content {
   padding: 1.5em;
 }

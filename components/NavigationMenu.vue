@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
+
 const showMenu = ref(false);
 const toggleMenu = () => {
   showMenu.value = !showMenu.value;
@@ -31,13 +32,13 @@ const close = () => {
           </li>
           <li>
             <NuxtLink to="/pamphlet" @click="close"
-              >学内マップ＆パンフレット</NuxtLink
-            >
+              >学内マップ＆パンフレット
+            </NuxtLink>
           </li>
           <li>
             <NuxtLink to="/sponsors" @click="close"
-              >ご協賛企業・個人一覧</NuxtLink
-            >
+              >ご協賛企業・個人一覧
+            </NuxtLink>
           </li>
           <!-- <li>
             <NuxtLink to="/events" @click="close">企画一覧</NuxtLink>
@@ -79,6 +80,7 @@ const close = () => {
   text-decoration: underline;
   cursor: pointer;
 }
+
 .under-hover-button {
   display: inline-block;
   width: 6rem;
@@ -121,9 +123,11 @@ const close = () => {
 .nav-list {
   margin-left: 1vw;
   color: #da8080;
+
   > li > a {
     text-decoration: none;
     color: #da8080;
+
     &.router-link-active {
       font-size: 1.3rem;
       font-weight: bold;

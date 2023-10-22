@@ -142,6 +142,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use "assets/scss/_breakpoint.scss";
+
 .page-title {
   position: relative;
   height: 200px;

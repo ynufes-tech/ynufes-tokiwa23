@@ -17,6 +17,7 @@ function getTagColor(type: Genre): string {
   }
   return "#000000";
 }
+
 function getTagInfo(type: Genre): string {
   switch (type) {
     case Genre.FOOD:
@@ -28,6 +29,7 @@ function getTagInfo(type: Genre): string {
   }
   return "";
 }
+
 const tagStyle = computed(() => {
   return {
     background: getTagColor(props.eventType),

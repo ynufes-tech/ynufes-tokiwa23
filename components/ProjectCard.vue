@@ -12,7 +12,7 @@ const props = defineProps<{
     org_name: string;
   };
 }>();
-const showNoImage = function (e) {
+const showNoImage = function (e: any) {
   e.target.src =
     "https://storage.googleapis.com/tokiwa23-assets/icons/no-image";
   e.target.onerror = null;
@@ -24,17 +24,17 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   <div class="project-card">
     <div class="incline-card">
       <div class="card-photo">
-        <img src="/images/card-icon.webp" alt="anchor" class="anchor-icon" />
+        <img alt="anchor" class="anchor-icon" src="/images/card-icon.webp" />
         <img
-          src="/images/card-back-img.webp"
           alt="back-image"
           class="back-image"
+          src="/images/card-back-img.webp"
         />
         <img
           :src="iconURL"
-          @error="showNoImage"
           alt="project-icon"
           class="project-icon"
+          @error="showNoImage"
         />
       </div>
       <div class="card-script">
@@ -52,13 +52,13 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
       </div>
       <div class="card-button">
         <p class="button-messeage">MORE</p>
-        <img src="/images/arrow.webp" alt="arrow" class="arrow" />
+        <img alt="arrow" class="arrow" src="/images/arrow.webp" />
       </div>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .incline-card {
   position: relative;
   width: 265px;
@@ -67,14 +67,17 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   border-radius: 10px;
   border: 2px var(--thick-font-color) solid;
 }
+
 .project-card {
   width: fit-content;
   position: relative;
   z-index: 1;
+
   &:hover {
     transform: rotate(10deg);
     transition: 0.2s;
   }
+
   &::after {
     content: "";
     position: absolute;
@@ -95,12 +98,14 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   top: 8px;
   right: 12px;
 }
+
 .back-image {
   position: relative;
   z-index: 3;
   top: 15px;
   left: 18px;
 }
+
 .project-icon {
   width: 150px;
   height: 150px;
@@ -111,17 +116,20 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   left: 57.5px;
   border-radius: 20px;
 }
+
 .card-script {
   position: relative;
   text-align: center;
   top: 90px;
   z-index: 4;
+
   p {
     color: var(--thin-font-color);
     font-size: 14px;
     font-weight: bold;
     margin: 12px auto;
   }
+
   .event-name {
     font-size: 16px;
   }
@@ -133,6 +141,7 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   height: 2px;
   border: none;
 }
+
 .card-button {
   position: absolute;
   z-index: 4;
@@ -140,10 +149,12 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   right: 15px;
   display: flex;
   align-items: center;
+
   .button-messeage {
     margin: 0 0;
     color: var(--thin-font-color);
   }
+
   .arrow {
     width: 20px;
     height: 15px;

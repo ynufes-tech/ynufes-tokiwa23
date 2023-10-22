@@ -1,6 +1,14 @@
 <script setup lang="ts">
+import { Swiper, SwiperSlide } from "swiper/vue"; // 以下swiperの設定
 import events from "~/assets/data/events.json";
 import { Event } from "~/model/event";
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+
+// import required modules
+import { Autoplay, Pagination } from "swiper/modules";
 
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
@@ -19,17 +27,7 @@ useHead({
   ],
 });
 
-import { Swiper, SwiperSlide } from "swiper/vue"; //以下swiperの設定
-
-// Import Swiper styles
-import "swiper/css";
-
-import "swiper/css/pagination";
-
-// import required modules
-import { Autoplay, Pagination } from "swiper/modules";
-
-const urls = []; //swiperの複数の画像のURLを格納する配列
+const urls = []; // swiperの複数の画像のURLを格納する配列
 
 for (let i = 0; i < event?.activity_images; i++) {
   urls.push(
@@ -45,7 +43,7 @@ for (let i = 0; i < event?.activity_images; i++) {
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
     <div class="event-tag">
-      <EventTag :eventType="event?.event_genre ?? 0" class="EventTag" />
+      <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
     </div>
     <img
       :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
@@ -88,20 +86,20 @@ for (let i = 0; i < event?.activity_images; i++) {
           ホームページリンク：{{ event?.website }}
         </a>
         <div class="link-icons">
-          <a class="link-icon" :href="event.x_id" v-if="event?.x_id">
+          <a v-if="event?.x_id" class="link-icon" :href="event.x_id">
             <img src="/images/icons/x-logo.webp" alt="X" />
           </a>
           <a
+            v-if="event?.instagram_id"
             class="link-icon"
             :href="event.instagram_id"
-            v-if="event?.instagram_id"
           >
             <img src="/images/icons/instagram-logo.webp" alt="instagram" />
           </a>
           <a
+            v-if="event?.facebook_id"
             class="link-icon"
             :href="event.facebook_id"
-            v-if="event?.facebook_id"
           >
             <img src="/images/icons/facebook-logo.webp" alt="facebook" />
           </a>

@@ -18,15 +18,18 @@ useHead({
           </p>
           <a
             href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
+            rel="noopener norefererr"
+            target="_blank"
+            class="map-download"
           >
-            <div class="map-download">
-              <p>・学内MAPのダウンロード</p>
-              <img
-                alt=""
-                class="pdf-icon"
-                src="/images/pamphlet/PDF-icon.webp"
-              />
-            </div>
+            <p>・学内MAPのダウンロード</p>
+            <img alt="" class="pdf-icon" src="/images/pamphlet/PDF-icon.webp" />
+          </a>
+          <a
+            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
+            rel="noopener norefererr"
+            target="_blank"
+          >
             <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
           </a>
         </div>
@@ -89,6 +92,7 @@ useHead({
     }
 
     .map-download {
+      width: fit-content;
       display: flex;
       margin: 1em 0;
 

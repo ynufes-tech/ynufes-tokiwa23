@@ -60,6 +60,7 @@
       </div>
     </div>
     <FloatingButton />
+    <BackToHome />
     <div class="spacer"></div>
   </div>
 </template>
@@ -114,5 +115,9 @@ html {
 .spacer {
   width: 100%;
   height: 120px;
+}
+
+.back-to-home {
+  margin: 0 auto;
 }
 </style>

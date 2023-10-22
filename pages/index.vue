@@ -62,7 +62,7 @@ useHead({
           </NuxtLink>
         </div>
       </div>
-      <PageTitle title="Service" />
+      <!--      <PageTitle title="Service" />-->
       <div class="service-section home-column">
         <Countdown />
         <HomeSNS />

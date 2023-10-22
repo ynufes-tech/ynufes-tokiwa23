@@ -57,7 +57,7 @@ function updateCountdown(elements: {
 <template>
   <HomeWidget>
     <template #title>
-      <h1 class="countdown-title">常盤祭2023</h1>
+      <h1 class="countdown-title">23常盤祭</h1>
       <h2 class="countdown-sub-title">まで...</h2>
     </template>
     <template #content>
@@ -81,7 +81,7 @@ function updateCountdown(elements: {
 
 <style lang="scss" scoped>
 .countdown-title {
-  font-size: 1.8rem;
+  font-size: 40px;
   font-weight: bold;
   padding: 30px 0 0 0;
   background-color: #8cb6de;
@@ -90,10 +90,10 @@ function updateCountdown(elements: {
 
 .countdown-sub-title {
   text-indent: 40%;
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: bolder;
   background-color: #8cb6de;
-  padding: 15px 0;
+  margin-top: 10px;
   text-align: center;
 }
 

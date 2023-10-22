@@ -24,12 +24,12 @@
 }
 
 .title {
-  height: 120px;
+  height: 90px;
   background-color: #8cb6de;
   width: 100%;
 }
 
 .content {
-  height: 120px;
+  height: 160px;
 }
 </style>

@@ -45,8 +45,8 @@
 
 <style lang="scss" scoped>
 h1 {
-  height: 120px;
-  line-height: 120px;
+  height: 90px;
+  line-height: 90px;
   text-align: center;
   font-size: 30px;
   font-weight: bold;

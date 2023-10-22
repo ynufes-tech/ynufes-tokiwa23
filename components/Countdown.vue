@@ -81,16 +81,16 @@ function updateCountdown(elements: {
 
 <style lang="scss" scoped>
 .countdown-title {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
-  padding: 30px 0 0 0;
+  padding: 15px 0 0 0;
   background-color: #8cb6de;
   border-radius: 25px 25px 0 0;
 }
 
 .countdown-sub-title {
   text-indent: 40%;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bolder;
   background-color: #8cb6de;
   margin-top: 10px;
@@ -103,25 +103,29 @@ function updateCountdown(elements: {
   justify-content: center;
   background-color: #ffffff;
   border-radius: 0 0 25px 25px;
-  width: 100%;
-}
+  width: 80%;
+  align-items: center;
+  margin: 10px auto 0;
 
-.time-container > div {
-  width: 25%;
-
-  /* hours, minutes, secondsの共通スタイル */
-  > p {
+  > div {
+    width: 25%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
 
-    > span {
-      font-size: 30px;
-      line-height: 1;
-      margin: 25px 15px;
+    /* hours, minutes, secondsの共通スタイル */
+    > p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+
+      > span {
+        font-size: 30px;
+        line-height: 1;
+        margin: 25px 15px;
+      }
     }
   }
 }

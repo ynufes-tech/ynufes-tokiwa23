@@ -2,10 +2,7 @@
 import { ref } from "vue";
 
 const showMenu = ref(false);
-const toggleMenu = () => {
-  showMenu.value = !showMenu.value;
-};
-const close = () => {
+const toggle = () => {
   showMenu.value = !showMenu.value;
 };
 </script>
@@ -14,10 +11,10 @@ const close = () => {
   <div class="navigation-menu">
     <a
       :class="{
-        'navigation-menu-button-title': !showMenu,
         'under-hover-button': showMenu,
       }"
-      @click="toggleMenu"
+      id="button-title"
+      @click="toggle"
     >
       MENU
     </a>
@@ -25,18 +22,18 @@ const close = () => {
       <nav class="nav-list-wrapper">
         <ul class="nav-list">
           <li>
-            <NuxtLink to="/" @click="close">トップ</NuxtLink>
+            <NuxtLink to="/" @click="toggle">トップ</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about" @click="close">常盤祭紹介</NuxtLink>
+            <NuxtLink to="/about" @click="toggle">常盤祭紹介</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/pamphlet" @click="close"
+            <NuxtLink to="/pamphlet" @click="toggle"
               >学内マップ＆パンフレット
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/sponsors" @click="close"
+            <NuxtLink to="/sponsors" @click="toggle"
               >ご協賛企業・個人一覧
             </NuxtLink>
           </li>
@@ -57,13 +54,13 @@ const close = () => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .navigation-menu {
   position: relative;
   z-index: 10000;
 }
 
-.navigation-menu-button-title {
+#button-title {
   display: inline-block;
   width: 6rem;
   text-align: center;
@@ -71,7 +68,6 @@ const close = () => {
   line-height: 2.5rem;
   background: #da8080;
   outline: none;
-  background-color: #da8080;
   border: 2px solid #da8080;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -79,23 +75,12 @@ const close = () => {
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
-}
+  user-select: none;
 
-.under-hover-button {
-  display: inline-block;
-  width: 6rem;
-  text-align: center;
-  color: #da8080;
-  line-height: 2.5rem;
-  outline: none;
-  background-color: #fcf9ef;
-  border: 2px solid #da8080;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: underline;
-  cursor: pointer;
+  &.under-hover-button {
+    color: #da8080;
+    background-color: #fcf9ef;
+  }
 }
 
 .nav-list-wrapper {
@@ -126,7 +111,7 @@ const close = () => {
 
   > li > a {
     text-decoration: none;
-    color: #da8080;
+    color: inherit;
 
     &.router-link-active {
       font-size: 1.3rem;

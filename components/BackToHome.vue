@@ -16,6 +16,7 @@
 .back-to-home {
   margin: 2em 0;
   transition: 0.3s;
+  width: fit-content;
 
   &:active {
     padding-top: 0.3em;

@@ -44,10 +44,11 @@ useHead({
 .card-wrapper{
   margin-top: 100px;
   justify-content: center;
-  background-position-x: center;
-  background-image:url(/images/background.svg) ;
+  background-position: initial;
+  background-image:url(/images/background.png) ;
+  background-repeat: repeat-y;
   background-size: contain;
-  background-repeat: round;
+  background-clip: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

@@ -26,13 +26,8 @@ useHead({
         >
         <ProjectCard :event-data="event" />
         </NuxtLink>
-         <p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p>
-         <p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p><p class="a">aa</p>
       </div>
-     
     </div>
-
-
   </div>
 </template>
 
@@ -57,9 +52,5 @@ useHead({
 }
 .card{
   margin-top: 100px;
-}
-.a{
-  width: 50svw;
-  font-size: 500px;
 }
 </style>

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import SponsorBannar from "~/components/SponsorBannar.vue";
+
 definePageMeta({
   layout: "home",
 });
@@ -67,6 +69,7 @@ useHead({
         <Countdown />
         <HomeSNS />
       </div>
+      <SponsorBannar />
       <BouncingText text="※只今製作中..." />
       <p id="upcoming-notify">
         <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>

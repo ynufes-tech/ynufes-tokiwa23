@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue"; // 以下swiperの設定
-import events from "~/assets/data/events.json";
 import { EventData } from "~/model/eventData";
 // Import Swiper styles
 import "swiper/css";
@@ -15,6 +14,8 @@ const id = route.params.id; // idが数値でない場合はトップページ�
 if (Number.isNaN(id)) {
   await useRouter().push("/");
 }
+const loader = await useDataLoader();
+const events = loader.events_data;
 const event = events.find((e) => e.id === Number(id)) as EventData;
 
 useHead({

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: "東京ホテイソン降臨！横浜ナショナルクラッシュ！",
+  title: "LOVE SHOT",
   meta: [
     {
       name: "description",
@@ -26,51 +26,80 @@ useHead({
           </p>
         </div>
       </div>
-      <div class="photo-term">
-        <SectionTitle text="募集期間について" />
-        <div class="photo-contents">
-          <p class="photo-thick-font">
-            <span>10月7日（土）</span>
-            <span>～10月20日（金）</span>
-            <br />
-            <span>X(旧Twitter)</span>
-            <span>で募集！</span>
-          </p>
-        </div>
-      </div>
-      <div class="photo-entry">
-        <SectionTitle text="応募詳細" />
-        <div class="photo-contents">
-          <ul>
-            <li>
-              X(旧Twitter)にて「#23常盤フォトコンテスト」をつけて応募する写真をツイートしてください。
-            </li>
-            <li>
-              1人で複数作品の応募や、1投稿での複数作品の応募を可能とします。<br />投稿の際に、作品のタイトル・撮影場所・撮影日・展示の際に記載する撮影者名(ハンドルネーム可)・所属(任意)を添えてください。
-            </li>
-            <li>
-              入賞者及び入選者に大学祭公式X(旧Twitter)のDMにて通知を行います。ただし、返信が2日以上なかった場合入賞は無効とします。
-            </li>
-            <li>写真であれば撮影機材を問いません。</li>
-            <li>
-              撮影日時は2023年内のものを対象とします。また、写真の向きは縦向き・横向きのいずれも可能とし、縦横比は3:2又は4:3とします。<br />縦横比16:9(iPhoneXシリーズ以降のiPhone各機種やAndroidの一部機種でサポートされているワイドスクリーン形式)など、縦横比が3:2又は4:3でないものは4:3にトリミングした上で応募可能とします。
-            </li>
-            <li>
-              人物が写真に写っている際は許可を取ったうえで投稿してください。
-            </li>
-            <li>作品を掲示する際、アカウント名は載せません。</li>
-          </ul>
-        </div>
-      </div>
-      <div class="photo-privacy">
-        <SectionTitle text="個人情報について" />
-        <div class="photo-contents">
-          <ul>
-            <li>個人情報は必要用途以外には使用しません。</li>
-            <li>企画が終了したのち速やかに破棄します。</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="card-wrapper">
+        <h2>写真部門最優秀賞</h2>
+        <li class="photo-card">
+          <img src="~/assets/images/ねこ待つねこ.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>ねこ待つねこ</p>
+            <p>撮影者<br/>ぷる</p>
+          </div>
+        </li>
+        <h2>入選作品</h2>
+        <li class="photo-card">
+          <img src="~/assets/images/「エッフェル塔」.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>「エッフェル塔」</p>
+            <p>撮影者<br/>δ︶δ</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/夜のシャンデリゼ.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>夜のシャンデリゼ</p>
+            <p>撮影者<br/>δ︶δ</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/十月、或いは.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>十月、或いは</p>
+            <p>撮影者<br/>横浜国立大学市街化調整区域愛好会</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/虹の足元.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>虹の足元</p>
+            <p>撮影者<br/>δ︶δ</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/夕日と漁船.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>夕日と漁船</p>
+            <p>撮影者<br/>ヤドカリくん</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/森が勝つか、建物が勝つか.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>森が勝つか、建物が勝つか</p>
+            <p>撮影者名<br/>森</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/未知との遭遇.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>未知との遭遇</p>
+            <p>撮影者<br/>ピクリン酸</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/I DO （NOT） LOVE YOU.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>I DO （NOT） LOVE YOU</p>
+            <p>撮影者<br/>横浜国立大学市街化調整区域愛好会</p>
+          </div>
+        </li>
+        <li class="photo-card">
+          <img src="~/assets/images/にらめっこ.webp" />
+          <div class="card-script">
+            <p>タイトル<br/>にらめっこ</p>
+            <p>撮影者<br/>keito</p>
+          </div>
+        </li>
+      </ul>
       <NuxtLink to="/" class="back-button">
         <DarkButton text="⇐ ホームに戻る" />
       </NuxtLink>
@@ -79,6 +108,7 @@ useHead({
 </template>
 
 <style scoped lang="scss">
+@use "assets/scss/variables.scss" as *;
 .content-root {
   display: flex;
   flex-direction: column;
@@ -89,40 +119,61 @@ useHead({
 h2 {
   margin-bottom: 1em;
   color: var(--thick-font-color);
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 p {
   color: var(--thick-font-color);
   line-height: 1.5em;
+  font-size: 2rem;
+  margin: 10px auto;
+  @include md{
+    margin: 0 0;
+  }
 }
-
+a {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 ul {
   list-style: disc;
 }
 
 li {
+  display: flex;
+  flex-direction: row;
   color: var(--thick-font-color);
   line-height: 1.5em;
-  margin-bottom: 0.5em;
+  margin: 30px 0;
+  > img {
+    width: 50%;
+  }
+  @include md {
+    > img {
+      margin: 0 auto;
+    }
+    flex-direction: column;
+  }
 }
-
+.card-wrapper {
+  margin: 60px auto;
+  width: 90%;
+}
+.card-script {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto auto;
+  @include md {
+    margin: 0 auto;
+  }
+}
 .photo-contents {
   // 左右に10%ずつ
   margin: 2em 10% 0;
   width: 80%;
   justify-content: center;
   align-items: center;
-}
-
-.photo-thick-font {
-  font-size: 2em;
-  line-height: 1.3;
-  font-weight: bold;
-
-  > span {
-    display: inline-block;
-  }
 }
 
 .back-button {

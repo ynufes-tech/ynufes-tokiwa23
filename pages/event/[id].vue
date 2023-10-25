@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from "swiper/vue"; // 以下swiperの設定
 import events from "~/assets/data/events.json";
-import { Event } from "~/model/event";
+import { EventData } from "~/model/eventData";
 // Import Swiper styles
 import "swiper/css";
 
@@ -15,7 +15,7 @@ const id = route.params.id; // idが数値でない場合はトップページ�
 if (Number.isNaN(id)) {
   await useRouter().push("/");
 }
-const event = events.find((e) => e.id === Number(id)) as Event;
+const event = events.find((e) => e.id === Number(id)) as EventData;
 
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,

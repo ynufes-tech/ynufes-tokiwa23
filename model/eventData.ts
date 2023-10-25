@@ -1,7 +1,7 @@
 import { Genre } from "~/model/genre";
 import { Place } from "~/model/place";
 
-export interface Event {
+export interface EventData {
   id: number;
   event_name: string;
   event_genre: Genre;

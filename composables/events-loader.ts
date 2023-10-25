@@ -31,13 +31,13 @@ export async function useDataLoader() {
           csvData.forEach((d) => {
             const event_data: EventData = {} as EventData;
             // id,e_name,e_desc,e_genre,o_name,o_desc,a_size,x_id,f_id,i_id,web
-            event_data.id = d.id as number;
+            event_data.id = Number(d.id);
             event_data.event_name = d.e_name as string;
             event_data.event_description = d.e_desc as string;
-            event_data.event_genre = d.e_genre as number;
+            event_data.event_genre = Number(d.e_genre);
             event_data.org_name = d.o_name as string;
             event_data.org_description = d.o_desc as string;
-            event_data.activity_images = d.a_size as number;
+            event_data.activity_images = Number(d.a_size);
             event_data.x_id = d.x_id as string;
             event_data.facebook_id = d.f_id as string;
             event_data.instagram_id = d.i_id as string;

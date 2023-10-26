@@ -19,7 +19,8 @@ useHead({
         <SectionTitle text="企画説明" />
         <div class="photo-contents">
           <h2 class="catch-phrase">
-            写真×大喜利！！ あなたの笑顔で大学祭を彩ろう！
+            <span>写真×大喜利!!</span>
+            <span>あなたの笑顔で大学祭を彩ろう！</span>
           </h2>
           <p>
             本学の学生が撮影した友人や動物の写真を使ったフォトコンテスト企画です。<br />
@@ -27,80 +28,146 @@ useHead({
           </p>
         </div>
       </div>
-      <ul class="card-wrapper">
-        <h2>写真部門最優秀賞</h2>
-        <li class="photo-card">
-          <img src="~/assets/images/ねこ待つねこ.webp" />
-          <div class="card-script">
-            <p>タイトル<br />ねこ待つねこ</p>
-            <p>撮影者<br />ぷる</p>
-          </div>
-        </li>
-        <h2>入選作品</h2>
-        <li class="photo-card">
-          <img src="~/assets/images/「エッフェル塔」.webp" />
-          <div class="card-script">
-            <p>タイトル<br />「エッフェル塔」</p>
-            <p>撮影者<br />δ︶δ</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/夜のシャンデリゼ.webp" />
-          <div class="card-script">
-            <p>タイトル<br />夜のシャンデリゼ</p>
-            <p>撮影者<br />δ︶δ</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/十月、或いは.webp" />
-          <div class="card-script">
-            <p>タイトル<br />十月、或いは</p>
-            <p>撮影者<br />横浜国立大学市街化調整区域愛好会</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/虹の足元.webp" />
-          <div class="card-script">
-            <p>タイトル<br />虹の足元</p>
-            <p>撮影者<br />δ︶δ</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/夕日と漁船.webp" />
-          <div class="card-script">
-            <p>タイトル<br />夕日と漁船</p>
-            <p>撮影者<br />ヤドカリくん</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/森が勝つか、建物が勝つか.webp" />
-          <div class="card-script">
-            <p>タイトル<br />森が勝つか、建物が勝つか</p>
-            <p>撮影者名<br />森</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/未知との遭遇.webp" />
-          <div class="card-script">
-            <p>タイトル<br />未知との遭遇</p>
-            <p>撮影者<br />ピクリン酸</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/i_do_(not)_love_you.webp" />
-          <div class="card-script">
-            <p>タイトル<br />I DO （NOT） LOVE YOU</p>
-            <p>撮影者<br />横浜国立大学市街化調整区域愛好会</p>
-          </div>
-        </li>
-        <li class="photo-card">
-          <img src="~/assets/images/にらめっこ.webp" />
-          <div class="card-script">
-            <p>タイトル<br />にらめっこ</p>
-            <p>撮影者<br />keito</p>
-          </div>
-        </li>
-      </ul>
+      <div class="card-wrapper">
+        <SponsorsWaveLine />
+        <SponsorsListTitle text="写真部門最優秀賞" />
+        <ul>
+          <li>
+            <img src="~/assets/images/ねこ待つねこ.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>ねこ待つねこ</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>ぷる</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <SponsorsWaveLine />
+        <SponsorsListTitle text="入選作品" />
+        <ul>
+          <li>
+            <img src="~/assets/images/「エッフェル塔」.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>「エッフェル塔」</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>δ︶δ</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/夜のシャンデリゼ.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>夜のシャンデリゼ</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>δ︶δ</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/十月、或いは.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>十月、或いは</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>横浜国立大学市街化調整区域愛好会</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/虹の足元.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>虹の足元</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>δ︶δ</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/夕日と漁船.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>夕日と漁船</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>ヤドカリくん</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/森が勝つか、建物が勝つか.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>森が勝つか、建物が勝つか</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>森</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/未知との遭遇.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>未知との遭遇</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>ピクリン酸</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/i_do_(not)_love_you.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>I DO （NOT） LOVE YOU</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>横浜国立大学市街化調整区域愛好会</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="~/assets/images/にらめっこ.webp" />
+            <div class="card-script">
+              <div>
+                <h3>タイトル</h3>
+                <p>にらめっこ</p>
+              </div>
+              <div>
+                <h3>撮影者</h3>
+                <p>keito</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
       <NuxtLink to="/" class="back-button">
         <DarkButton text="⇐ ホームに戻る" />
       </NuxtLink>
@@ -127,11 +194,15 @@ h2 {
 p {
   color: var(--thick-font-color);
   line-height: 1.5em;
-  font-size: 2rem;
+  font-size: 1.5em;
   margin: 10px auto;
   @include md {
     margin: 0 0;
   }
+}
+
+.sponsors-list-title {
+  margin: 0 auto;
 }
 
 a {
@@ -148,16 +219,48 @@ li {
   flex-direction: row;
   color: var(--thick-font-color);
   line-height: 1.5em;
-  margin: 30px 0;
+  margin-bottom: 30px;
 
   > img {
     width: 50%;
   }
 
+  > .card-script {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid var(--thick-font-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto auto;
+    gap: 1.5em;
+
+    h3 {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
   @include md {
     > img {
+      width: 90%;
       margin: 0 auto;
+      max-height: 350px;
+      object-fit: contain;
     }
+    > .card-script {
+      width: unset;
+      border: unset;
+      gap: 0.8em;
+    }
+    border: 1px solid var(--thick-font-color);
+    border-radius: 10px;
+    padding: 15px;
     flex-direction: column;
   }
 }
@@ -165,15 +268,9 @@ li {
 .card-wrapper {
   margin: 60px auto;
   width: 90%;
-}
 
-.card-script {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: auto auto;
-  @include md {
-    margin: 0 auto;
+  h2 {
+    text-align: center;
   }
 }
 

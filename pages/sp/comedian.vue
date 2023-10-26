@@ -57,6 +57,7 @@ useHead({
           </li>
         </ol>
       </StripedSection>
+      <YellowCard/>
     </div>
     <div class="bottom-button-holder">
       <BackToHome class="bottom-button" />

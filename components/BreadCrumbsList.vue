@@ -31,6 +31,12 @@ const resolveCrumbs = (path: string): Array<CrumbInfo> => {
       return resolveMap(p);
     case "posters":
       return resolvePosters(p);
+    case "faq":
+      return resolveFaq(p);
+    case "time-schedule":
+      return resolveTimeSchedule(p);
+    case "access":
+      return resolveAccess(p);
     default:
       return [];
   }
@@ -39,7 +45,7 @@ const resolveAbout = (p: Array<string>): Array<CrumbInfo> => {
   return [{ name: "ABOUT", crumbPath: "/about" }];
 };
 const resolvePamphlet = (p: Array<string>): Array<CrumbInfo> => {
-  return [{ name: "学内マップ&パンフレット", crumbPath: "/pamphlet" }];
+  return [{ name: "パンフレット", crumbPath: "/pamphlet" }];
 };
 const resolveSponsors = (p: Array<string>): Array<CrumbInfo> => {
   return [{ name: "ご協賛企業・個人一覧", crumbPath: "/sponsors" }];
@@ -79,10 +85,19 @@ const resolveEvents = (p: Array<string>): Array<CrumbInfo> => {
   return [{ name: "企画一覧", crumbPath: "/events" }];
 };
 const resolveMap = (p: Array<string>): Array<CrumbInfo> => {
-  return [{ name: "企画出店マップ", crumbPath: "/map" }];
+  return [{ name: "学内マップ", crumbPath: "/map" }];
 };
 const resolvePosters = (p: Array<string>): Array<CrumbInfo> => {
   return [{ name: "ポスター案ページ", crumbPath: "/posters" }];
+};
+const resolveFaq = (p: Array<string>): Array<CrumbInfo> => {
+  return [{ name: "よくある質問", crumbPath: "/faq" }];
+};
+const resolveTimeSchedule = (p: Array<string>): Array<CrumbInfo> => {
+  return [{ name: "タイムスケジュール", crumbPath: "/time-schedule" }];
+};
+const resolveAccess = (p: Array<string>): Array<CrumbInfo> => {
+  return [{ name: "アクセス", crumbPath: "/access" }];
 };
 </script>
 <template>
@@ -109,27 +124,33 @@ img {
   margin-top: 0.1em;
   margin-left: 1em;
 }
+
 p {
   margin-left: 1em;
   color: var(--thick-font-color);
   white-space: nowrap;
 }
+
 .bread-crumbs-list {
   display: flex;
   align-items: center;
   margin-left: 2em;
 }
+
 .list-body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
   > a {
     text-decoration: none;
   }
 }
+
 .list-item {
   display: flex;
   align-items: center;
+
   > a {
     text-decoration: none;
   }

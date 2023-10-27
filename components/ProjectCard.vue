@@ -59,6 +59,7 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
 </template>
 
 <style lang="scss" scoped>
+@use "assets/scss/_breakpoint.scss" as *;
 .incline-card {
   position: relative;
   width: 265px;
@@ -66,6 +67,9 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   background-color: var(--main-background-color);
   border-radius: 10px;
   border: 2px var(--thick-font-color) solid;
+  @include md {
+    height: 300px;
+  }
 }
 
 .project-card {
@@ -89,6 +93,9 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
     background-color: var(--main-background-color);
     border-radius: 10px;
     border: 2px var(--thick-font-color) solid;
+    @include md {
+      height: 300px;
+    }
   }
 }
 
@@ -104,6 +111,10 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   z-index: 3;
   top: 15px;
   left: 18px;
+
+  @include md {
+    display: none;
+  }
 }
 
 .project-icon {
@@ -115,6 +126,13 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   top: 110px;
   left: 57.5px;
   border-radius: 20px;
+
+  @include md {
+    display: block;
+    padding: 10px 0 0 0;
+    position: static;
+    margin: 0 auto;
+  }
 }
 
 .card-script {
@@ -122,6 +140,9 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   text-align: center;
   top: 90px;
   z-index: 4;
+  @include md {
+    position: static;
+  }
 
   p {
     color: var(--thin-font-color);

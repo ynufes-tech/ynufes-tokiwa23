@@ -15,8 +15,8 @@ useHead({
 <template>
   <div class="events">
     <PageTitle title="EVENTS" />
-    <div class="layout">
-      <SectionTitle text="企画団体" />
+    <SectionTitle text="企画団体" />
+    <div class="card-wrapper-background">
       <div class="card-wrapper">
         <NuxtLink
           v-for="event in events"
@@ -32,26 +32,36 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-.layout {
-  margin: 0 auto;
+@use "assets/scss/_breakpoint.scss" as *;
+.section-title {
   max-width: 1024px;
+  margin: 0 auto;
+}
+.card-wrapper-background {
+  // background-position-y: 100px;
+  background-image: url(/images/background.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-clip: border-box;
 }
 
 .card-wrapper {
-  margin-top: 100px;
+  max-width: 1024px;
+  margin: 100px auto 0 auto;
   justify-content: center;
-  background-position: initial;
-  background-image: url(/images/background.png);
-  background-repeat: repeat-y;
-  background-size: contain;
-  background-clip: border-box;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
+  @include md {
+    margin-top: 20px;
+  }
 }
 
 .card {
   margin-top: 100px;
+  @include md {
+    margin-top: 0px;
+  }
 }
 </style>

@@ -57,6 +57,10 @@ useHead({
           </li>
         </ol>
       </StripedSection>
+<<<<<<< HEAD
+=======
+      <YellowCard title="EVENTS" subTitle="kikakudanntainosyoukai" text="ここでは大学祭における企画について紹介しております。各サークルが行う出展企画、実行委員会が行う本部企画の紹介とその日時をお知らせしております。" link="/about"/>
+>>>>>>> 4e3699581ba0e37001be90c0ed706e48fa905604
     </div>
     <div class="bottom-button-holder">
       <BackToHome class="bottom-button" />

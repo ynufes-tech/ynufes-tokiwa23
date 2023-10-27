@@ -25,9 +25,9 @@ const props = defineProps({
       <h1 class="card-title">{{ props.title }}</h1>
       <h2 class="card-sub-title">{{ props.subTitle }}</h2>
       <p class="card-script">{{ props.text }}</p>
-      <a class="read-more" href={{ props.link }}>
+      <nux class="read-more" :href="props.link">
         <pre>READ MORE</pre>
-      </a>
+      </nux>
     </div>
   </div>
 </template>

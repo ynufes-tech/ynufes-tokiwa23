@@ -1,14 +1,31 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  subTitle: {
+    type: String,
+    required: true,
+  },
+  text: {
+    type: String,
+    required: true,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+});
+</script>
 
 <template>
   <div class="yellow-card">
     <div class="main-card">
-      <h1 class="card-title">EVENTS</h1>
-      <h2 class="card-sub-title">企画団体の紹介</h2>
-      <p class="card-script">
-        ここでは大学祭における企画について紹介しております。各サークルが行う出展企画、実行委員会が行う本部企画の紹介とその日時をお知らせしております。
-      </p>
-      <a class="read-more">
+      <h1 class="card-title">{{ props.title }}</h1>
+      <h2 class="card-sub-title">{{ props.subTitle }}</h2>
+      <p class="card-script">{{ props.text }}</p>
+      <a class="read-more" href={{ props.link }}>
         <pre>READ MORE</pre>
       </a>
     </div>
@@ -16,23 +33,41 @@
 </template>
 
 <style scoped lang="scss">
+@use "assets/scss/variables.scss" as *;
 .yellow-card {
   position: relative;
-  color: var(--thick-font-color);
-  z-index: 0;
+  z-index: 1;
+  margin: 100px 0;
+  @include md {
+    margin: 60px 0;
+  }
+  @include sm {
+    margin: 40px 0;
+  }
 }
 
 .main-card {
-  width: max(60svw, 769px);
+  width: 769px;
   height: 550px;
   background-color: #fbfbfb;
   border: #575f6a 1px solid;
   border-radius: 120px;
   position: relative;
+  z-index: auto;
+  @include md {
+    width: 401px;
+    height: 550px;
+    border-radius: 100px;
+  }
+  @include sm {
+    width: 325px;
+    height: 450px;
+    border-radius: 80px;
+  }
 }
 .main-card::after {
   content: "";
-  width: max(60svw, 769px);
+  width: 769px;
   height: 550px;
   background-color: #fdfeb8;
   border: #575f6a 1px solid;
@@ -40,6 +75,14 @@
   border-top-left-radius: 120px;
   position: absolute;
   z-index: -2;
+  @include md {
+    width: 401px;
+    height: 550px;
+  }
+  @include sm {
+    width: 325px;
+    height: 450px;
+  }
 }
 .card-title {
   font-size: 96px;
@@ -48,6 +91,19 @@
   z-index: 2;
   top: -60px;
   left: 140px;
+  color: var(--thick-font-color);
+  @include md {
+    rotate: 90deg;
+    font-size: 64px;
+    top: 110px;
+    left: 220px;
+  }
+  @include sm {
+    rotate: 90deg;
+    font-size: 50px;
+    top: 100px;
+    left: 180px;
+  }
 }
 .card-sub-title {
   font-size: 58px;
@@ -57,6 +113,17 @@
   text-align: center;
   top: 100px;
   left: 100px;
+  color: var(--thick-font-color);
+  @include md {
+    font-size: 30px;
+    top: 200px;
+    left: 50px;
+  }
+  @include sm {
+    font-size: 24px;
+    top: 160px;
+    left: 30px;
+  }
 }
 .card-script {
   position: absolute;
@@ -66,9 +133,23 @@
   top: 180px;
   left: 100px;
   margin-top: 50px;
+  color: var(--thick-font-color);
+  @include md {
+    font-size: 20px;
+    top: 240px;
+    left: 50px;
+    width: 70%;
+  }
+  @include sm {
+    font-size: 16px;
+    top: 200px;
+    left: 30px;
+    width: 70%;
+  }
 }
 .read-more {
   font-size: 40px;
+  height: fit-content;
   font-weight: bold;
   position: absolute;
   text-align: center;
@@ -77,10 +158,28 @@
   right: 90px;
   display: flex;
   border-bottom: #575f6a 2px solid;
+  color: var(--thick-font-color);
+  @include md {
+    font-size: 24px;
+    bottom: 60px;
+    right: 60px;
+  }
+  @include sm {
+    font-size: 20px;
+    bottom: 40px;
+    right: 45px;
+  }
 }
 .read-more::after {
   content: "→";
   font-size: 40px;
+  color: var(--thick-font-color);
+  @include md {
+    font-size: 24px;
+  }
+  @include sm {
+    font-size: 20px;
+  }
 }
 .read-more:hover {
   translate: 10px;

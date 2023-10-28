@@ -25,9 +25,9 @@ const props = defineProps({
       <h1 class="card-title">{{ props.title }}</h1>
       <h2 class="card-sub-title">{{ props.subTitle }}</h2>
       <p class="card-script">{{ props.text }}</p>
-      <nux class="read-more" :href="props.link">
+      <NuxtLink class="read-more" :href="props.link">
         <pre>READ MORE</pre>
-      </nux>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -95,14 +95,14 @@ const props = defineProps({
   @include md {
     rotate: 90deg;
     font-size: 64px;
-    top: 110px;
-    left: 220px;
+    top: 160px;
+    left: 180px;
   }
   @include sm {
     rotate: 90deg;
     font-size: 50px;
-    top: 100px;
-    left: 180px;
+    top: 130px;
+    left: 150px;
   }
 }
 .card-sub-title {
@@ -117,12 +117,12 @@ const props = defineProps({
   @include md {
     font-size: 30px;
     top: 200px;
-    left: 50px;
+    left: 30px;
   }
   @include sm {
     font-size: 24px;
     top: 160px;
-    left: 30px;
+    left: 20px;
   }
 }
 .card-script {
@@ -137,13 +137,13 @@ const props = defineProps({
   @include md {
     font-size: 20px;
     top: 240px;
-    left: 50px;
+    left: 30px;
     width: 70%;
   }
   @include sm {
     font-size: 16px;
     top: 200px;
-    left: 30px;
+    left: 20px;
     width: 70%;
   }
 }

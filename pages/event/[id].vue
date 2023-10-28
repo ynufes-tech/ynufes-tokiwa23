@@ -1,6 +1,5 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"; // 以下swiperの設定
-import events from "~/assets/data/events.json";
 import { Event } from "~/model/event";
 // Import Swiper styles
 import "swiper/css";
@@ -15,8 +14,10 @@ const id = route.params.id; // idが数値でない場合はトップページ�
 if (Number.isNaN(id)) {
   await useRouter().push("/");
 }
-const event = events.find((e) => e.id === Number(id)) as Event;
-
+// fetch data from /api/events/:id
+const event = await useFetch(`/api/events/${id}`).then((res) => {
+  return res.data.value as Event;
+});
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,
   meta: [
@@ -60,14 +61,14 @@ for (let i = 0; i < event?.activity_images; i++) {
       <div class="about-group-contents">
         <swiper
           v-if="event?.activity_images > 1"
-          :pagination="{
-            dynamicBullets: true,
-          }"
           :autoplay="{
             delay: 2500,
             disableOnInteraction: false,
           }"
           :modules="[Pagination, Autoplay]"
+          :pagination="{
+            dynamicBullets: true,
+          }"
           class="mySwiper"
         >
           <swiper-slide v-for="url in urls"
@@ -82,26 +83,26 @@ for (let i = 0; i < event?.activity_images; i++) {
         <h2 class="group-name">{{ event?.org_name }}</h2>
         <p>{{ event?.org_description }}</p>
         <h2>各種リンク</h2>
-        <a class="home-page-link" :href="event?.website">
+        <a :href="event?.website" class="home-page-link">
           ホームページリンク：{{ event?.website }}
         </a>
         <div class="link-icons">
-          <a v-if="event?.x_id" class="link-icon" :href="event.x_id">
-            <img src="/images/icons/x-logo.webp" alt="X" />
+          <a v-if="event?.x_id" :href="event.x_id" class="link-icon">
+            <img alt="X" src="/images/icons/x-logo.webp" />
           </a>
           <a
             v-if="event?.instagram_id"
-            class="link-icon"
             :href="event.instagram_id"
+            class="link-icon"
           >
-            <img src="/images/icons/instagram-logo.webp" alt="instagram" />
+            <img alt="instagram" src="/images/icons/instagram-logo.webp" />
           </a>
           <a
             v-if="event?.facebook_id"
-            class="link-icon"
             :href="event.facebook_id"
+            class="link-icon"
           >
-            <img src="/images/icons/facebook-logo.webp" alt="facebook" />
+            <img alt="facebook" src="/images/icons/facebook-logo.webp" />
           </a>
         </div>
       </div>
@@ -109,7 +110,7 @@ for (let i = 0; i < event?.activity_images; i++) {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 h2 {
   font-size: min(2.5rem, 5svw);
   font-weight: bold;

@@ -22,6 +22,6 @@ export interface EventSummary {
   e_name: string;
   e_genre: Genre;
   o_name: string;
-  area: string;
+  area: Area;
   p_name: string;
 }

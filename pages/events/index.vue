@@ -33,10 +33,12 @@ useHead({
 
 <style lang="scss" scoped>
 @use "assets/scss/_breakpoint.scss" as *;
+
 .section-title {
   max-width: 1024px;
   margin: 0 auto;
 }
+
 .card-wrapper-background {
   // background-position-y: 100px;
   background-image: url(/images/background.png);

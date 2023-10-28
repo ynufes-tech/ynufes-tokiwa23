@@ -1,16 +1,10 @@
 <script lang="ts" setup>
 import { genreToString } from "~/model/genre";
 import { placeToString } from "~/model/area";
+import { EventSummary } from "~/model/event";
 
 const props = defineProps<{
-  eventData: {
-    id: number;
-    event_name: string;
-    event_genre: number;
-    place_id: number;
-    place_name: string;
-    org_name: string;
-  };
+  eventData: EventSummary;
 }>();
 const showNoImage = function (e: any) {
   e.target.src =
@@ -38,16 +32,14 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
         />
       </div>
       <div class="card-script">
-        <p class="event-name">{{ props.eventData.event_name }}</p>
+        <p class="event-name">{{ props.eventData.e_name }}</p>
         <hr class="line" />
-        <p>{{ props.eventData.org_name }}</p>
+        <p>{{ props.eventData.o_name }}</p>
         <p>
-          {{ genreToString(props.eventData.event_genre) }}
+          {{ genreToString(props.eventData.e_genre) }}
         </p>
         <p>
-          {{
-            placeToString(props.eventData.place_id) + props.eventData.place_name
-          }}
+          {{ placeToString(props.eventData.area) + props.eventData.p_name }}
         </p>
       </div>
       <div class="card-button">
@@ -60,6 +52,7 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
 
 <style lang="scss" scoped>
 @use "assets/scss/_breakpoint.scss" as *;
+
 .incline-card {
   position: relative;
   width: 265px;

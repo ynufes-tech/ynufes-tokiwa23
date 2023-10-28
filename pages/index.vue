@@ -65,21 +65,21 @@ useHead({
           link="events"
           sub-title="企画一覧"
           text="ここでは大学祭における企画について一覧にまとめて紹介しております。各サークルが行う出展企画の紹介とその日時をお知らせしております。ぜひご活用ください。"
-          title="&nbsp;EVENTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          title="EVENTS"
         />
         <TopCard
           :color="CardType.Cyan"
           link="about"
           sub-title="常盤祭について"
           text="ここでは大学祭についての情報を記載しております。今回の常盤祭のもの以外に実行委員会の情報も記載しておりますのでぜひご覧ください。"
-          title="&nbsp;&nbsp;&nbsp;ABOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          title="ABOUT"
         />
         <TopCard
           :color="CardType.Green"
           link="sp"
           sub-title="本部企画の紹介"
           text="ここでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。"
-          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          title="SP"
         />
         <TopCard
           :color="CardType.LightBlue"
@@ -93,14 +93,14 @@ useHead({
           link="map"
           sub-title="学内MAPのの紹介"
           text="ここでは学内MAPの掲載をしております。ページ内からのダウンロードも可能となっております。マップを参考に、自分の楽しみ方で大学祭を満喫してください。"
-          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          title="MAP"
         />
         <TopCard
           :color="CardType.Cyan"
           link="pamphlet"
           sub-title="パンフレットの紹介"
           text="ここでは大学祭当日に配布をしておりますパンフレットの掲載をしております。こちらもページ内からのダウンロードも可能となっております。ご活用ください。"
-          title="PAMPFLET&nbsp;&nbsp;"
+          title="PAMPHLET"
         />
         <TopCard
           :color="CardType.Green"
@@ -114,7 +114,7 @@ useHead({
           link="faq"
           sub-title="よくある質問"
           text="ここでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。"
-          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          title="FAQ"
         />
       </div>
     </div>

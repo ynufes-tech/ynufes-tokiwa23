@@ -28,14 +28,32 @@ const toggle = () => {
             <NuxtLink to="/about" @click="toggle">常盤祭紹介</NuxtLink>
           </li>
           <li>
+            <NuxtLink to="/events" @click="toggle">企画一覧</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/map" @click="toggle">マップ</NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="/pamphlet" @click="toggle"
-              >学内マップ＆パンフレット
+              >パンフレット
             </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/time-schedule" @click="toggle">タイムテーブル</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/sp" @click="toggle">本部企画一覧</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/sponsors" @click="toggle"
               >ご協賛企業・個人一覧
             </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/faq" @click="toggle">FAQ - よくある質問</NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/access" @click="toggle">アクセス</NuxtLink>
           </li>
           <!-- <li>
             <NuxtLink to="/events" @click="close">企画一覧</NuxtLink>

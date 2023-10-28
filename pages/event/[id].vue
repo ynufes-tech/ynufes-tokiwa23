@@ -15,7 +15,7 @@ if (Number.isNaN(id)) {
   await useRouter().push("/");
 }
 // fetch data from /api/events/:id
-const event = await useFetch(`/api/events/${id}`).then((res) => {
+const event = await useFetch(`/api/event/${id}`).then((res) => {
   return res.data.value as Event;
 });
 useHead({

@@ -49,7 +49,7 @@ useHead({
 
 .card-wrapper {
   max-width: 1024px;
-  margin: 100px auto 0 auto;
+  margin: 40px auto 0 auto;
   justify-content: center;
   display: flex;
   flex-direction: row;
@@ -58,12 +58,9 @@ useHead({
   @include md {
     margin-top: 20px;
   }
-}
 
-.card {
-  margin-top: 100px;
-  @include md {
-    margin-top: 0px;
+  a {
+    text-decoration: none;
   }
 }
 </style>

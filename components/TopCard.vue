@@ -1,40 +1,62 @@
+<script lang="ts">
+export enum CardType {
+  Yellow = 0,
+  LightBlue = 1,
+  Cyan = 2,
+  Green = 3,
+}
+</script>
 <script lang="ts" setup>
-const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  subTitle: {
-    type: String,
-    required: true,
-  },
-  text: {
-    type: String,
-    required: true,
-  },
-  link: {
-    type: String,
-    required: true,
-  },
+const props = defineProps<{
+  title: string;
+  subTitle: string;
+  text: string;
+  link: string;
+  color: CardType;
+}>();
+
+const cardBackgroundStyle = computed(() => {
+  return {
+    yellow: props.color == CardType.Yellow,
+    "light-blue": props.color == CardType.LightBlue,
+    cyan: props.color == CardType.Cyan,
+    green: props.color == CardType.Green,
+  };
 });
 </script>
-
 <template>
-  <div class="yellow-card">
-    <div class="main-card">
+  <div class="top-card">
+    <div :class="cardBackgroundStyle" class="main-card">
       <h1 class="card-title">{{ props.title }}</h1>
       <h2 class="card-sub-title">{{ props.subTitle }}</h2>
       <p class="card-script">{{ props.text }}</p>
-      <NuxtLink class="read-more" :href="props.link">
+      <NuxtLink :to="props.link" class="read-more">
         <pre>READ MORE</pre>
       </NuxtLink>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use "assets/scss/variables.scss" as *;
-.yellow-card {
+
+.yellow::after {
+  background-color: #fdfeb8;
+}
+
+.light-blue::after {
+  background-color: #8ac6d6;
+}
+
+.cyan::after {
+  background-color: #8cb6de;
+}
+
+.green::after {
+  background-color: #87c8a0;
+}
+
+.top-card {
   position: relative;
   z-index: 1;
   margin: 100px 0;
@@ -64,26 +86,27 @@ const props = defineProps({
     height: 450px;
     border-radius: 80px;
   }
-}
-.main-card::after {
-  content: "";
-  width: 769px;
-  height: 550px;
-  background-color: #8CB6DE;
-  border: #575f6a 1px solid;
-  border-bottom-right-radius: 120px;
-  border-top-left-radius: 120px;
-  position: absolute;
-  z-index: -2;
-  @include md {
-    width: 401px;
+
+  &::after {
+    content: "";
+    width: 769px;
     height: 550px;
-  }
-  @include sm {
-    width: 325px;
-    height: 450px;
+    border: #575f6a 1px solid;
+    border-bottom-right-radius: 120px;
+    border-top-left-radius: 120px;
+    position: absolute;
+    z-index: -2;
+    @include md {
+      width: 401px;
+      height: 550px;
+    }
+    @include sm {
+      width: 325px;
+      height: 450px;
+    }
   }
 }
+
 .card-title {
   font-size: 96px;
   font-weight: 800;
@@ -105,6 +128,7 @@ const props = defineProps({
     left: 150px;
   }
 }
+
 .card-sub-title {
   font-size: 58px;
   font-weight: bold;
@@ -125,6 +149,7 @@ const props = defineProps({
     left: 20px;
   }
 }
+
 .card-script {
   position: absolute;
   font-size: 32px;
@@ -147,6 +172,7 @@ const props = defineProps({
     width: 70%;
   }
 }
+
 .read-more {
   font-size: 40px;
   height: fit-content;
@@ -169,20 +195,22 @@ const props = defineProps({
     bottom: 40px;
     right: 45px;
   }
-}
-.read-more::after {
-  content: "→";
-  font-size: 40px;
-  color: var(--thick-font-color);
-  @include md {
-    font-size: 24px;
+
+  &::after {
+    content: "→";
+    font-size: 40px;
+    color: var(--thick-font-color);
+    @include md {
+      font-size: 24px;
+    }
+    @include sm {
+      font-size: 20px;
+    }
   }
-  @include sm {
-    font-size: 20px;
+
+  &:hover {
+    translate: 10px;
+    transition: 0.3s;
   }
-}
-.read-more:hover {
-  translate: 10px;
-  transition: 0.3s;
 }
 </style>

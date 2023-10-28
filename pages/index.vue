@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import SponsorBannar from "~/components/SponsorBannar.vue";
+import { CardType } from "~/components/TopCard.vue";
 
 definePageMeta({
   layout: "home",
@@ -59,53 +60,61 @@ useHead({
       </div>
       <SponsorBannar />
       <div class="card-wrapper">
-        <YellowCard
-          title="&nbsp;EVENTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        <TopCard
+          :color="CardType.Yellow"
+          link="events"
           sub-title="企画一覧"
           text="ここでは大学祭における企画について一覧にまとめて紹介しております。各サークルが行う出展企画の紹介とその日時をお知らせしております。ぜひご活用ください。"
-          link="events"
+          title="&nbsp;EVENTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         />
-        <CyanCard
-          title="&nbsp;&nbsp;&nbsp;ABOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        <TopCard
+          :color="CardType.Cyan"
+          link="about"
           sub-title="常盤祭について"
           text="ここでは大学祭についての情報を記載しております。今回の常盤祭のもの以外に実行委員会の情報も記載しておりますのでぜひご覧ください。"
-          link="about"
+          title="&nbsp;&nbsp;&nbsp;ABOUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         />
-        <GreenCard 
-          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
-          sub-title="本部企画の紹介" 
-          text="ここでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。" 
-          link="sp" 
+        <TopCard
+          :color="CardType.Green"
+          link="sp"
+          sub-title="本部企画の紹介"
+          text="ここでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。"
+          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         />
-        <LightBlueCard
-          title="SCHEDULE"
+        <TopCard
+          :color="CardType.LightBlue"
+          link="time-schedule"
           sub-title="タイムスケジュール"
           text="ここでは本部企画のタイムスケジュールを掲載しております。日程、時間、場所が一目でわかる内容となっております。ご活用ください。"
-          link="time-schedule"
+          title="SCHEDULE"
         />
-        <YellowCard
-          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        <TopCard
+          :color="CardType.Yellow"
+          link="map"
           sub-title="学内MAPのの紹介"
           text="ここでは学内MAPの掲載をしております。ページ内からのダウンロードも可能となっております。マップを参考に、自分の楽しみ方で大学祭を満喫してください。"
-          link="map"
+          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         />
-        <CyanCard
-          title="PAMPFLET&nbsp;&nbsp;"
+        <TopCard
+          :color="CardType.Cyan"
+          link="pamphlet"
           sub-title="パンフレットの紹介"
           text="ここでは大学祭当日に配布をしておりますパンフレットの掲載をしております。こちらもページ内からのダウンロードも可能となっております。ご活用ください。"
-          link="pamphlet"
+          title="PAMPFLET&nbsp;&nbsp;"
         />
-        <GreenCard
-          title="SPONSORS"
+        <TopCard
+          :color="CardType.Green"
+          link="sponsors"
           sub-title="協賛企業について"
           text="この度の大学祭開催にあたり、多くの企業・団体の皆様からご協賛をいただいております。大学祭運営に尽力いただいた協賛企業の皆様をご紹介するページを設けました。"
-          link="sponsors"
+          title="SPONSORS"
         />
-        <LightBlueCard
-          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        <TopCard
+          :color="CardType.LightBlue"
+          link="faq"
           sub-title="よくある質問"
           text="ここでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。"
-          link="faq"
+          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         />
       </div>
     </div>

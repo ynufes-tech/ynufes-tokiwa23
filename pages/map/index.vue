@@ -1,12 +1,12 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import BackToHome from "~/components/BackToHome.vue";
 
 useHead({
-  title: "常盤祭パンフレット | 23常盤祭公式HP~未来航路~",
+  title: "学内マップ | 23常盤祭公式HP~未来航路~",
   meta: [
     {
       name: "description",
-      content: "常盤祭パンフレットのダウンロードはこちらから!!",
+      content: "学内マップのダウンロードはこちらから!!",
     },
   ],
 });
@@ -14,30 +14,29 @@ useHead({
 
 <template>
   <div class="page-root">
-    <PageTitle title="パンフレット" />
+    <PageTitle title="学内マップ&amp;パンフレット" />
     <div class="content-root">
-      <div class="inner-pamphlet">
-        <div class="pamphlet-items">
-          <img
-            alt="pamphlet"
-            class="pamphlet-img"
-            src="/images/pamphlet/pamphlet-face.webp"
-          />
-          <div class="pamphlet-text">
-            <p>下のボタンからパンフレットをダウンロードできます</p>
-            <div class="pamphlet-download">
-              <p>通常版（ーーM)</p>
-              <a class="pamphlet-button" href="">
-                <DownloadButton />
-              </a>
-            </div>
-            <div class="pamphlet-download">
-              <p>軽量版（ーーM）</p>
-              <a class="pamphlet-button" href="">
-                <DownloadButton />
-              </a>
-            </div>
-          </div>
+      <div class="inner-map">
+        <div class="inner-map-items">
+          <p class="inner-map-text">
+            PDFファイルはこちらからダウンロードできます
+          </p>
+          <a
+            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
+            rel="noopener norefererr"
+            target="_blank"
+            class="map-download"
+          >
+            <p>・学内MAPのダウンロード</p>
+            <img alt="" class="pdf-icon" src="/images/pamphlet/PDF-icon.webp" />
+          </a>
+          <a
+            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
+            rel="noopener norefererr"
+            target="_blank"
+          >
+            <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
+          </a>
         </div>
       </div>
       <div class="bottom-button">
@@ -47,7 +46,7 @@ useHead({
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 .content-root {
   display: flex;
   flex-direction: column;

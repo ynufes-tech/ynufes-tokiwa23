@@ -1,5 +1,5 @@
 import { Genre } from "~/model/genre";
-import { Place } from "~/model/place";
+import { Area } from "~/model/area";
 
 export interface Event {
   id: number;
@@ -11,8 +11,17 @@ export interface Event {
   x_id: string;
   instagram_id: string;
   facebook_id: string;
-  place_id: Place;
+  area: Area;
   place_name: string;
   website: string;
   activity_images: number;
+}
+
+export interface EventSummary {
+  id: number;
+  e_name: string;
+  e_genre: Genre;
+  o_name: string;
+  area: string;
+  p_name: string;
 }

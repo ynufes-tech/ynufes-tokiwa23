@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { genreToString } from "~/model/genre";
-import { placeToString } from "~/model/place";
+import { placeToString } from "~/model/area";
 
 const props = defineProps<{
   eventData: {

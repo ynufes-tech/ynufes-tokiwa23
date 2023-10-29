@@ -321,19 +321,42 @@ const cards: CardData[] = [
   gap: 30px;
 }
 
-.card-wrapper {
+.home-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 60px 30px;
+  gap: 1em 30px;
   margin: 60px auto;
-  padding: 0 1em;
+  padding: 0 20px;
   box-sizing: border-box;
   animation: fade-in-from-right 1s ease-in-out;
 
-  //.top-card:nth-child(2n) {
-  //  transform: translateY(3em);
+  a {
+    text-decoration: none;
+  }
+
+  // responsive with media query
+  // if narrower than 402 * 3 + 30 * 2 + 20 * 2
+  // and wider than 402 * 2 + 30 * 1 + 20 * 2
+  @media screen and (max-width: 1305px) and (min-width: 874px) {
+    a:nth-child(even) {
+      transform: translateY(3em);
+    }
+  }
+  // wider than 402 * 3 + 30 * 2 + 20 * 2
+  //@media screen and (min-width: 1306px) {
+  //  gap: 3em 30px;
+  //  padding-top: 1em;
+  //  a:nth-child(3n + 1) {
+  //    transform: translateY(0.5em);
+  //  }
+  //  a:nth-child(3n + 2) {
+  //    transform: translateY(-1.5em);
+  //  }
+  //  a:nth-child(3n + 3) {
+  //    transform: translateY(1em);
+  //  }
   //}
 }
 </style>

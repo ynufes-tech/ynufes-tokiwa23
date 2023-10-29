@@ -71,7 +71,7 @@ const changePlace = (id: number) => {
     <div class="time-table-wrapper">
       <!-- 1. 野外音楽堂 -->
       <div v-show="placeId == 1" class="time-table">
-        <SponsorsListTitle text="野外音楽堂" style="width: fit-content" />
+        <SponsorsListTitle text="野外音楽堂" />
         <h2 class="day-1">11/3 fri.</h2>
 
         <div class="duration-box"></div>
@@ -133,10 +133,7 @@ const changePlace = (id: number) => {
 
       <!-- 2. 中央図書館1階メディアホール -->
       <div v-show="placeId == 2" class="time-table">
-        <SponsorsListTitle
-          style="width: fit-content"
-          text="中央図書館1階メディアホール"
-        />
+        <SponsorsListTitle text="中央図書館1階メディアホール" />
         <h2 class="day-1">11/3 fri.</h2>
 
         <div class="duration-box"></div>
@@ -163,10 +160,7 @@ const changePlace = (id: number) => {
 
       <!-- 3. 経営学部2号館109教室 -->
       <div v-show="placeId == 3" class="time-table">
-        <SponsorsListTitle
-          style="width: fit-content"
-          text="経営学部2号館109教室"
-        />
+        <SponsorsListTitle text="経営学部2号館109教室" />
         <h2 class="day-1">11/3 fri.</h2>
 
         <div class="duration-box"></div>
@@ -210,10 +204,7 @@ const changePlace = (id: number) => {
 
       <!-- 4. 教育6号館と7号館の間 -->
       <div v-show="placeId == 4" class="time-table">
-        <SponsorsListTitle
-          style="width: fit-content"
-          text="教育6号館と7号館の間"
-        />
+        <SponsorsListTitle text="教育6号館と7号館の間" />
         <h2 class="day-1">11/3 fri.</h2>
 
         <div class="duration-box"></div>
@@ -335,10 +326,7 @@ const changePlace = (id: number) => {
 
       <!-- 5. 学生センター前のウッドデッキ -->
       <div v-show="placeId == 5" class="time-table">
-        <SponsorsListTitle
-          style="width: fit-content"
-          text="学生センター前のウッドデッキ"
-        />
+        <SponsorsListTitle text="学生センター前のウッドデッキ" />
         <h2 class="day-1">11/3 fri.</h2>
         <div class="duration-box"></div>
         <h2 class="day-2">11/4 sat.</h2>
@@ -384,7 +372,7 @@ const changePlace = (id: number) => {
 
       <!-- 6. 多目的グラウンド -->
       <div v-show="placeId == 6" class="time-table">
-        <SponsorsListTitle style="width: fit-content" text="多目的グラウンド" />
+        <SponsorsListTitle text="多目的グラウンド" />
         <h2 class="day-1">11/3 fri.</h2>
 
         <div class="duration-box"></div>
@@ -427,10 +415,7 @@ const changePlace = (id: number) => {
 
       <!-- 7. 大学会館4階ホール -->
       <div v-show="placeId == 7" class="time-table">
-        <SponsorsListTitle
-          style="width: fit-content"
-          text="大学会館4階ホール"
-        />
+        <SponsorsListTitle text="大学会館4階ホール" />
         <h2 class="day-1">11/3 fri.</h2>
         <div class="duration-box"></div>
         <div class="time-table-item">
@@ -540,6 +525,8 @@ const changePlace = (id: number) => {
 </template>
 
 <style lang="scss" scoped>
+@import "assets/scss/_breakpoint.scss";
+
 * {
   // outline: red 1px solid !important
 }
@@ -677,8 +664,12 @@ const changePlace = (id: number) => {
 }
 
 .sponsors-list-title {
-  height: fit-content !important;
-  margin-bottom: 2rem;
+  margin-bottom: 2em;
+  font-size: 1.3em;
+  @include md {
+    font-size: 1em;
+    height: fit-content !important;
+  }
 }
 
 .time-table-wrapper {

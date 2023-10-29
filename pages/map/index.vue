@@ -14,7 +14,7 @@ useHead({
 
 <template>
   <div class="page-root">
-    <PageTitle title="学内マップ&amp;パンフレット" />
+    <PageTitle title="学内マップ" />
     <div class="content-root">
       <div class="inner-map">
         <div class="inner-map-items">
@@ -88,78 +88,10 @@ useHead({
   }
 }
 
-.inner-pamphlet {
-  .pamphlet-items {
-    display: flex;
-    width: 100%;
-    padding: 0 2em;
-    box-sizing: border-box;
-    margin-top: 2em;
-
-    .pamphlet-img {
-      width: 40svw;
-      height: 31.46svw; /*縦横比固定*/
-    }
-
-    .pamphlet-text {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-left: 10%;
-      width: 40svw;
-      margin-top: 2em;
-
-      .pamphlet-download {
-        margin-top: 3em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .pamphlet-button {
-          color: var(--thick-font-color);
-          text-decoration: none;
-        }
-
-        > p {
-          margin-bottom: 1em;
-        }
-      }
-    }
-  }
-}
-
 .bottom-button {
   margin-top: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-  .inner-pamphlet {
-    .pamphlet-items {
-      width: 100svw;
-      margin-left: 0;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .pamphlet-text {
-        margin-left: 0;
-        width: 100%;
-
-        .pamphlet-download {
-          margin-top: 1em;
-        }
-
-        > p {
-          text-align: center;
-          width: 80svw;
-          margin-left: 10svw;
-        }
-      }
-    }
-  }
 }
 </style>

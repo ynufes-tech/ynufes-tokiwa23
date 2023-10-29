@@ -56,39 +56,6 @@ useHead({
   margin: 0 auto;
 }
 
-.inner-map {
-  color: var(--thick-font-color);
-
-  .inner-map-items {
-    padding: 0 2em;
-    box-sizing: border-box;
-    width: 100%;
-
-    .map-img {
-      width: 100%;
-    }
-
-    .inner-map-text {
-      margin: 2em 0;
-    }
-
-    .map-download {
-      width: fit-content;
-      display: flex;
-      margin: 1em 0;
-
-      > p {
-        text-decoration: none;
-        color: var(--thick-font-color);
-      }
-
-      > img {
-        width: 1em;
-      }
-    }
-  }
-}
-
 .inner-pamphlet {
   .pamphlet-items {
     display: flex;

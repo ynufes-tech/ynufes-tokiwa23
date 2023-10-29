@@ -11,7 +11,6 @@ const props = defineProps<{
   title: string;
   subTitle: string;
   text: string;
-  link: string;
   color: CardType;
 }>();
 
@@ -30,9 +29,9 @@ const cardBackgroundStyle = computed(() => {
       <h1 class="card-title">{{ props.title }}</h1>
       <h2 class="card-sub-title">{{ props.subTitle }}</h2>
       <p class="card-script">{{ props.text }}</p>
-      <NuxtLink :to="props.link" class="read-more">
+      <div class="read-more">
         <pre>READ MORE</pre>
-      </NuxtLink>
+      </div>
     </div>
   </div>
 </template>

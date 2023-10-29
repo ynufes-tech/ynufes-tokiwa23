@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 useHead({
-  title: "清陵祭 - タイムスケジュール",
+  title: "常盤祭 - タイムスケジュール",
   meta: [
     {
       name: "description",

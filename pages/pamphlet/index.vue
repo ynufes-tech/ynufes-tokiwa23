@@ -2,11 +2,11 @@
 import BackToHome from "~/components/BackToHome.vue";
 
 useHead({
-  title: "学内マップ&パンフレット | 23常盤祭公式HP~未来航路~",
+  title: "常盤祭パンフレット | 23常盤祭公式HP~未来航路~",
   meta: [
     {
       name: "description",
-      content: "学内マップとパンフレットのダウンロードはこちらから!!",
+      content: "常盤祭パンフレットのダウンロードはこちらから!!",
     },
   ],
 });
@@ -14,34 +14,9 @@ useHead({
 
 <template>
   <div class="page-root">
-    <PageTitle title="学内マップ&amp;パンフレット" />
+    <PageTitle title="パンフレット" />
     <div class="content-root">
-      <div class="inner-map">
-        <SectionTitle class="upper-title" text="学内MAP" />
-        <div class="inner-map-items">
-          <p class="inner-map-text">
-            PDFファイルはこちらからダウンロードできます
-          </p>
-          <a
-            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
-            rel="noopener norefererr"
-            target="_blank"
-            class="map-download"
-          >
-            <p>・学内MAPのダウンロード</p>
-            <img alt="" class="pdf-icon" src="/images/pamphlet/PDF-icon.webp" />
-          </a>
-          <a
-            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
-            rel="noopener norefererr"
-            target="_blank"
-          >
-            <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
-          </a>
-        </div>
-      </div>
       <div class="inner-pamphlet">
-        <SectionTitle class="upper-title" text="常盤祭パンフレット" />
         <div class="pamphlet-items">
           <img
             alt="pamphlet"
@@ -79,39 +54,6 @@ useHead({
   justify-content: center;
   max-width: 1024px;
   margin: 0 auto;
-}
-
-.inner-map {
-  color: var(--thick-font-color);
-
-  .inner-map-items {
-    padding: 0 2em;
-    box-sizing: border-box;
-    width: 100%;
-
-    .map-img {
-      width: 100%;
-    }
-
-    .inner-map-text {
-      margin: 2em 0;
-    }
-
-    .map-download {
-      width: fit-content;
-      display: flex;
-      margin: 1em 0;
-
-      > p {
-        text-decoration: none;
-        color: var(--thick-font-color);
-      }
-
-      > img {
-        width: 1em;
-      }
-    }
-  }
 }
 
 .inner-pamphlet {

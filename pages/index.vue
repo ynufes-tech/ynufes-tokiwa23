@@ -270,4 +270,20 @@ useHead({
   justify-content: center;
   gap: 30px;
 }
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 60px 30px;
+  margin: 60px auto;
+  padding: 0 1em;
+  box-sizing: border-box;
+  animation: fade-in-from-right 1s ease-in-out;
+
+  //.top-card:nth-child(2n) {
+  //  transform: translateY(3em);
+  //}
+}
 </style>

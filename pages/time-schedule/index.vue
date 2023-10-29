@@ -9,7 +9,16 @@ useHead({
   ],
 });
 const placeId = ref(1);
+const route = useRoute();
+const place = Number(route.query.place);
+if (place) {
+  placeId.value = place;
+}
 const changePlace = (id: number) => {
+  useRouter().push({
+    path: "/time-schedule",
+    query: { place: String(id) },
+  });
   placeId.value = id;
 };
 </script>

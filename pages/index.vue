@@ -135,7 +135,7 @@ const cards: CardData[] = [
       <div class="pre-guest-event">
         <h1>フォトコンテスト優秀作品決定!!</h1>
         <div class="event-buttons-row">
-          <NuxtLink to="/sp/voice-actor">
+          <NuxtLink to="/sp/photo-contest">
             <PreGuestEventButton text="フォトコンテスト企画詳細" />
           </NuxtLink>
         </div>

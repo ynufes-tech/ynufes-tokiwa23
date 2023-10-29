@@ -15,6 +15,73 @@ useHead({
     },
   ],
 });
+
+interface CardData {
+  color: CardType; // これは実際のプロジェクトで使用される色の型/値によって異なる場合があります（例：stringや特定の列挙型など）
+  link: string;
+  subTitle: string;
+  text: string;
+  title: string;
+}
+
+const cards: CardData[] = [
+  {
+    color: CardType.Yellow,
+    link: "events",
+    subTitle: "企画一覧",
+    text: "こちらでは大学祭における企画について一覧にまとめて紹介しております。各サークルが行う出展企画の紹介とその日時をお知らせしております。ぜひご活用ください。",
+    title: "EVENTS",
+  },
+  {
+    color: CardType.Cyan,
+    link: "about",
+    subTitle: "常盤祭について",
+    text: "こちらでは大学祭についての情報を記載しております。今回の常盤祭のもの以外に実行委員会の情報も記載しておりますのでぜひご覧ください。",
+    title: "ABOUT",
+  },
+  {
+    color: CardType.Green,
+    link: "sp",
+    subTitle: "本部企画の紹介",
+    text: "こちらでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。",
+    title: "SP",
+  },
+  {
+    color: CardType.LightBlue,
+    link: "time-schedule",
+    subTitle: "タイムスケジュール",
+    text: "こちらでは本部企画のタイムスケジュールを掲載しております。日程、時間、場所が一目でわかる内容となっております。ご活用ください。",
+    title: "SCHEDULE",
+  },
+  {
+    color: CardType.Yellow,
+    link: "map",
+    subTitle: "学内MAPのの紹介",
+    text: "こちらでは学内MAPの掲載をしております。ページ内からのダウンロードも可能となっております。マップを参考に、自分の楽しみ方で大学祭を満喫してください。",
+    title: "MAP",
+  },
+  {
+    color: CardType.Cyan,
+    link: "pamphlet",
+    subTitle: "パンフレットの紹介",
+    text: "こちらでは大学祭当日に配布をしておりますパンフレットの掲載をしております。こちらもページ内からのダウンロードも可能となっております。ご活用ください。",
+    title: "PAMPHLET",
+  },
+  {
+    color: CardType.Green,
+    link: "sponsors",
+    subTitle: "協賛企業について",
+    text: "この度の大学祭開催にあたり、多くの企業・団体の皆様からご協賛をいただいております。大学祭運営に尽力いただいた協賛企業の皆様をご紹介するページを設けました。",
+    title: "SPONSORS",
+  },
+  {
+    color: CardType.LightBlue,
+    link: "faq",
+    subTitle: "よくある質問",
+    text: "こちらでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。",
+    title: "FAQ",
+  },
+];
 </script>
 
 <template>
@@ -83,63 +150,21 @@ useHead({
       <p id="upcoming-notify">
         <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>
       </p>
-      <div class="card-wrapper">
-        <TopCard
-          :color="CardType.Yellow"
-          link="events"
-          sub-title="企画一覧"
-          text="こちらでは大学祭における企画について一覧にまとめて紹介しております。各サークルが行う出展企画の紹介とその日時をお知らせしております。ぜひご活用ください。"
-          title="EVENTS"
-        />
-        <TopCard
-          :color="CardType.Cyan"
-          link="about"
-          sub-title="常盤祭について"
-          text="こちらでは大学祭についての情報を記載しております。今回の常盤祭のもの以外に実行委員会の情報も記載しておりますのでぜひご覧ください。"
-          title="ABOUT"
-        />
-        <TopCard
-          :color="CardType.Green"
-          link="sp"
-          sub-title="本部企画の紹介"
-          text="こちらでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。"
-          title="SP"
-        />
-        <TopCard
-          :color="CardType.LightBlue"
-          link="time-schedule"
-          sub-title="タイムスケジュール"
-          text="こちらでは本部企画のタイムスケジュールを掲載しております。日程、時間、場所が一目でわかる内容となっております。ご活用ください。"
-          title="SCHEDULE"
-        />
-        <TopCard
-          :color="CardType.Yellow"
-          link="map"
-          sub-title="学内MAPのの紹介"
-          text="こちらでは学内MAPの掲載をしております。ページ内からのダウンロードも可能となっております。マップを参考に、自分の楽しみ方で大学祭を満喫してください。"
-          title="MAP"
-        />
-        <TopCard
-          :color="CardType.Cyan"
-          link="pamphlet"
-          sub-title="パンフレットの紹介"
-          text="こちらでは大学祭当日に配布をしておりますパンフレットの掲載をしております。こちらもページ内からのダウンロードも可能となっております。ご活用ください。"
-          title="PAMPHLET"
-        />
-        <TopCard
-          :color="CardType.Green"
-          link="sponsors"
-          sub-title="協賛企業について"
-          text="この度の大学祭開催にあたり、多くの企業・団体の皆様からご協賛をいただいております。大学祭運営に尽力いただいた協賛企業の皆様をご紹介するページを設けました。"
-          title="SPONSORS"
-        />
-        <TopCard
-          :color="CardType.LightBlue"
-          link="faq"
-          sub-title="よくある質問"
-          text="こちらでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。"
-          title="FAQ"
-        />
+      <div class="home-cards">
+        <NuxtLink
+          v-for="(card, index) in cards"
+          :key="index"
+          :to="card.link"
+          class="card-link"
+        >
+          <TopCard
+            :color="card.color"
+            :link="card.link"
+            :subTitle="card.subTitle"
+            :text="card.text"
+            :title="card.title"
+          />
+        </NuxtLink>
       </div>
     </div>
   </div>

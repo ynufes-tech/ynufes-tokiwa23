@@ -54,11 +54,35 @@ useHead({
           </tr>
         </table>
       </div>
+      <div class="pre-guest-event">
+        <h1>大物ゲストが来校決定！詳しくはコチラ</h1>
+        <div class="event-buttons-row">
+          <NuxtLink to="/sp/voice-actor">
+            <PreGuestEventButton text="声優ゲスト企画詳細" />
+          </NuxtLink>
+          <NuxtLink to="/sp/comedian">
+            <PreGuestEventButton text="芸人ゲスト企画詳細" />
+          </NuxtLink>
+        </div>
+      </div>
+      <div class="pre-guest-event">
+        <h1>フォトコンテスト優秀作品決定!!</h1>
+        <div class="event-buttons-row">
+          <NuxtLink to="/sp/voice-actor">
+            <PreGuestEventButton text="フォトコンテスト企画詳細" />
+          </NuxtLink>
+        </div>
+      </div>
+      <!--      <PageTitle title="Service" />-->
       <div class="service-section home-column">
         <Countdown />
         <HomeSNS />
       </div>
       <SponsorBannar />
+      <BouncingText text="※只今製作中..." />
+      <p id="upcoming-notify">
+        <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>
+      </p>
       <div class="card-wrapper">
         <TopCard
           :color="CardType.Yellow"
@@ -224,14 +248,15 @@ useHead({
 .pre-guest-event {
   > h1 {
     text-align: center;
-    padding-top: 3em;
+    padding-top: 1em;
     font-size: 2em;
   }
 
-  .pre-guest-event-button {
+  .event-buttons-row {
     margin-top: 0.7rem;
     display: flex;
     justify-content: center;
+    width: fit-content;
     text-decoration: none;
 
     > a {

@@ -345,18 +345,18 @@ const cards: CardData[] = [
     }
   }
   // wider than 402 * 3 + 30 * 2 + 20 * 2
-  //@media screen and (min-width: 1306px) {
-  //  gap: 3em 30px;
-  //  padding-top: 1em;
-  //  a:nth-child(3n + 1) {
-  //    transform: translateY(0.5em);
-  //  }
-  //  a:nth-child(3n + 2) {
-  //    transform: translateY(-1.5em);
-  //  }
-  //  a:nth-child(3n + 3) {
-  //    transform: translateY(1em);
-  //  }
-  //}
+  @media screen and (min-width: 1306px) {
+    gap: 3em 30px;
+    padding-top: 1em;
+    a:nth-child(3n + 1) {
+      transform: translateY(0.5em);
+    }
+    a:nth-child(3n + 2) {
+      transform: translateY(-1.5em);
+    }
+    a:nth-child(3n + 3) {
+      transform: translateY(1em);
+    }
+  }
 }
 </style>

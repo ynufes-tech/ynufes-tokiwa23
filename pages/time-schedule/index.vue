@@ -683,7 +683,13 @@ const changePlace = (id: number) => {
 
 .time-table-wrapper {
   margin: 0 auto;
-  max-width: min(1024px, 90vw);
+  width: min(1024px, 80vw);
+  @include md {
+    width: 90vw;
+  }
+  @include sm {
+    width: 95vw;
+  }
 }
 
 .select-button-description {

@@ -16,60 +16,53 @@ const changePlace = (id: number) => {
 
 <template>
   <div>
-    <PageTitle title="タイムスケジュール" class="section-title" />
-    <p
-      style="
-        margin: 0 auto;
-        width: fit-content;
-        max-width: 96vw;
-        margin-top: 1rem;
-      "
-    >
+    <PageTitle class="section-title" title="タイムスケジュール" />
+
+    <p class="select-button-description">
       タイムスケジュールを表示する場所を選択してください
     </p>
-
     <!-- 表示する場所を変更するボタンのラッパー -->
     <div class="button-wrapper">
       <SelectButton
+        :selected="placeId == 1"
         class="select-button"
         value="野外音楽堂"
-        :selected="placeId == 1"
         @click="changePlace(1)"
       />
       <SelectButton
+        :selected="placeId == 2"
         class="select-button"
         value="中央図書館1階メディアホール"
-        :selected="placeId == 2"
         @click="changePlace(2)"
       />
       <SelectButton
+        :selected="placeId == 3"
         class="select-button"
         value="経営学部2号館109教室"
-        :selected="placeId == 3"
         @click="changePlace(3)"
       />
       <SelectButton
+        :selected="placeId == 4"
         class="select-button"
         value="教育6号館と7号館の間"
-        :selected="placeId == 4"
         @click="changePlace(4)"
       />
       <SelectButton
+        :selected="placeId == 5"
         class="select-button"
         value="学生センター前ウッドデッキ"
-        :selected="placeId == 5"
         @click="changePlace(5)"
       />
       <SelectButton
+        :selected="placeId == 6"
         class="select-button"
         value="多目的グラウンド"
-        :selected="placeId == 6"
         @click="changePlace(6)"
       />
       <SelectButton
+        :selected="placeId == 7"
         class="select-button"
         value="大学会館4階 ホール"
-        :selected="placeId == 7"
         @click="changePlace(7)"
       />
     </div>
@@ -141,8 +134,8 @@ const changePlace = (id: number) => {
       <!-- 2. 中央図書館1階メディアホール -->
       <div v-show="placeId == 2" class="time-table">
         <SponsorsListTitle
-          text="中央図書館1階メディアホール"
           style="width: fit-content"
+          text="中央図書館1階メディアホール"
         />
         <h2 class="day-1">11/3 fri.</h2>
 
@@ -171,8 +164,8 @@ const changePlace = (id: number) => {
       <!-- 3. 経営学部2号館109教室 -->
       <div v-show="placeId == 3" class="time-table">
         <SponsorsListTitle
-          text="経営学部2号館109教室"
           style="width: fit-content"
+          text="経営学部2号館109教室"
         />
         <h2 class="day-1">11/3 fri.</h2>
 
@@ -218,8 +211,8 @@ const changePlace = (id: number) => {
       <!-- 4. 教育6号館と7号館の間 -->
       <div v-show="placeId == 4" class="time-table">
         <SponsorsListTitle
-          text="教育6号館と7号館の間"
           style="width: fit-content"
+          text="教育6号館と7号館の間"
         />
         <h2 class="day-1">11/3 fri.</h2>
 
@@ -343,8 +336,8 @@ const changePlace = (id: number) => {
       <!-- 5. 学生センター前のウッドデッキ -->
       <div v-show="placeId == 5" class="time-table">
         <SponsorsListTitle
-          text="学生センター前のウッドデッキ"
           style="width: fit-content"
+          text="学生センター前のウッドデッキ"
         />
         <h2 class="day-1">11/3 fri.</h2>
         <div class="duration-box"></div>
@@ -391,7 +384,7 @@ const changePlace = (id: number) => {
 
       <!-- 6. 多目的グラウンド -->
       <div v-show="placeId == 6" class="time-table">
-        <SponsorsListTitle text="多目的グラウンド" style="width: fit-content" />
+        <SponsorsListTitle style="width: fit-content" text="多目的グラウンド" />
         <h2 class="day-1">11/3 fri.</h2>
 
         <div class="duration-box"></div>
@@ -435,8 +428,8 @@ const changePlace = (id: number) => {
       <!-- 7. 大学会館4階ホール -->
       <div v-show="placeId == 7" class="time-table">
         <SponsorsListTitle
-          text="大学会館4階ホール"
           style="width: fit-content"
+          text="大学会館4階ホール"
         />
         <h2 class="day-1">11/3 fri.</h2>
         <div class="duration-box"></div>
@@ -500,45 +493,45 @@ const changePlace = (id: number) => {
     <!-- 表示する場所を変更するボタンのラッパー -->
     <div class="button-wrapper">
       <SelectButton
+        :selected="placeId == 1"
         class="select-button"
         value="野外音楽堂"
-        :selected="placeId == 1"
         @click="changePlace(1)"
       />
       <SelectButton
+        :selected="placeId == 2"
         class="select-button"
         value="中央図書館1階メディアホール"
-        :selected="placeId == 2"
         @click="changePlace(2)"
       />
       <SelectButton
+        :selected="placeId == 3"
         class="select-button"
         value="経営学部2号館109教室"
-        :selected="placeId == 3"
         @click="changePlace(3)"
       />
       <SelectButton
+        :selected="placeId == 4"
         class="select-button"
         value="教育6号館と7号館の間"
-        :selected="placeId == 4"
         @click="changePlace(4)"
       />
       <SelectButton
+        :selected="placeId == 5"
         class="select-button"
         value="学生センター前ウッドデッキ"
-        :selected="placeId == 5"
         @click="changePlace(5)"
       />
       <SelectButton
+        :selected="placeId == 6"
         class="select-button"
         value="多目的グラウンド"
-        :selected="placeId == 6"
         @click="changePlace(6)"
       />
       <SelectButton
+        :selected="placeId == 7"
         class="select-button"
         value="大学会館4階 ホール"
-        :selected="placeId == 7"
         @click="changePlace(7)"
       />
     </div>
@@ -546,13 +539,15 @@ const changePlace = (id: number) => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 * {
   // outline: red 1px solid !important
 }
+
 .section-title {
   margin: 0 auto;
 }
+
 .button-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -571,6 +566,7 @@ const changePlace = (id: number) => {
     border: 1px solid #3b3b3b;
     border-radius: 16px;
   }
+
   .selected {
     background-color: #3b3b3b;
     color: #fff;
@@ -580,10 +576,12 @@ const changePlace = (id: number) => {
 .time-table {
   max-width: min(1024px, 96%);
   margin: 0 auto;
+
   .section-title {
     margin-left: 0;
     margin-bottom: 1em;
   }
+
   .frame-section {
     margin: 40px 0;
     width: 100%;
@@ -591,10 +589,12 @@ const changePlace = (id: number) => {
     text-align: center;
     font-weight: bold;
   }
+
   .day-1,
   .day-2 {
     font-size: 2rem;
   }
+
   .time-table-item {
     margin: 0 0 0 20px;
     padding: 20px;
@@ -603,18 +603,22 @@ const changePlace = (id: number) => {
 
     .item-text {
       margin: 20px 0;
+
       .item-title {
         font-size: 1.5rem;
         font-weight: bold;
+
         .item-subtitle {
           font-size: 1rem;
         }
       }
+
       .item-description {
         margin: 0;
         font-size: 0.8rem;
         line-height: 1.2rem;
       }
+
       .item-warning {
         margin: 0;
         font-size: 0.7rem;
@@ -629,6 +633,7 @@ const changePlace = (id: number) => {
       left: 20px;
       font-size: 1.2rem;
     }
+
     .item-end-time {
       position: absolute;
       bottom: 0;
@@ -646,6 +651,7 @@ const changePlace = (id: number) => {
       background-color: #3b3b3b;
       border-radius: 100%;
     }
+
     &::after {
       content: "";
       position: absolute;
@@ -657,6 +663,7 @@ const changePlace = (id: number) => {
       border-radius: 100%;
     }
   }
+
   .duration-box {
     margin: 0 0 0 19px;
     // width: 100%;
@@ -664,11 +671,24 @@ const changePlace = (id: number) => {
     border-left: 3px dashed #3b3b3b;
   }
 }
+
 .back-to-home {
   margin: 40px auto;
 }
+
 .sponsors-list-title {
   height: fit-content !important;
   margin-bottom: 2rem;
+}
+
+.time-table-wrapper {
+  margin: 0 auto;
+  max-width: min(1024px, 90vw);
+}
+
+.select-button-description {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
 }
 </style>

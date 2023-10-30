@@ -21,9 +21,9 @@ const props = defineProps({
   text-align: center;
   display: flex;
   align-items: center;
+  font-size: min(2.5em, 5svw);
 
   > h2 {
-    font-size: min(2.5rem, 5svw);
     font-weight: bold;
     margin: 5% 0 0 25%;
     color: var(--thick-font-color);

@@ -18,6 +18,9 @@ if (Number.isNaN(id)) {
 const event = await useFetch(`/api/event/${id}`).then((res) => {
   return res.data.value as Event;
 });
+if (!event) {
+  await useRouter().push("/");
+}
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,
   meta: [
@@ -28,9 +31,9 @@ useHead({
   ],
 });
 
-const urls = []; // swiperの複数の画像のURLを格納する配列
+const urls: string[] = []; // swiperの複数の画像のURLを格納する配列
 
-for (let i = 0; i < event?.activity_images; i++) {
+for (let i = 1; i <= event?.activity_images; i++) {
   urls.push(
     "https://storage.googleapis.com/tokiwa23-assets/icons/" +
       event.id +
@@ -43,57 +46,62 @@ for (let i = 0; i < event?.activity_images; i++) {
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
-    <div class="event-tag">
-      <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
-    </div>
-    <img
-      :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
-      class="event-image"
-    />
-    <SectionTitle text="企画説明" />
-    <div class="about-event">
-      <div class="about-event-text">
-        <p>{{ event?.event_name }}</p>
+    <div class="page-content">
+      <div class="event-tag">
+        <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
       </div>
-    </div>
-    <div class="about-group">
+      <img
+        :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
+        class="event-image"
+      />
+      <SectionTitle text="企画説明" />
+      <p class="event-description" v-text="event?.event_description" />
       <SectionTitle text="企画団体紹介" />
-      <div class="about-group-contents">
+      <h2 class="org-name">{{ event?.org_name }}</h2>
+      <p class="org-description" v-text="event?.org_description" />
+      <div
+        v-if="event?.activity_images && event?.activity_images > 0"
+        class="activity-images"
+      >
         <swiper
           v-if="event?.activity_images > 1"
           :autoplay="{
-            delay: 2500,
+            delay: 8000,
             disableOnInteraction: false,
           }"
           :modules="[Pagination, Autoplay]"
           :pagination="{
             dynamicBullets: true,
           }"
-          class="mySwiper"
+          class="activity-images-swiper"
         >
-          <swiper-slide v-for="url in urls"
-            ><img :src="{ url }"
-          /></swiper-slide>
+          <swiper-slide v-for="url in urls"><img :src="url" /></swiper-slide>
         </swiper>
         <img
-          v-else
-          :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}-1`"
+          v-if="event?.activity_images == 1"
+          :src="urls[0]"
+          alt=""
           class="group-image"
         />
-        <h2 class="group-name">{{ event?.org_name }}</h2>
-        <p>{{ event?.org_description }}</p>
-        <h2>各種リンク</h2>
-        <a :href="event?.website" class="home-page-link">
-          ホームページリンク：{{ event?.website }}
-        </a>
+      </div>
+      <div>
+        <SponsorsListTitle text="各種リンク" />
         <div class="link-icons">
-          <a v-if="event?.x_id" :href="event.x_id" class="link-icon">
+          <a
+            v-if="event?.x_id"
+            :href="`https://x.com/${event.x_id}`"
+            class="link-icon"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <img alt="X" src="/images/icons/x-logo.webp" />
           </a>
           <a
             v-if="event?.instagram_id"
-            :href="event.instagram_id"
+            :href="`https://instagram.com/${event.instagram_id}`"
             class="link-icon"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <img alt="instagram" src="/images/icons/instagram-logo.webp" />
           </a>
@@ -105,77 +113,106 @@ for (let i = 0; i < event?.activity_images; i++) {
             <img alt="facebook" src="/images/icons/facebook-logo.webp" />
           </a>
         </div>
+        <div v-if="event?.website" class="website-section">
+          <SponsorsListTitle text="団体ホームページ" />
+          <a
+            :href="event?.website"
+            class="website-link"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {{ event?.website }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-h2 {
-  font-size: min(2.5rem, 5svw);
-  font-weight: bold;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
+@use "assets/scss/_breakpoint.scss" as *;
 
 .page-root {
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10em;
+}
+
+.page-content {
+  font-size: min(1rem, 4svw);
+  width: min(800px, 85svw);
+  display: flex;
+  flex-direction: column;
+
+  @include sm {
+    width: 100%;
+  }
+
+  .section-title {
+    width: 100%;
+    min-width: 400px;
+    font-size: 2em;
+  }
 }
 
 .event-tag {
-  width: min(1024px, 100svw);
+  width: fit-content;
   margin-top: 1em;
-
-  .EventTag {
-    margin-left: 10%;
-  }
 }
 
 .event-image {
   aspect-ratio: 1;
-  width: min(512px, 50svw);
+  width: min(80svw, 300px);
   margin-top: 2em;
-}
-
-.group-image {
-  aspect-ratio: 16/9;
-  width: min(512px, 50svw);
-  margin-top: 2em;
+  align-self: center;
 }
 
 .about-event,
 .about-group {
-  width: min(1024px, 100svw);
+  width: min(1024px, 80svw);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
+}
 
-  > SectionTitle {
-    width: 100%;
+.org-name {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 2em 0 1em;
+
+  @include md {
+    font-size: 1.5em;
+    margin: 0.5em 0;
   }
 }
 
-.about-event-text {
-  margin-top: 2em;
+.event-description,
+.org-description {
+  padding: 1em 0;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  white-space: pre-wrap;
+
+  @include md {
+    padding: 1em;
+  }
 }
 
-.about-group-contents {
+.activity-images {
   margin-top: 1em;
-  margin-bottom: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: min(100%, 600px);
+  align-self: center;
 
-  > a {
-    margin-bottom: 1em;
-    text-decoration: none;
-    color: var(--thick-font-color);
+  .group-image {
+    width: 100%;
   }
 }
 
@@ -196,53 +233,36 @@ h2 {
   }
 }
 
-#app {
-  height: 100%;
-}
+.website-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family:
-    Helvetica Neue,
-    Helvetica,
-    Arial,
-    sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
+  a {
+    font-size: 1.3em;
+  }
 }
 
 .swiper {
-  width: 50svw;
-  height: 50svh;
+  width: min(90svw, 600px);
   aspect-ratio: 16 / 9;
-}
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
+  .swiper-slide {
+    text-align: center;
+    background: #fff;
 
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-}
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 16 / 9;
+    width: 100%;
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
+    img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+  }
 }
 </style>

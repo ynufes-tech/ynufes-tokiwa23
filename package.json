@@ -14,7 +14,7 @@
     "lintfix": "prettier --write --list-different ."
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@types/node": "^18.17.3",

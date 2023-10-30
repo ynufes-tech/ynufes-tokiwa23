@@ -84,7 +84,7 @@ for (let i = 1; i <= event?.activity_images; i++) {
           class="group-image"
         />
       </div>
-      <div>
+      <div v-if="event?.x_id || event?.instagram_id || event?.facebook_id">
         <SponsorsListTitle text="各種リンク" />
         <div class="link-icons">
           <a
@@ -113,17 +113,17 @@ for (let i = 1; i <= event?.activity_images; i++) {
             <img alt="facebook" src="/images/icons/facebook-logo.webp" />
           </a>
         </div>
-        <div v-if="event?.website" class="website-section">
-          <SponsorsListTitle text="団体ホームページ" />
-          <a
-            :href="event?.website"
-            class="website-link"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {{ event?.website }}
-          </a>
-        </div>
+      </div>
+      <div v-if="event?.website" class="website-section">
+        <SponsorsListTitle text="団体ホームページ" />
+        <a
+          :href="event?.website"
+          class="website-link"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {{ event?.website }}
+        </a>
       </div>
     </div>
   </div>

@@ -27,60 +27,60 @@ interface CardData {
 const cards: CardData[] = [
   {
     color: CardType.Yellow,
-    link: "events",
+    link: "/events",
     subTitle: "企画一覧",
-    text: "こちらでは大学祭における企画について一覧にまとめて紹介しております。各サークルが行う出展企画の紹介とその日時をお知らせしております。ぜひご活用ください。",
+    text: "出展企画を紹介しています！常盤祭での企画の詳細はこちらをご確認ください！",
     title: "EVENTS",
   },
   {
     color: CardType.Cyan,
-    link: "about",
+    link: "/about",
     subTitle: "常盤祭について",
-    text: "こちらでは大学祭についての情報を記載しております。今回の常盤祭のもの以外に実行委員会の情報も記載しておりますのでぜひご覧ください。",
+    text: "常盤祭の概要やテーマ、横浜国立大学の大学祭についてご紹介しています！",
     title: "ABOUT",
   },
-  {
-    color: CardType.Green,
-    link: "sp",
-    subTitle: "本部企画の紹介",
-    text: "こちらでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。",
-    title: "SP",
-  },
-  {
-    color: CardType.LightBlue,
-    link: "time-schedule",
-    subTitle: "タイムスケジュール",
-    text: "こちらでは本部企画のタイムスケジュールを掲載しております。日程、時間、場所が一目でわかる内容となっております。ご活用ください。",
-    title: "SCHEDULE",
-  },
+  // {
+  //   color: CardType.Green,
+  //   link: "sp",
+  //   subTitle: "本部企画の紹介",
+  //   text: "こちらでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。",
+  //   title: "SP",
+  // },
+  // {
+  //   color: CardType.LightBlue,
+  //   link: "time-schedule",
+  //   subTitle: "タイムスケジュール",
+  //   text: "こちらでは本部企画のタイムスケジュールを掲載しております。日程、時間、場所が一目でわかる内容となっております。ご活用ください。",
+  //   title: "SCHEDULE",
+  // },
   {
     color: CardType.Yellow,
     link: "map",
-    subTitle: "学内MAPのの紹介",
-    text: "こちらでは学内MAPの掲載をしております。ページ内からのダウンロードも可能となっております。マップを参考に、自分の楽しみ方で大学祭を満喫してください。",
+    subTitle: "学内MAP",
+    text: "学内MAPはこちらから！マップを片手に大学を探索して大学祭を満喫しましょう！",
     title: "MAP",
   },
   {
     color: CardType.Cyan,
     link: "pamphlet",
-    subTitle: "パンフレットの紹介",
-    text: "こちらでは大学祭当日に配布をしておりますパンフレットの掲載をしております。こちらもページ内からのダウンロードも可能となっております。ご活用ください。",
+    subTitle: "パンフレット",
+    text: "常盤祭のパンフレットのダウンロードはこちらから！当日案内所でもパンフレットの配布をしております。ご活用ください！",
     title: "PAMPHLET",
   },
   {
     color: CardType.Green,
     link: "sponsors",
     subTitle: "協賛企業について",
-    text: "この度の大学祭開催にあたり、多くの企業・団体の皆様からご協賛をいただいております。大学祭運営に尽力いただいた協賛企業の皆様をご紹介するページを設けました。",
+    text: "23常盤祭開催にあたり、多くの企業・団体の皆様からご協賛を頂きました。ご協賛頂きました皆様の一覧はこちら！",
     title: "SPONSORS",
   },
-  {
-    color: CardType.LightBlue,
-    link: "faq",
-    subTitle: "よくある質問",
-    text: "こちらでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。",
-    title: "FAQ",
-  },
+  // {
+  //   color: CardType.LightBlue,
+  //   link: "faq",
+  //   subTitle: "よくある質問",
+  //   text: "こちらでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。",
+  //   title: "FAQ",
+  // },
 ];
 </script>
 
@@ -146,10 +146,10 @@ const cards: CardData[] = [
         <HomeSNS />
       </div>
       <SponsorBannar />
-      <BouncingText text="※只今製作中..." />
-      <p id="upcoming-notify">
-        <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>
-      </p>
+      <!--      <BouncingText text="※只今製作中..." />-->
+      <!--      <p id="upcoming-notify">-->
+      <!--        <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>-->
+      <!--      </p>-->
       <div class="home-cards">
         <NuxtLink
           v-for="(card, index) in cards"
@@ -159,7 +159,6 @@ const cards: CardData[] = [
         >
           <TopCard
             :color="card.color"
-            :link="card.link"
             :subTitle="card.subTitle"
             :text="card.text"
             :title="card.title"
@@ -325,7 +324,7 @@ const cards: CardData[] = [
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  width: min(880px, 100%);
   gap: 1em 30px;
   margin: 60px auto;
   padding: 0 20px;
@@ -339,8 +338,13 @@ const cards: CardData[] = [
   // responsive with media query
   // if narrower than 402 * 3 + 30 * 2 + 20 * 2
   // and wider than 402 * 2 + 30 * 1 + 20 * 2
-  @media screen and (max-width: 1305px) and (min-width: 874px) {
+  @media screen and (min-width: 874px) {
     a:nth-child(even) {
+      transform: translateY(3em);
+    }
+
+    // 奇数番目かつ最後の要素
+    a:nth-child(odd):last-child {
       transform: translateY(3em);
     }
   }

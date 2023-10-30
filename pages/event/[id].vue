@@ -28,9 +28,9 @@ useHead({
   ],
 });
 
-const urls = []; // swiperの複数の画像のURLを格納する配列
+const urls: string[] = []; // swiperの複数の画像のURLを格納する配列
 
-for (let i = 0; i < event?.activity_images; i++) {
+for (let i = 1; i <= event?.activity_images; i++) {
   urls.push(
     "https://storage.googleapis.com/tokiwa23-assets/icons/" +
       event.id +
@@ -43,45 +43,39 @@ for (let i = 0; i < event?.activity_images; i++) {
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
-    <div class="event-tag">
-      <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
-    </div>
-    <img
-      :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
-      class="event-image"
-    />
-    <SectionTitle text="企画説明" />
-    <div class="about-event">
-      <div class="about-event-text">
-        <p>{{ event?.event_name }}</p>
+    <div class="page-content">
+      <div class="event-tag">
+        <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
       </div>
-    </div>
-    <div class="about-group">
+      <img
+        :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
+        class="event-image"
+      />
+      <SectionTitle text="企画説明" />
+      <p class="event-description" v-text="event?.event_description" />
       <SectionTitle text="企画団体紹介" />
       <div class="about-group-contents">
         <swiper
           v-if="event?.activity_images > 1"
           :autoplay="{
-            delay: 2500,
+            delay: 8000,
             disableOnInteraction: false,
           }"
           :modules="[Pagination, Autoplay]"
           :pagination="{
             dynamicBullets: true,
           }"
-          class="mySwiper"
+          class="activity-images-swiper"
         >
-          <swiper-slide v-for="url in urls"
-            ><img :src="{ url }"
-          /></swiper-slide>
+          <swiper-slide v-for="url in urls"><img :src="url" /></swiper-slide>
         </swiper>
+        <h2 class="group-name">{{ event?.org_name }}</h2>
+        <p class="org-description" v-text="event?.org_description" />
         <img
-          v-else
-          :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}-1`"
+          v-if="event?.activity_images == 1"
+          :src="urls[0]"
           class="group-image"
         />
-        <h2 class="group-name">{{ event?.org_name }}</h2>
-        <p>{{ event?.org_description }}</p>
         <h2>各種リンク</h2>
         <a :href="event?.website" class="home-page-link">
           ホームページリンク：{{ event?.website }}
@@ -119,26 +113,27 @@ h2 {
 }
 
 .page-root {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.event-tag {
-  width: min(1024px, 100svw);
-  margin-top: 1em;
+.page-content {
+  width: min(1024px, 85svw);
+  display: flex;
+  flex-direction: column;
+}
 
-  .EventTag {
-    margin-left: 10%;
-  }
+.event-tag {
+  width: fit-content;
+  margin-top: 1em;
 }
 
 .event-image {
   aspect-ratio: 1;
-  width: min(512px, 50svw);
+  width: min(80svw, 300px);
   margin-top: 2em;
+  align-self: center;
 }
 
 .group-image {
@@ -149,19 +144,19 @@ h2 {
 
 .about-event,
 .about-group {
-  width: min(1024px, 100svw);
+  width: min(1024px, 80svw);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  > SectionTitle {
-    width: 100%;
-  }
+  align-items: start;
+  justify-content: start;
 }
 
-.about-event-text {
-  margin-top: 2em;
+.event-description,
+.org-description {
+  margin-bottom: 1em;
+  font-size: min(1.5rem, 3.5svw);
+  line-height: 1.5em;
+  white-space: pre-wrap;
 }
 
 .about-group-contents {
@@ -196,32 +191,8 @@ h2 {
   }
 }
 
-#app {
-  height: 100%;
-}
-
-html,
-body {
-  position: relative;
-  height: 100%;
-}
-
-body {
-  background: #eee;
-  font-family:
-    Helvetica Neue,
-    Helvetica,
-    Arial,
-    sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
-}
-
 .swiper {
-  width: 50svw;
-  height: 50svh;
+  width: min(70svw, 600px);
   aspect-ratio: 16 / 9;
 }
 
@@ -236,13 +207,11 @@ body {
   align-items: center;
   aspect-ratio: 16 / 9;
   width: 100%;
-}
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
+  img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
 }
 </style>

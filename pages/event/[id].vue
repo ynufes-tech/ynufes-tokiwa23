@@ -50,10 +50,10 @@ for (let i = 0; i < event?.activity_images; i++) {
       :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
       class="event-image"
     />
-    <SectionTitle text="企画説明" />
     <div class="about-event">
+      <SectionTitle text="企画説明" />
       <div class="about-event-text">
-        <p>{{ event?.event_name }}</p>
+        <p>{{ event?.event_description }}</p>
       </div>
     </div>
     <div class="about-group">
@@ -132,6 +132,12 @@ h2 {
 
   .EventTag {
     margin-left: 10%;
+    width: 9em;
+    height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
   }
 }
 
@@ -147,21 +153,18 @@ h2 {
   margin-top: 2em;
 }
 
-.about-event,
+.about-event {
+  width: min(1024px, 100svw);
+}
 .about-group {
   width: min(1024px, 100svw);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  > SectionTitle {
-    width: 100%;
-  }
 }
 
 .about-event-text {
   margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-group-contents {
@@ -221,7 +224,6 @@ body {
 
 .swiper {
   width: 50svw;
-  height: 50svh;
   aspect-ratio: 16 / 9;
 }
 

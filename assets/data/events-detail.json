@@ -30,18 +30,18 @@
     "activity_images": 2
   },
   {
-    "id": 901,
-    "event_name": "イベント名",
-    "event_genre": 2,
-    "event_description": "イベントの説明",
-    "org_name": "企画団体名",
-    "org_description": "企画団体の紹介文",
+    "id": 902,
+    "event_name": "昼寝具博覧会",
+    "event_genre": 1,
+    "event_description": "お昼寝に適した様々な寝具を展示しています。\n毛布・枕・アイマスクなど、お昼寝には欠かせない様々なグッズの魅力を広めるべくサークルの総力を上げて博覧会を開催します！\n好きの人もそうでない好きの人もそうでない人もぜひいらしてください。",
+    "org_name": "お昼寝サークルすやすや",
+    "org_description": "お昼寝サークルすやすやは、普段は授業日のお昼休みから3限の間に活動をしています。\nお天気の良い日は野外音楽堂の草むらにブルーシートを敷いてみんなで日向ぼっこを楽しんだり、お天気のすぐれない日は室内で最高のお昼寝を実現するための研究に勤しんだりしています。\nご興味のある方はぜひSNSのDMなどからご連絡ください〜",
     "x_id": "ynufes",
-    "instagram_id": "",
-    "facebook_id": "",
+    "instagram_id": "sample",
+    "facebook_id": "sample",
     "place_id": 1,
     "place_name": "103",
-    "website": "https://ynu-fes.yokohama",
+    "website": "https://nap-equipment",
     "activity_images": 2
   },
   {

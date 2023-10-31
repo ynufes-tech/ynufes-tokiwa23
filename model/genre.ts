@@ -17,3 +17,15 @@ export function genreToString(genre: Genre): string {
       return "食事";
   }
 }
+
+export function getTagColor(type: Genre): string {
+  switch (type) {
+    case Genre.FOOD:
+      return "#FFC107";
+    case Genre.EXHIBITION:
+      return "#FF5722";
+    case Genre.PERFORMANCE:
+      return "#4CAF50";
+  }
+  return "#000000";
+}

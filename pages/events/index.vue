@@ -310,7 +310,6 @@ onMounted(() => {
   width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
 
   @include md {
     margin: 1em auto;
@@ -347,6 +346,7 @@ onMounted(() => {
   }
 
   .menu {
+    width: 90%;
     height: fit-content;
     display: flex;
     margin: 0 auto;
@@ -466,7 +466,7 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   @include md {
     margin-top: 20px;
   }
@@ -477,6 +477,7 @@ onMounted(() => {
 }
 
 .order-adjust-row {
+  margin-top: 0.5em;
   /* Wrapper Styles */
   div {
     display: inline-flex;

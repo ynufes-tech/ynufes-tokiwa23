@@ -49,7 +49,7 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
         </p>
       </div>
       <div class="card-button">
-        <p class="button-message">MORE</p>
+        <p class="message">MORE</p>
         <img alt="arrow" class="arrow" src="/images/arrow.webp" />
       </div>
     </div>
@@ -162,7 +162,7 @@ const iconURL = `https://storage.googleapis.com/tokiwa23-assets/icons/${props.ev
   border: none;
 }
 
-.more-bottom {
+.card-button {
   position: absolute;
   z-index: 4;
   bottom: 5px;

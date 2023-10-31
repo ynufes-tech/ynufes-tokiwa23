@@ -53,6 +53,8 @@ const filterEvents = computed(() => {
     return placeSelections.value[e.area] && genreSelections.value[e.e_genre];
   });
 });
+
+const isGridView = ref(false);
 </script>
 
 <template>
@@ -216,6 +218,63 @@ const filterEvents = computed(() => {
             <label class="c-form-input" for="event_genre-3">食事 </label>
           </div>
         </div>
+        <div class="order-adjust-row">
+          <div>
+            <button
+              id="grid"
+              @click="isGridView = true"
+              :class="{
+                active: isGridView,
+              }"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Grid</span>
+            </button>
+            <button
+              id="list"
+              :class="{
+                active: !isGridView,
+              }"
+              @click="isGridView = false"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
+              <span>List</span>
+            </button>
+          </div>
+          <!--          Toggle button for switching list view and item view-->
+        </div>
       </div>
       <div class="card-wrapper">
         <NuxtLink
@@ -224,7 +283,8 @@ const filterEvents = computed(() => {
           :to="`/event/${event.id}`"
           class="card"
         >
-          <ProjectCardCompact :event-data="event" />
+          <ProjectCard v-if="isGridView" :event-data="event" />
+          <ProjectCardCompact v-else :event-data="event" />
         </NuxtLink>
       </div>
     </div>
@@ -243,6 +303,9 @@ const filterEvents = computed(() => {
   max-width: 500px;
   margin: 3em auto;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 
   @include md {
     margin: 1em auto;
@@ -405,6 +468,61 @@ const filterEvents = computed(() => {
 
   a {
     text-decoration: none;
+  }
+}
+
+.order-adjust-row {
+  /* Wrapper Styles */
+  div {
+    display: inline-flex;
+    border: 2px solid #edf2f7;
+    background-color: #edf2f7;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #a0aec0;
+    line-height: 1;
+  }
+
+  /* Button Styles */
+  button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  button:hover,
+  button:focus {
+    color: #8fc5f1;
+    outline: none;
+  }
+
+  .active {
+    background: #1674c0;
+    color: white;
+  }
+
+  /* First Button (Grid) specific styles */
+  button#grid {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+  }
+
+  /* Second Button (List) specific styles */
+  button#list {
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+  }
+
+  /* SVG Styles */
+  svg {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    fill: currentColor;
   }
 }
 </style>

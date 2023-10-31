@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+
 useHead({
   title: "LOVE SHOT",
   meta: [
@@ -14,6 +16,7 @@ useHead({
 <template>
   <div class="page-root">
     <PageTitle title="Smile Shot♡" />
+    <BreadCrumbsList />
     <div class="content-root">
       <div class="photo-explanation">
         <SectionTitle text="企画説明" />

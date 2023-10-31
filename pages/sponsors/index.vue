@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+
 useHead({
   title: "Sponsors | 23常盤祭公式HP~未来航路~",
   meta: [
@@ -11,6 +13,7 @@ useHead({
   <div class="page-root">
     <div class="sponsors-title">
       <PageTitle title="SPONSORS" />
+      <BreadCrumbsList />
     </div>
     <div class="inner-sponsors-page">
       <div class="sponsor-group">

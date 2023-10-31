@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
 
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
@@ -46,6 +47,7 @@ for (let i = 1; i <= event?.activity_images; i++) {
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
+    <bread-crumbs-list />
     <div class="page-content">
       <div class="event-tag">
         <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+
 useHead({
   title: "常盤祭 - タイムスケジュール",
   meta: [
@@ -27,6 +29,7 @@ const changePlace = (id: number) => {
 <template>
   <div>
     <PageTitle class="section-title" title="タイムスケジュール" />
+    <BreadCrumbsList />
 
     <p class="select-button-description">
       タイムスケジュールを表示する場所を選択してください

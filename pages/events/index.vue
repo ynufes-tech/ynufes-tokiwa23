@@ -3,6 +3,7 @@ import events from "~/assets/data/events.json";
 import type { EventSummary } from "~/model/event";
 import { Genre } from "~/model/genre";
 import { Area } from "~/model/area";
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
 
 useHead({
   title: "企画団体紹介ページ",
@@ -65,6 +66,7 @@ onMounted(() => {
 <template>
   <div class="events">
     <PageTitle title="EVENTS" />
+    <BreadCrumbsList />
     <SectionTitle text="企画団体" />
     <div class="card-wrapper-background">
       <div class="filter">

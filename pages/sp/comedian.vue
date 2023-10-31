@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+
 useHead({
   title: "東京ホテイソン降臨！横浜ナショナルクラッシュ！",
   meta: [
@@ -14,6 +16,7 @@ useHead({
 <template>
   <div class="page-root">
     <PageTitle :title="'東京ホテイソン降臨！\n横浜ナショナルクラッシュ！'" />
+    <BreadCrumbsList />
     <div class="top-images">
       <img src="/images/comedian/logo.webp" />
       <img src="/images/comedian/guest.webp" />

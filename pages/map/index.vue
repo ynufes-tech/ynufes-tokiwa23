@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import BackToHome from "~/components/BackToHome.vue";
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
 
 useHead({
   title: "学内マップ | 23常盤祭公式HP~未来航路~",
@@ -15,6 +16,7 @@ useHead({
 <template>
   <div class="page-root">
     <PageTitle title="学内マップ" />
+    <BreadCrumbsList />
     <div class="content-root">
       <div class="inner-map">
         <div class="inner-map-items">

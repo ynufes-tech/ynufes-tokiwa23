@@ -55,6 +55,11 @@ const filterEvents = computed(() => {
 });
 
 const isGridView = ref(false);
+
+// set isGridView to true if the screen width is larger than 600px
+onMounted(() => {
+  isGridView.value = window.innerWidth > 600;
+});
 </script>
 
 <template>

@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import events from "~/assets/data/events.json";
+import type { EventSummary } from "~/model/event";
+import { Genre } from "~/model/genre";
+import { Area } from "~/model/area";
 
 useHead({
   title: "企画団体紹介ページ",
@@ -12,21 +15,26 @@ useHead({
 });
 // A, B, C, D, E, F, Y, BUSINESS, CITY, SCIENCE, EDUCATION, SPECIAL
 // 12 of true array
-const placeSelections = ref([
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-]);
+const placeSelections = ref({
+  [Area.A]: true,
+  [Area.B]: true,
+  [Area.C]: true,
+  [Area.D]: true,
+  [Area.E]: true,
+  [Area.F]: true,
+  [Area.Y]: true,
+  [Area.BUSINESS]: true,
+  [Area.CITY]: true,
+  [Area.SCIENCE]: true,
+  [Area.EDUCATION]: true,
+  [Area.SPECIAL]: true,
+});
 
+const genreSelections = ref({
+  [Genre.FOOD]: true,
+  [Genre.PERFORMANCE]: true,
+  [Genre.EXHIBITION]: true,
+});
 const showFilterPlace = ref(false);
 const showFilterGenre = ref(true);
 
@@ -39,6 +47,12 @@ const toggleFilterGenre = () => {
   showFilterPlace.value = false;
   showFilterGenre.value = !showFilterGenre.value;
 };
+
+const filterEvents = computed(() => {
+  return events.filter((e: EventSummary) => {
+    return placeSelections.value[e.area] && genreSelections.value[e.e_genre];
+  });
+});
 </script>
 
 <template>
@@ -146,26 +160,38 @@ const toggleFilterGenre = () => {
         </div>
         <div class="menu menu-g" v-show="showFilterGenre">
           <div id="selection-exhibition">
-            <input id="event_genre-1" type="checkbox" />
+            <input
+              id="event_genre-1"
+              type="checkbox"
+              v-model="genreSelections[Genre.EXHIBITION]"
+            />
             <label class="c-form-input" for="event_genre-1"
               >展示・体験・販売</label
             >
           </div>
           <div id="selection-performance">
-            <input id="event_genre-2" type="checkbox" />
+            <input
+              id="event_genre-2"
+              type="checkbox"
+              v-model="genreSelections[Genre.PERFORMANCE]"
+            />
             <label class="c-form-input" for="event_genre-2"
               >パフォーマンス</label
             >
           </div>
           <div id="selection-food">
-            <input id="event_genre-3" type="checkbox" />
-            <label class="c-form-input" for="event_genre-3">食事</label>
+            <input
+              id="event_genre-3"
+              type="checkbox"
+              v-model="genreSelections[Genre.FOOD]"
+            />
+            <label class="c-form-input" for="event_genre-3">食事 </label>
           </div>
         </div>
       </div>
       <div class="card-wrapper">
         <NuxtLink
-          v-for="event in events"
+          v-for="event in filterEvents"
           :key="event.id"
           :to="`/event/${event.id}`"
           class="card"

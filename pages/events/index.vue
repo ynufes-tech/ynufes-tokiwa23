@@ -36,7 +36,7 @@ const genreSelections = ref({
   [Genre.EXHIBITION]: true,
 });
 const showFilterPlace = ref(false);
-const showFilterGenre = ref(true);
+const showFilterGenre = ref(false);
 
 const toggleFilterPlace = () => {
   showFilterGenre.value = false;
@@ -82,31 +82,59 @@ const filterEvents = computed(() => {
             <div class="outside frame">
               <p>屋外エリア</p>
               <div>
-                <input type="checkbox" id="f-A" v-model="placeSelections[0]" />
+                <input
+                  type="checkbox"
+                  id="f-A"
+                  v-model="placeSelections[Area.A]"
+                />
                 <label for="f-A">エリアA</label>
               </div>
               <div>
-                <input type="checkbox" id="f-B" v-model="placeSelections[1]" />
+                <input
+                  type="checkbox"
+                  id="f-B"
+                  v-model="placeSelections[Area.B]"
+                />
                 <label for="f-B">エリアB</label>
               </div>
               <div>
-                <input type="checkbox" id="f-C" v-model="placeSelections[2]" />
+                <input
+                  type="checkbox"
+                  id="f-C"
+                  v-model="placeSelections[Area.C]"
+                />
                 <label for="f-C">エリアC</label>
               </div>
               <div>
-                <input type="checkbox" id="f-D" v-model="placeSelections[3]" />
+                <input
+                  type="checkbox"
+                  id="f-D"
+                  v-model="placeSelections[Area.D]"
+                />
                 <label for="f-D">エリアD</label>
               </div>
               <div>
-                <input type="checkbox" id="f-E" v-model="placeSelections[4]" />
+                <input
+                  type="checkbox"
+                  id="f-E"
+                  v-model="placeSelections[Area.E]"
+                />
                 <label for="f-E">エリアE</label>
               </div>
               <div>
-                <input type="checkbox" id="f-F" v-model="placeSelections[5]" />
+                <input
+                  type="checkbox"
+                  id="f-F"
+                  v-model="placeSelections[Area.F]"
+                />
                 <label for="f-F">エリアF</label>
               </div>
               <div>
-                <input type="checkbox" id="f-Y" v-model="placeSelections[6]" />
+                <input
+                  type="checkbox"
+                  id="f-Y"
+                  v-model="placeSelections[Area.Y]"
+                />
                 <label for="f-Y">エリアY</label>
               </div>
             </div>
@@ -118,7 +146,7 @@ const filterEvents = computed(() => {
                 <input
                   type="checkbox"
                   id="f-BUSINESS"
-                  v-model="placeSelections[7]"
+                  v-model="placeSelections[Area.BUSINESS]"
                 />
                 <label for="f-BUSINESS">経済経営学部</label>
               </div>
@@ -126,7 +154,7 @@ const filterEvents = computed(() => {
                 <input
                   type="checkbox"
                   id="f-CITY"
-                  v-model="placeSelections[8]"
+                  v-model="placeSelections[Area.CITY]"
                 />
                 <label for="f-CITY">都市科学部</label>
               </div>
@@ -134,7 +162,7 @@ const filterEvents = computed(() => {
                 <input
                   type="checkbox"
                   id="f-SCIENCE"
-                  v-model="placeSelections[9]"
+                  v-model="placeSelections[Area.SCIENCE]"
                 />
                 <label for="f-SCIENCE">理工学部</label>
               </div>
@@ -142,7 +170,7 @@ const filterEvents = computed(() => {
                 <input
                   type="checkbox"
                   id="f-EDUCATION"
-                  v-model="placeSelections[10]"
+                  v-model="placeSelections[Area.EDUCATION]"
                 />
                 <label for="f-EDUCATION">教育学部</label>
               </div>
@@ -151,7 +179,7 @@ const filterEvents = computed(() => {
               <input
                 type="checkbox"
                 id="f-SPECIAL"
-                v-model="placeSelections[11]"
+                v-model="placeSelections[Area.SPECIAL]"
               />
               <label for="f-SPECIAL">特別な場所</label>
             </div>
@@ -212,13 +240,16 @@ const filterEvents = computed(() => {
 }
 
 .filter {
+  max-width: 500px;
+  margin: 0 auto;
+  width: 90%;
+
   #filter-row {
-    width: 90%;
     height: 40px;
     display: flex;
-    margin: 0 auto;
     background-color: var(--main-background-color);
     text-align: center;
+    user-select: none;
 
     .selected {
       background-color: #1674c0 !important;
@@ -244,7 +275,6 @@ const filterEvents = computed(() => {
   }
 
   .menu {
-    width: 90%;
     height: fit-content;
     display: flex;
     margin: 0 auto;

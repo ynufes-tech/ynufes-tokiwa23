@@ -1,10 +1,16 @@
 <script lang="ts" setup>
-import { genreToString } from "~/model/genre";
-import { placeToString } from "~/model/area";
-import { EventSummary } from "~/model/event";
+import { Genre, genreToString } from "~/model/genre";
+import { Area, placeToString } from "~/model/area";
 
 const props = defineProps<{
-  eventData: EventSummary;
+  eventData: {
+    id: number;
+    e_name: string;
+    e_genre: Genre;
+    o_name: string;
+    area: Area;
+    p_name: string;
+  };
 }>();
 const showNoImage = function (e: any) {
   e.target.src =

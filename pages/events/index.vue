@@ -241,8 +241,12 @@ const filterEvents = computed(() => {
 
 .filter {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 3em auto;
   width: 90%;
+
+  @include md {
+    margin: 1em auto;
+  }
 
   #filter-row {
     height: 40px;

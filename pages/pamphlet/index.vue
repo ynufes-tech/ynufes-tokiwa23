@@ -26,7 +26,7 @@ useHead({
           <div class="pamphlet-text">
             <p>下のボタンからパンフレットをダウンロードできます</p>
             <div class="pamphlet-download">
-              <p>軽量版（12.6MB）</p>
+              <p>軽量版（17.7MB）</p>
               <a
                 class="pamphlet-button"
                 href="https://storage.googleapis.com/tokiwa23-assets/tokiwa23-pamphlet-light.pdf"
@@ -37,7 +37,7 @@ useHead({
               </a>
             </div>
             <div class="pamphlet-download">
-              <p>高画質版（101.8MB)</p>
+              <p>高画質版（28.4MB)</p>
               <a
                 class="pamphlet-button"
                 href="https://storage.googleapis.com/tokiwa23-assets/tokiwa23-pamphlet-high.pdf"

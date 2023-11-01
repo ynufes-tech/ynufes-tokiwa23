@@ -19,17 +19,11 @@ useHead({
       <div class="inner-map">
         <div class="inner-map-items">
           <p class="inner-map-text">
-            PDFファイルはこちらからダウンロードできます
+            こちらのマップは、パンフレットの2-3ページに掲載されているのものです。
           </p>
-          <a
-            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
-            rel="noopener norefererr"
-            target="_blank"
-            class="map-download"
-          >
-            <p>・学内MAPのダウンロード</p>
-            <img alt="" class="pdf-icon" src="/images/pamphlet/PDF-icon.webp" />
-          </a>
+          <NuxtLink to="/pamphlet" class="link-text-holder">
+            <p class="link-text">・パンフレットのダウンロードページはこちら→</p>
+          </NuxtLink>
           <a
             href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
             rel="noopener norefererr"
@@ -93,5 +87,13 @@ useHead({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.link-text-holder {
+  text-decoration: underline var(--thick-font-color);
+  color: var(--thick-font-color);
+}
+.link-text {
+  margin-bottom: 1em;
 }
 </style>

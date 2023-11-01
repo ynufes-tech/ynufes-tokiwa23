@@ -12,14 +12,14 @@ import { Autoplay, Pagination } from "swiper/modules";
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
 if (Number.isNaN(id)) {
-  await useRouter().push("/");
+  useRouter().push("/");
 }
 // fetch data from /api/events/:id
 const event = await useFetch(`/api/event/${id}`).then((res) => {
   return res.data.value as Event;
 });
 if (!event) {
-  await useRouter().push("/");
+  useRouter().push("/");
 }
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,

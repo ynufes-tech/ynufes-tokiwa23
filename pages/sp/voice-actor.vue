@@ -50,6 +50,7 @@ definePageMeta({
       <h2 class="section-title">日時</h2>
       <h3 class="section-emphasize">11月4日(土) 14:00～15:15 (75分)</h3>
       <p class="section-annotation">
+        当日開場13:25～(来場者順での自由席)<br />
         ※開場13:15 13：55～14：00の間一時的に入場を制限(109教室のみ)
       </p>
       <h2 class="section-title">会場</h2>
@@ -202,6 +203,7 @@ definePageMeta({
 
 .section-annotation {
   color: #fff;
+  line-height: 1.4;
   padding: 0.2rem;
 }
 

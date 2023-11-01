@@ -60,7 +60,6 @@ for (let i = 1; i <= event?.activity_images; i++) {
       <p class="event-description" v-text="event?.event_description" />
       <SectionTitle text="企画団体紹介" />
       <h2 class="org-name">{{ event?.org_name }}</h2>
-      <p class="org-description" v-text="event?.org_description" />
       <div
         v-if="event?.activity_images && event?.activity_images > 0"
         class="activity-images"
@@ -86,6 +85,7 @@ for (let i = 1; i <= event?.activity_images; i++) {
           class="group-image"
         />
       </div>
+      <p class="org-description" v-text="event?.org_description" />
       <div v-if="event?.x_id || event?.instagram_id || event?.facebook_id">
         <SponsorsListTitle text="各種リンク" />
         <div class="link-icons">

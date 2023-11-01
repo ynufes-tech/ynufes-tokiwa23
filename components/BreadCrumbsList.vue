@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import events from "~/assets/data/events.json";
-import { Event } from "~/model/event";
+import type { Event } from "~/model/event";
 
 export interface CrumbInfo {
   name: string;

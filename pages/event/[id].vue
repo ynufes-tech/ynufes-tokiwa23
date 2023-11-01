@@ -47,8 +47,8 @@ for (let i = 1; i <= event?.activity_images; i++) {
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
-    <bread-crumbs-list />
     <div class="page-content">
+      <bread-crumbs-list class="bread-crumbs" />
       <div class="event-tag">
         <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
       </div>

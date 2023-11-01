@@ -83,7 +83,7 @@ const cardBackgroundStyle = computed(() => {
   }
   @include sm {
     width: min(300px, 90vw);
-    aspect-ratio: 1;
+    aspect-ratio: 1.2;
     border-radius: 60px;
   }
 

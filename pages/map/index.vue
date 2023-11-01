@@ -18,9 +18,7 @@ useHead({
     <div class="content-root">
       <div class="inner-map">
         <div class="inner-map-items">
-          <NuxtLink to="/pamphlet" class="link-text-holder">
-            <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
-          </NuxtLink>
+          <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
           <p class="inner-map-text">
             こちらのマップは、パンフレットの2-3ページに掲載されているのものです。
           </p>

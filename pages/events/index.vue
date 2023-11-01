@@ -293,6 +293,7 @@ onMounted(() => {
         </NuxtLink>
       </div>
     </div>
+    <BackToHome />
   </div>
 </template>
 
@@ -530,5 +531,8 @@ onMounted(() => {
     margin-right: 0.5rem;
     fill: currentColor;
   }
+}
+.back-to-home {
+  margin: 2rem auto;
 }
 </style>

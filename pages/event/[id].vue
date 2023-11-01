@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"; // 以下swiperの設定
-import { Event } from "~/model/event";
+import type { Event } from "~/model/event";
 // Import Swiper styles
 import "swiper/css";
 

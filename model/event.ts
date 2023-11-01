@@ -1,5 +1,5 @@
-import { Genre } from "~/model/genre";
-import { Area } from "~/model/area";
+import { Genre } from "@/model/genre";
+import { Area } from "@/model/area";
 
 export interface Event {
   id: number;

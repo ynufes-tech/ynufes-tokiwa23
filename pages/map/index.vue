@@ -18,25 +18,13 @@ useHead({
     <div class="content-root">
       <div class="inner-map">
         <div class="inner-map-items">
+          <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
           <p class="inner-map-text">
-            PDFファイルはこちらからダウンロードできます
+            こちらのマップは、パンフレットの2-3ページに掲載されているのものです。
           </p>
-          <a
-            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
-            rel="noopener norefererr"
-            target="_blank"
-            class="map-download"
-          >
-            <p>・学内MAPのダウンロード</p>
-            <img alt="" class="pdf-icon" src="/images/pamphlet/PDF-icon.webp" />
-          </a>
-          <a
-            href="https://www.ynu.ac.jp/about/public/publish/ynumap/pdf/ynumap_2022.pdf"
-            rel="noopener norefererr"
-            target="_blank"
-          >
-            <img alt="" class="map-img" src="/images/pamphlet/map-face.webp" />
-          </a>
+          <NuxtLink to="/pamphlet" class="link-text-holder">
+            <p class="link-text">・パンフレットのダウンロードページはこちら→</p>
+          </NuxtLink>
         </div>
       </div>
       <div class="bottom-button">
@@ -62,6 +50,7 @@ useHead({
     padding: 0 2em;
     box-sizing: border-box;
     width: 100%;
+    margin-top: 2em;
 
     .map-img {
       width: 100%;
@@ -93,5 +82,10 @@ useHead({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.link-text-holder {
+  text-decoration: underline var(--thick-font-color);
+  color: var(--thick-font-color);
 }
 </style>

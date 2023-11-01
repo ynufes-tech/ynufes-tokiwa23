@@ -19,7 +19,7 @@ const event = await useFetch(`/api/event/${id}`).then((res) => {
   return res.data.value as Event;
 });
 if (!event) {
-  await useRouter().push("/");
+  useRouter().push("/");
 }
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,

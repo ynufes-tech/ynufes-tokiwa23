@@ -46,6 +46,9 @@ for (let i = 1; i <= event?.activity_images; i++) {
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
+    <div class="group-name-holder">
+      <p class="group-name" v-text="event?.org_name ?? ''" />
+    </div>
     <div class="page-content">
       <div class="event-tag">
         <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
@@ -56,35 +59,38 @@ for (let i = 1; i <= event?.activity_images; i++) {
       />
       <SectionTitle text="企画説明" />
       <p class="event-description" v-text="event?.event_description" />
-      <SectionTitle text="企画団体紹介" />
-      <h2 class="org-name">{{ event?.org_name }}</h2>
-      <p class="org-description" v-text="event?.org_description" />
-      <div
-        v-if="event?.activity_images && event?.activity_images > 0"
-        class="activity-images"
-      >
-        <swiper
-          v-if="event?.activity_images > 1"
-          :autoplay="{
-            delay: 8000,
-            disableOnInteraction: false,
-          }"
-          :modules="[Pagination, Autoplay]"
-          :pagination="{
-            dynamicBullets: true,
-          }"
-          class="activity-images-swiper"
+      <div v-if="event?.org_description">
+        <SectionTitle text="企画団体紹介" />
+        <h2 class="org-name">{{ event?.org_name }}</h2>
+        <p class="org-description" v-text="event?.org_description" />
+        <div
+          v-if="event?.activity_images && event?.activity_images > 0"
+          class="activity-images"
         >
-          <swiper-slide v-for="url in urls"><img :src="url" /></swiper-slide>
-        </swiper>
-        <img
-          v-if="event?.activity_images == 1"
-          :src="urls[0]"
-          alt=""
-          class="group-image"
-        />
-      </div>
-      <div v-if="event?.x_id || event?.instagram_id || event?.facebook_id">
+          <swiper
+            v-if="event?.activity_images > 1"
+            :autoplay="{
+              delay: 8000,
+              disableOnInteraction: false,
+            }"
+            :modules="[Pagination, Autoplay]"
+            :pagination="{
+              dynamicBullets: true,
+            }"
+            class="activity-images-swiper"
+          >
+            <swiper-slide v-for="url in urls"><img :src="url" /></swiper-slide>
+          </swiper>
+          <img
+            v-if="event?.activity_images == 1"
+            :src="urls[0]"
+            alt=""
+            class="group-image"
+          />
+        </div>
+        <div
+          v-if="event?.x_id || event?.instagram_id || event?.facebook_id"
+        ></div>
         <SponsorsListTitle text="各種リンク" />
         <div class="link-icons">
           <a
@@ -263,6 +269,22 @@ for (let i = 1; i <= event?.activity_images; i++) {
       object-fit: cover;
       aspect-ratio: 16 / 9;
     }
+  }
+}
+.group-name-holder {
+  display: flex;
+  flex-direction: row-reverse;
+  width: min(1024px, 80svw);
+  margin-left: 1em;
+}
+.group-name {
+  font-size: 1.5em;
+  color: var(--thick-font-color);
+  font-weight: bold;
+}
+@media screen and (max-width: 480px) {
+  .group-name-holder {
+    margin-left: 0.5em;
   }
 }
 </style>

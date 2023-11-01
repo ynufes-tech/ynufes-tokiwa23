@@ -12,7 +12,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
 if (Number.isNaN(id)) {
-  await useRouter().push("/");
+  useRouter().push("/");
 }
 // fetch data from /api/events/:id
 const event = await useFetch(`/api/event/${id}`).then((res) => {

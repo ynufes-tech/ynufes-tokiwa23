@@ -47,7 +47,6 @@ const tagStyle = computed(() => {
     font-size: 1.2em;
     line-height: 1.3em;
     font-weight: 400;
-    padding: 1px;
   }
 }
 </style>

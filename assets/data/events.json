@@ -2,65 +2,65 @@
   {
     "id": 900,
     "e_name": "イベント名",
-    "e_genre": "Genre1",
+    "e_genre": 1,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 2,
     "p_name": "203"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 2,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 3,
     "p_name": "103"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 2,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 4,
     "p_name": "103"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 1,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 1,
     "p_name": "103"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 2,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 2,
     "p_name": "103"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 2,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 3,
     "p_name": "103"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 2,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 2,
     "p_name": "103"
   },
   {
     "id": 901,
     "e_name": "イベント名",
-    "e_genre": "Genre2",
+    "e_genre": 2,
     "o_name": "企画団体名",
-    "area": "Area1",
+    "area": 2,
     "p_name": "103"
   }
 ]

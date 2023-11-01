@@ -78,7 +78,7 @@ const resolveEvent = (p: Array<string>): Array<CrumbInfo> => {
   const event = events.find((e) => e.id === Number(id)) as Event;
   return [
     { name: "イベント", crumbPath: "/event" },
-    { name: "`event.name`", crumbPath: "`/event/${id}`" },
+    { name: `${event?.event_name}`, crumbPath: `/event/${id}` },
   ];
 };
 const resolveEvents = (p: Array<string>): Array<CrumbInfo> => {

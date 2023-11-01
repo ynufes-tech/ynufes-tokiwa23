@@ -12,7 +12,7 @@ useHead({
 
 <template>
   <div class="page-root">
-    <PageTitle title="Access" />
+    <PageTitle title="電車でのアクセス" />
     <div class="content-root">
       <iframe
         class="access-map"
@@ -22,38 +22,42 @@ useHead({
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       />
-      <SponsorsListTitle text="電車でのアクセス" />
+      <SponsorsListTitle text="羽沢横浜国大駅" />
+      <p class="attention">
+        羽沢横浜国大駅からお越しの方は<br />こちらの推奨ルートでお越しください。
+      </p>
       <div class="train-access">
-        <div>
-          <p>横浜市営地下鉄ブルーライン「三ッ沢上町駅」より正門まで徒歩16分</p>
-          <a
-            href="https://www.ynu.ac.jp/access/train_front.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            三ッ沢上町駅前からのルート
-          </a>
-        </div>
-        <div>
-          <p>相鉄線「和田町駅」より南門・南通用門まで徒歩20分</p>
-          <a
-            href="https://www.ynu.ac.jp/access/train_south.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            和田町駅前からのルート
-          </a>
-        </div>
-        <div>
-          <p>相鉄新横浜線「羽沢横浜国大駅」より北門・西門まで徒歩15分</p>
-          <a
-            href="https://www.ynu.ac.jp/access/train_hazawa.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            羽沢横浜国大駅前からのルート
-          </a>
-        </div>
+        <p>相鉄新横浜線「羽沢横浜国大駅」より北門・西門まで徒歩15分</p>
+        <img src="@/assets/images/hazawa.webp" class="map-hazawa" />
+        <a
+          href="https://www.ynu.ac.jp/access/train_hazawa.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          羽沢横浜国大駅前からのルート
+        </a>
+      </div>
+      <SponsorsListTitle text="三ッ沢上町駅" />
+      <div class="train-access">
+        <p>横浜市営地下鉄ブルーライン「三ッ沢上町駅」より正門まで徒歩16分</p>
+        <a
+          href="https://www.ynu.ac.jp/access/train_front.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          三ッ沢上町駅前からのルート
+        </a>
+      </div>
+      <SponsorsListTitle text="和田町駅" />
+      <div class="train-access">
+        <p>相鉄線「和田町駅」より南門・南通用門まで徒歩20分</p>
+        <a
+          href="https://www.ynu.ac.jp/access/train_south.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          和田町駅前からのルート
+        </a>
       </div>
     </div>
     <BackToHome />
@@ -82,6 +86,11 @@ useHead({
   aspect-ratio: 2;
 }
 
+.map-hazawa {
+  width: min(100%, 600px);
+  object-fit: contain;
+}
+
 .train-access {
   width: min(calc(100% - 50px), 35em);
   margin: 0 0 1em;
@@ -93,30 +102,25 @@ useHead({
   border: 1px solid var(--thick-font-color);
   gap: 1.5em;
 
-  > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  > a {
+    width: fit-content;
+    text-decoration: none;
+    color: var(--thick-font-color);
+    display: block;
+    margin: 0.5em 0;
+    border: 1px var(--thick-font-color) solid;
+    border-radius: 1em;
+    padding: 1.2em;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #3b3b3b;
+        color: #fffdf5;
+      }
+    }
 
-    > a {
-      width: fit-content;
-      text-decoration: none;
-      color: var(--thick-font-color);
-      display: block;
-      margin: 0.5em 0;
-      border: 1px var(--thick-font-color) solid;
-      border-radius: 1em;
-      padding: 1.2em;
-      @media (hover: hover) {
-        &:hover {
-          background-color: #3b3b3b;
-          color: #fffdf5;
-        }
-      }
-      &:active {
-        transform: translateY(2px);
-        transition: 0.2s;
-      }
+    &:active {
+      transform: translateY(2px);
+      transition: 0.2s;
     }
   }
 }
@@ -136,5 +140,13 @@ useHead({
 
 .back-to-home {
   margin: 0 auto;
+}
+
+.attention {
+  margin-bottom: 1em;
+  line-height: 1.5;
+  text-align: center;
+  color: red;
+  text-decoration: underline;
 }
 </style>

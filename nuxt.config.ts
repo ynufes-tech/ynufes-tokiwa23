@@ -41,5 +41,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     contestDataUrl: process.env.CONTEST_DATA_URL,
+    public: {
+      app_name: "23tokiwa",
+    },
   },
 });

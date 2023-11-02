@@ -1,11 +1,19 @@
 <script lang="ts" setup>
 import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+import SectionTitle from "~/components/SectionTitle.vue";
 
 useHead({
   title: "Sponsors | 23常盤祭公式HP~未来航路~",
   meta: [
     { name: "description", content: "23常盤祭のご協賛団体、個人の一覧です" },
   ],
+});
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "Sponsors",
 });
 </script>
 
@@ -17,7 +25,7 @@ useHead({
     </div>
     <div class="inner-sponsors-page">
       <div class="sponsor-group">
-        <section-title class="upper-title" text="ご協賛について" />
+        <SectionTitle class="upper-title" text="ご協賛について" />
         <div class="sponsors-about-contents">
           <p class="text">
             「23常盤祭」を開催するにあたり、多くの企業の皆様より多大なご協力を賜りました。この場をお借りいたしまして、心より感謝申し上げます。

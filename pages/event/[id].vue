@@ -76,6 +76,14 @@ const getArea = (area_id: string) => {
   }
   return "";
 };
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name:
+    "EventDetail - " + event?.id ?? "" + " - " + event?.event_name ?? "",
+});
 </script>
 
 <template>

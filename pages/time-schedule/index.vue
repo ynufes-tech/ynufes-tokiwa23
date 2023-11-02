@@ -24,6 +24,13 @@ const changePlace = (id: number) => {
   });
   placeId.value = id;
 };
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "TimeSchedule",
+});
 </script>
 
 <template>

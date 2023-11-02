@@ -31,6 +31,7 @@ jobs:
             sed -i 's/{{service_name}}/tokiwa23-stg/' app.yaml
             echo "BASE_URL=/stg/23/tokiwa/" >> .env
           fi
+          echo "CONTEST_DATA_URL=${{ secrets.CONTEST_DATA_URL }}" >> .env
         # switch service name to configure deployment target appropriately
       - name: Download events.json from external URL
         run: |

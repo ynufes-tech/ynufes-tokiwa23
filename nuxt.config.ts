@@ -32,4 +32,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    contestDataUrl: process.env.CONTEST_DATA_URL,
+  },
 });

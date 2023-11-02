@@ -15,6 +15,7 @@ export default defineNuxtConfig({
       "nuxt-gtag",
       {
         id: process.env.GOOGLE_ANALYTICS_ID,
+        initialConsent: process.env.IS_PRODUCTION,
       },
     ],
   ],

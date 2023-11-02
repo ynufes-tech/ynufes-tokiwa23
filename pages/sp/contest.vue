@@ -38,6 +38,7 @@ useHead({
         皆さんの1票が結果に大きく関わりますので<br />是非投票しに来てください!
         <br />協賛品も貰えちゃいます♪
       </div>
+      <img id="how-to-vote-img" src="@/assets/images/how-to-vote.webp" />
       <SponsorsListTitle text="企画部門別" />
       <div class="description">
         <ul>
@@ -105,6 +106,12 @@ useHead({
   width: min(1024px, 90%);
   display: flex;
   flex-direction: column;
+}
+
+#how-to-vote-img {
+  width: 80%;
+  align-self: center;
+  margin: 1em 0;
 }
 
 .main-frame {

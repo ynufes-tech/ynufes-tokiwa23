@@ -140,6 +140,14 @@ const cards: CardData[] = [
         </div>
       </div>
       <div class="pre-guest-event">
+        <h1>企画コンテスト開催中!!</h1>
+        <div class="event-buttons-row">
+          <NuxtLink to="/sp/contest">
+            <PreGuestEventButton text="企画コンテスト詳細" />
+          </NuxtLink>
+        </div>
+      </div>
+      <div class="pre-guest-event">
         <h1>フォトコンテスト優秀作品決定!!</h1>
         <div class="event-buttons-row">
           <NuxtLink to="/sp/photo-contest">

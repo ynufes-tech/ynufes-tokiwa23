@@ -27,9 +27,11 @@ jobs:
           if [[ "${{ env.short_ref }}" == "release" ]]; then
             sed -i 's/{{service_name}}/tokiwa23/' app.yaml
             echo "BASE_URL=/23/tokiwa/" >> .env
+            echo "IS_PRODUCTION=true" >> .env
           elif [[ "${{ env.short_ref }}" == "stg" ]]; then
             sed -i 's/{{service_name}}/tokiwa23-stg/' app.yaml
             echo "BASE_URL=/stg/23/tokiwa/" >> .env
+            echo "IS_PRODUCTION=false" >> .env
           fi
           echo "CONTEST_DATA_URL=${{ secrets.CONTEST_DATA_URL }}" >> .env
         # switch service name to configure deployment target appropriately

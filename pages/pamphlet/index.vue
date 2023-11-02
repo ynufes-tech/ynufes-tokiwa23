@@ -11,6 +11,13 @@ useHead({
     },
   ],
 });
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "Pamphlet",
+});
 </script>
 
 <template>
@@ -34,6 +41,12 @@ useHead({
                 href="https://storage.googleapis.com/tokiwa23-assets/tokiwa23-pamphlet-light.pdf"
                 rel="noopener noreferrer"
                 target="_blank"
+                @click="
+                  gtag('event', 'download', {
+                    event_category: 'pamphlet',
+                    event_label: 'light',
+                  })
+                "
               >
                 <DownloadButton />
               </a>
@@ -45,6 +58,12 @@ useHead({
                 href="https://storage.googleapis.com/tokiwa23-assets/tokiwa23-pamphlet-high.pdf"
                 rel="noopener noreferrer"
                 target="_blank"
+                @click="
+                  gtag('event', 'download', {
+                    event_category: 'pamphlet',
+                    event_label: 'high',
+                  })
+                "
               >
                 <DownloadButton />
               </a>

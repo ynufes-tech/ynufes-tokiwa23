@@ -11,6 +11,13 @@ export default defineNuxtConfig({
         },
       },
     ],
+    [
+      "nuxt-gtag",
+      {
+        id: process.env.GOOGLE_ANALYTICS_ID,
+        initialConsent: process.env.IS_PRODUCTION,
+      },
+    ],
   ],
   app: {
     baseURL: process.env.BASE_URL ? process.env.BASE_URL : "/",
@@ -34,5 +41,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     contestDataUrl: process.env.CONTEST_DATA_URL,
+    public: {
+      app_name: "23tokiwa",
+    },
   },
 });

@@ -7,6 +7,12 @@ useHead({
     { name: "description", content: "23常盤祭についての情報を掲載しています" },
   ],
 });
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "About",
+});
 </script>
 
 <template>

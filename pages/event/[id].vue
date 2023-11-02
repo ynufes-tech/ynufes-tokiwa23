@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
+import { placeToString } from "~/model/area";
 
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
@@ -46,20 +47,24 @@ for (let i = 1; i <= event?.activity_images; i++) {
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
-    <div class="group-name-holder">
-      <p class="group-name" v-text="event?.org_name ?? ''" />
-    </div>
     <div class="page-content">
       <div class="event-tag">
         <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
       </div>
+      <p class="group-name" v-text="event?.org_name ?? ''" />
+      <p
+        class="place"
+        v-text="
+          '企画場所: ' + placeToString(event?.area) + event.place_name ?? ''
+        "
+      />
       <img
         :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
         class="event-image"
       />
       <SectionTitle text="企画説明" />
       <p class="event-description" v-text="event?.event_description" />
-      <div v-if="event?.org_description">
+      <div v-if="event?.org_description" class="org-description-sec">
         <SectionTitle text="企画団体紹介" />
         <h2 class="org-name">{{ event?.org_name }}</h2>
         <p class="org-description" v-text="event?.org_description" />
@@ -166,12 +171,27 @@ for (let i = 1; i <= event?.activity_images; i++) {
 .event-tag {
   width: fit-content;
   margin-top: 1em;
+  align-self: center;
+}
+
+.group-name {
+  margin: 0.5em;
+  align-self: center;
+  font-size: 1.2em;
+  color: var(--thick-font-color);
+  font-weight: bold;
+}
+
+.place {
+  align-self: center;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .event-image {
   aspect-ratio: 1;
   width: min(80svw, 300px);
-  margin-top: 2em;
+  margin-top: 1em;
   align-self: center;
 }
 
@@ -206,6 +226,11 @@ for (let i = 1; i <= event?.activity_images; i++) {
   @include md {
     padding: 1em;
   }
+}
+
+.org-description-sec {
+  display: flex;
+  flex-direction: column;
 }
 
 .activity-images {
@@ -269,22 +294,6 @@ for (let i = 1; i <= event?.activity_images; i++) {
       object-fit: cover;
       aspect-ratio: 16 / 9;
     }
-  }
-}
-.group-name-holder {
-  display: flex;
-  flex-direction: row-reverse;
-  width: min(1024px, 80svw);
-  margin-left: 1em;
-}
-.group-name {
-  font-size: 1.5em;
-  color: var(--thick-font-color);
-  font-weight: bold;
-}
-@media screen and (max-width: 480px) {
-  .group-name-holder {
-    margin-left: 0.5em;
   }
 }
 </style>

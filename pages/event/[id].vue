@@ -136,6 +136,7 @@ for (let i = 1; i <= event?.activity_images; i++) {
           {{ event?.website }}
         </a>
       </div>
+      <BackToHome />
     </div>
   </div>
 </template>
@@ -295,5 +296,8 @@ for (let i = 1; i <= event?.activity_images; i++) {
       aspect-ratio: 16 / 9;
     }
   }
+}
+.back-to-home {
+  margin: 2rem auto;
 }
 </style>

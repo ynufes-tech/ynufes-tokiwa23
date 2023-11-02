@@ -89,6 +89,9 @@ definePageMeta({
         ]"
       />
     </div>
+    <NuxtLink to="/" class="back-button">
+        <DarkButton text="⇐ ホームに戻る" />
+      </NuxtLink>
     <div class="spacer"></div>
   </div>
 </template>
@@ -209,5 +212,13 @@ definePageMeta({
 
 .spacer {
   height: 10vh;
+}
+.back-button {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  margin: 1em auto;
+  text-decoration: unset;
+  text-align:center;
 }
 </style>

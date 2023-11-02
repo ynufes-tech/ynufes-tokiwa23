@@ -118,8 +118,10 @@ for (let i = 1; i <= event?.activity_images; i++) {
           </a>
           <a
             v-if="event?.facebook_id"
-            :href="event.facebook_id"
+            :href="`https://instagram.com/${event.facebook_id}`"
             class="link-icon"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <img alt="facebook" src="/images/icons/facebook-logo.webp" />
           </a>
@@ -297,6 +299,7 @@ for (let i = 1; i <= event?.activity_images; i++) {
     }
   }
 }
+
 .back-to-home {
   margin: 2rem auto;
 }

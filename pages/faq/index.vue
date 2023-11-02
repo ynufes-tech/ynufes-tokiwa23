@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+
 useHead({
   title: "FAQ | 23常盤祭公式HP~未来航路~",
   meta: [{ name: "description", content: "23常盤祭のFAQページです" }],
@@ -9,6 +11,7 @@ useHead({
   <div class="about-page">
     <div class="about-title">
       <PageTitle title="FAQ" />
+      <BreadCrumbsList />
     </div>
     <div class="inner-about-page">
       <div class="tokiwa-about">

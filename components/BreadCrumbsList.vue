@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import events from "~/assets/data/events.json";
-import { Event } from "~/model/event";
+import type { EventSummary } from "~/model/event";
+import { placeToString } from "~/model/area";
 
 export interface CrumbInfo {
   name: string;
@@ -75,10 +76,12 @@ const resolveSp = (p: Array<string>): Array<CrumbInfo> => {
 };
 const resolveEvent = (p: Array<string>): Array<CrumbInfo> => {
   const id = route.params.id;
-  const event = events.find((e) => e.id === Number(id)) as Event;
+  console.log(id);
+  const event = events.find((e) => e.id === Number(id)) as EventSummary;
+  console.log("found", event);
   return [
     { name: "イベント", crumbPath: "/event" },
-    { name: "`event.name`", crumbPath: "`/event/${id}`" },
+    { name: `${event?.e_name}`, crumbPath: `/event/${id}` },
   ];
 };
 const resolveEvents = (p: Array<string>): Array<CrumbInfo> => {
@@ -153,6 +156,11 @@ p {
 
   > a {
     text-decoration: none;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .bread-crumbs-list {
+    margin-left: 10svw;
   }
 }
 </style>

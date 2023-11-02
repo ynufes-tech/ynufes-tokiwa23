@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from "swiper/vue"; // 以下swiperの設定
 import type { Event } from "~/model/event";
+import { Area } from "~/model/area";
 // Import Swiper styles
 import "swiper/css";
 
@@ -8,6 +9,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
 import { placeToString } from "~/model/area";
 import BackToEvent from "~/components/BackToEvent.vue";
 
@@ -43,12 +45,44 @@ for (let i = 1; i <= event?.activity_images; i++) {
       i,
   );
 }
+const area_id = event?.place_id ?? 0;
+
+const getArea = (area_id: string) => {
+  switch (area_id) {
+    case Area.A:
+      return "A";
+    case Area.B:
+      return "B";
+    case Area.C:
+      return "C";
+    case Area.D:
+      return "D";
+    case Area.E:
+      return "E";
+    case Area.F:
+      return "F";
+    case Area.Y:
+      return "Y";
+    case Area.BUSINESS:
+      return "経営";
+    case Area.CITY:
+      return "都市科学";
+    case Area.SCIENCE:
+      return "理工";
+    case Area.EDUCATION:
+      return "教育";
+    case Area.SPECIAL:
+      return "特別な場所";
+  }
+  return "";
+};
 </script>
 
 <template>
   <div class="page-root">
     <PageTitle :title="event?.event_name ?? ''" />
     <div class="page-content">
+      <bread-crumbs-list class="bread-crumbs" />
       <div class="event-tag">
         <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
       </div>
@@ -64,6 +98,18 @@ for (let i = 1; i <= event?.activity_images; i++) {
         class="event-image"
       />
       <SectionTitle text="企画説明" />
+      <div class="option-holder">
+        <div class="genre">
+          <p class="option-text">ジャンル：</p>
+          <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
+        </div>
+        <div class="area">
+          <p class="option-text">企画場所：</p>
+          <div class="area-tag">
+            <p>{{ getArea(area_id) }} {{ event?.place_name }}</p>
+          </div>
+        </div>
+      </div>
       <p class="event-description" v-text="event?.event_description" />
       <div v-if="event?.org_description" class="org-description-sec">
         <SectionTitle text="企画団体紹介" />

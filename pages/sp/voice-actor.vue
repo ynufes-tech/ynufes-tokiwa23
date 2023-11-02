@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+
 useHead({
   title: "声優トークライブ in YNU 2023",
   meta: [
@@ -18,6 +20,7 @@ definePageMeta({
 <template>
   <div class="page-root">
     <PageTitle :title="'声優トークライブ in YNU 2023'" />
+    <BreadCrumbsList />
     <div class="main-stamp-wrapper">
       <img src="/images/voice-actor/main-stamp.webp" />
     </div>

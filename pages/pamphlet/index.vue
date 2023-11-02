@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import BackToHome from "~/components/BackToHome.vue";
+import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
 
 useHead({
   title: "常盤祭パンフレット | 23常盤祭公式HP~未来航路~",
@@ -15,6 +16,7 @@ useHead({
 <template>
   <div class="page-root">
     <PageTitle title="パンフレット" />
+    <BreadCrumbsList />
     <div class="content-root">
       <div class="inner-pamphlet">
         <div class="pamphlet-items">

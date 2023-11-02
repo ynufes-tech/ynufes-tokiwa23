@@ -1,20 +1,20 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 interface RankingData {
   FOOD: number[];
   EXHIBITION: number[];
   PERFORMANCE: number[];
 }
 
-const rankingData = await useFetch("/api/contest").then((res) => {
-  if (
-    res.data.value.FOOD &&
-    res.data.value.EXHIBITION &&
-    res.data.value.PERFORMANCE
-  ) {
-    return res.data.value as RankingData;
-  }
-  return null;
-});
+// const rankingData = await useFetch("/api/contest").then((res) => {
+//   if (
+//     res.data.value.FOOD &&
+//     res.data.value.EXHIBITION &&
+//     res.data.value.PERFORMANCE
+//   ) {
+//     return res.data.value as RankingData;
+//   }
+//   return null;
+// });
 
 useHead({
   title: "企画コンテスト | 23常盤祭公式HP~未来航路~",
@@ -33,28 +33,34 @@ useHead({
     <PageTitle title="企画コンテスト" />
     <div class="content-root">
       <div class="main-frame">
-        全参加企画の頂点、今回も決めます!!
-        <br />
-        皆さんの1票が結果に大きく関わりますので<br />是非投票しに来てください!
-        <br />協賛品も貰えちゃいます♪
+        全参加企画の頂点、<br />
+        今回も決めます!!<br />
+        皆さんの1票が結果に<br />
+        大きく関わりますので<br />
+        是非投票しに来てください!<br />
+        協賛品も貰えちゃいます♪
       </div>
-      <SponsorsListTitle text="企画部門別" />
+      <img id="how-to-vote-img" src="@/assets/images/how-to-vote.webp" />
       <div class="description">
         <ul>
           <li>飲食</li>
           <li>展示・物販</li>
           <li>パフォーマンス</li>
         </ul>
-        全企画がこの3つの部門のいずれかに必ずエントリーされ、部門で競い合います。
+        全企画がこれらの部門で競い合います。
         <br />
         最も、得票数の多い企画が総合優勝となります！
       </div>
-      <SponsorsListTitle text="オリジナルドリンク" />
       <div class="description">
+        <ul>
+          <li>オリジナルドリンク部門</li>
+        </ul>
         ドリンクを提供する企画のうち、参加を申請した企画が参加します。様々なドリンクを楽しみましょう！
       </div>
-      <SponsorsListTitle text="ビジュアル" />
       <div class="description">
+        <ul>
+          <li>ビジュアル部門</li>
+        </ul>
         全企画が対象で見た目を観点に投票します。Xを用いて投票をお願いします。写真をたくさん撮ろう！
       </div>
       <SectionTitle text="結果発表" />
@@ -84,7 +90,7 @@ useHead({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @use "assets/scss/_breakpoint.scss" as *;
 
 .page-root {
@@ -107,9 +113,15 @@ useHead({
   flex-direction: column;
 }
 
+#how-to-vote-img {
+  width: 80%;
+  align-self: center;
+  margin: 1em 0;
+}
+
 .main-frame {
-  font-size: 1.5em;
-  width: 90%;
+  font-size: min(1.5em, 6vw);
+  width: fit-content;
   align-self: center;
   text-align: center;
   line-height: 1.3;
@@ -118,7 +130,7 @@ useHead({
   box-sizing: border-box;
   border-radius: 1.5em;
   font-weight: bold;
-  background: #ec457f;
+  background: #ec7745;
   color: white;
 }
 

@@ -26,6 +26,13 @@ interface CardData {
 
 const cards: CardData[] = [
   {
+    color: CardType.Green,
+    link: "/access",
+    subTitle: "電車でのアクセス",
+    text: "羽沢横浜国大駅・三ッ沢上町駅・和田町駅からのアクセスについてご案内しています。",
+    title: "ACCESS",
+  },
+  {
     color: CardType.Yellow,
     link: "/events",
     subTitle: "企画一覧",

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 useHead({
-  title: "東京ホテイソン降臨！横浜ナショナルクラッシュ！",
+  title:
+    "東京ホテイソン降臨！横浜ナショナルクラッシュ！ | 23常盤祭公式HP~未来航路~ ",
   meta: [
     {
       name: "description",

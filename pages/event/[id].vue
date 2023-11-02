@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 import { placeToString } from "~/model/area";
+import BackToEvent from "~/components/BackToEvent.vue";
 
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
@@ -136,7 +137,7 @@ for (let i = 1; i <= event?.activity_images; i++) {
           {{ event?.website }}
         </a>
       </div>
-      <BackToHome />
+      <BackToEvent />
     </div>
   </div>
 </template>
@@ -149,7 +150,6 @@ for (let i = 1; i <= event?.activity_images; i++) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10em;
 }
 
 .page-content {

@@ -32,3 +32,5 @@ async function execUpdate() {
   }
   rankingData = resp;
 }
+
+execUpdate();

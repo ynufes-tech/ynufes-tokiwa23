@@ -217,8 +217,6 @@ const getArea = (area_id: string) => {
 
 .event-tag {
   width: fit-content;
-<<<<<<< HEAD
-=======
   margin-top: 1em;
   align-self: center;
 }
@@ -235,7 +233,6 @@ const getArea = (area_id: string) => {
   align-self: center;
   font-size: 1.2em;
   font-weight: bold;
->>>>>>> origin/main
 }
 
 .event-image {

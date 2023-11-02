@@ -35,9 +35,6 @@ const eventTagStyle = (genre: Genre) => {
         class="project-icon"
         @error="showNoImage"
       />
-      <div class="card-photo">
-        <img alt="anchor" class="anchor-icon" src="/images/card-icon.webp" />
-      </div>
       <div class="card-script">
         <p class="event-name">{{ props.eventData.e_name }}</p>
         <hr class="line" />
@@ -124,20 +121,30 @@ const eventTagStyle = (genre: Genre) => {
 
 .card-script {
   text-align: center;
-  width: 180px;
+  width: calc(100% - 90px);
   color: var(--thin-font-color);
   font-weight: bold;
   font-size: 14px;
 
   .event-name {
-    margin: 5px 0 0 0;
+    margin: 5px 5% 0 5%;
     height: 16px;
     font-size: 16px;
+    width: 90%;
+    max-lines: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .org-name {
-    margin: 5px;
+    margin: 5px 5%;
+    width: 90%;
     line-height: 1;
+    max-lines: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .genre {
@@ -156,9 +163,9 @@ const eventTagStyle = (genre: Genre) => {
 
   .line {
     width: 90%;
+    margin: 4px 5%;
     background-color: var(--thin-font-color);
     height: 1px;
-    margin: 4px;
     border: none;
   }
 }
@@ -167,19 +174,21 @@ const eventTagStyle = (genre: Genre) => {
   position: absolute;
   z-index: 4;
   bottom: 5px;
-  right: 15px;
+  right: 10px;
   display: flex;
   align-items: center;
 
   .message {
     font-size: 12px;
     margin: 0 0;
+    transform: translateX(7px);
     color: var(--thin-font-color);
   }
 
   .arrow {
     width: 16px;
     height: 12px;
+    transform: translateX(3px);
   }
 }
 </style>

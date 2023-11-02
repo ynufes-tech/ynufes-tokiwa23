@@ -10,18 +10,19 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Pagination } from "swiper/modules";
 import BreadCrumbsList from "~/components/BreadCrumbsList.vue";
+import { placeToString } from "~/model/area";
 
 const route = useRoute();
 const id = route.params.id; // idが数値でない場合はトップページにリダイレクト
 if (Number.isNaN(id)) {
-  await useRouter().push("/");
+  useRouter().push("/");
 }
 // fetch data from /api/events/:id
 const event = await useFetch(`/api/event/${id}`).then((res) => {
   return res.data.value as Event;
 });
 if (!event) {
-  await useRouter().push("/");
+  useRouter().push("/");
 }
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,
@@ -81,7 +82,16 @@ const getArea = (area_id: string) => {
     <PageTitle :title="event?.event_name ?? ''" />
     <div class="page-content">
       <bread-crumbs-list class="bread-crumbs" />
-      <div class="event-tag"></div>
+      <div class="event-tag">
+        <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
+      </div>
+      <p class="group-name" v-text="event?.org_name ?? ''" />
+      <p
+        class="place"
+        v-text="
+          '企画場所: ' + placeToString(event?.area) + event.place_name ?? ''
+        "
+      />
       <img
         :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
         class="event-image"
@@ -100,35 +110,38 @@ const getArea = (area_id: string) => {
         </div>
       </div>
       <p class="event-description" v-text="event?.event_description" />
-      <SectionTitle text="企画団体紹介" />
-      <h2 class="org-name">{{ event?.org_name }}</h2>
-      <div
-        v-if="event?.activity_images && event?.activity_images > 0"
-        class="activity-images"
-      >
-        <swiper
-          v-if="event?.activity_images > 1"
-          :autoplay="{
-            delay: 8000,
-            disableOnInteraction: false,
-          }"
-          :modules="[Pagination, Autoplay]"
-          :pagination="{
-            dynamicBullets: true,
-          }"
-          class="activity-images-swiper"
+      <div v-if="event?.org_description" class="org-description-sec">
+        <SectionTitle text="企画団体紹介" />
+        <h2 class="org-name">{{ event?.org_name }}</h2>
+        <p class="org-description" v-text="event?.org_description" />
+        <div
+          v-if="event?.activity_images && event?.activity_images > 0"
+          class="activity-images"
         >
-          <swiper-slide v-for="url in urls"><img :src="url" /></swiper-slide>
-        </swiper>
-        <img
-          v-if="event?.activity_images == 1"
-          :src="urls[0]"
-          alt=""
-          class="group-image"
-        />
-      </div>
-      <p class="org-description" v-text="event?.org_description" />
-      <div v-if="event?.x_id || event?.instagram_id || event?.facebook_id">
+          <swiper
+            v-if="event?.activity_images > 1"
+            :autoplay="{
+              delay: 8000,
+              disableOnInteraction: false,
+            }"
+            :modules="[Pagination, Autoplay]"
+            :pagination="{
+              dynamicBullets: true,
+            }"
+            class="activity-images-swiper"
+          >
+            <swiper-slide v-for="url in urls"><img :src="url" /></swiper-slide>
+          </swiper>
+          <img
+            v-if="event?.activity_images == 1"
+            :src="urls[0]"
+            alt=""
+            class="group-image"
+          />
+        </div>
+        <div
+          v-if="event?.x_id || event?.instagram_id || event?.facebook_id"
+        ></div>
         <SponsorsListTitle text="各種リンク" />
         <div class="link-icons">
           <a
@@ -169,6 +182,7 @@ const getArea = (area_id: string) => {
           {{ event?.website }}
         </a>
       </div>
+      <BackToHome />
     </div>
   </div>
 </template>
@@ -203,12 +217,31 @@ const getArea = (area_id: string) => {
 
 .event-tag {
   width: fit-content;
+<<<<<<< HEAD
+=======
+  margin-top: 1em;
+  align-self: center;
+}
+
+.group-name {
+  margin: 0.5em;
+  align-self: center;
+  font-size: 1.2em;
+  color: var(--thick-font-color);
+  font-weight: bold;
+}
+
+.place {
+  align-self: center;
+  font-size: 1.2em;
+  font-weight: bold;
+>>>>>>> origin/main
 }
 
 .event-image {
   aspect-ratio: 1;
   width: min(80svw, 300px);
-  margin-top: 2em;
+  margin-top: 1em;
   align-self: center;
 }
 
@@ -243,6 +276,11 @@ const getArea = (area_id: string) => {
   @include md {
     padding: 1em;
   }
+}
+
+.org-description-sec {
+  display: flex;
+  flex-direction: column;
 }
 
 .activity-images {
@@ -308,11 +346,7 @@ const getArea = (area_id: string) => {
     }
   }
 }
-.area,
-.genre {
-  display: flex;
-}
-.option-holder {
-  margin-top: 1em;
+.back-to-home {
+  margin: 2rem auto;
 }
 </style>

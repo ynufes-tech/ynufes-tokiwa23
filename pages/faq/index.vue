@@ -31,7 +31,7 @@ useHead({
         </div>
         <div class="faq-tab">
           <input id="faq-tabfour012" type="checkbox" name="tabs" />
-          <label for="faq-tabfour012">常磐祭期間中、生協や食堂は使える？</label>
+          <label for="faq-tabfour012">常盤祭期間中、生協や食堂は使える？</label>
           <div class="tab-content">
             <p>
               第1食堂･第2食堂･生協は全て終日営業しておりません。<br />なお第1食堂は飲食スペースとして開放しております。

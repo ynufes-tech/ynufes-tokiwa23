@@ -119,7 +119,11 @@ const changePlace = (id: number) => {
               夜空を華々しく飾る花火と、横国生バンドによる野外フェス！
               秋に咲く花火を眺めた後は、夜の野音で盛り上がろう！
             </p>
-            <p class="item-warning">※ 雨天時: 中止</p>
+            <p class="item-warning">
+              ※ 雨天時について<br />
+              花火大会～未来～:&nbsp;<u>中止</u><br />
+              ROCK IN TOKIWA FES.2023: 経営学部2号館109教室
+            </p>
           </div>
 
           <span class="item-end-time">20 : 00</span>
@@ -187,7 +191,7 @@ const changePlace = (id: number) => {
               なか卯でお笑いの話をするボケ・ショーゴさんと旅行に行った2日後に破局したツッコミ・たけるさんからなる超人気お笑いコンビ
               東京ホテイソンが横浜に降臨!!<br />抱腹絶倒の70分を見逃すな!!
             </p>
-            <p class="item-warning"></p>
+            <p class="item-warning">※ 事前予約制</p>
           </div>
 
           <span class="item-end-time">15 : 20</span>
@@ -202,6 +206,7 @@ const changePlace = (id: number) => {
             <p class="item-description">
               大人気声優の「梶裕貴」、「岡本信彦」が横国に登場！共演作も多く、プライベートでも仲が良いふたりはどんなトークを繰り広げる...!?<br />さらにオリジナルサイン色紙が当たる抽選会も!?
             </p>
+            <p class="item-warning">※ 事前予約制</p>
             <p class="item-warning">
               ※ライブビューイング会場が「経営学部1号館106教室」と「中央図書館メディアホール」にございます。
             </p>

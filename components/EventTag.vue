@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { Genre } from "~/model/genre";
 
 export type Props = {
@@ -38,15 +38,15 @@ const tagStyle = computed(() => {
 </script>
 
 <template>
-  <p class="event-tag" :style="tagStyle">{{ getTagInfo(props.eventType) }}</p>
+  <p :style="tagStyle" class="event-tag">{{ getTagInfo(props.eventType) }}</p>
 </template>
 
 <style scoped>
 .event-tag {
-  > p {
-    font-size: 1.2em;
-    line-height: 1.3em;
-    font-weight: 400;
-  }
+  line-height: 1.3em;
+  font-weight: 400;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.8em;
 }
 </style>

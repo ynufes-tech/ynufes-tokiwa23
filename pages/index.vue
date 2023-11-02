@@ -46,13 +46,13 @@ const cards: CardData[] = [
   //   text: "こちらでは大学祭実行委員会が企画した本部企画についての情報を記載しております。豪華な企画が盛りだくさんとなっております。ぜひご覧ください。",
   //   title: "SP",
   // },
-  // {
-  //   color: CardType.LightBlue,
-  //   link: "time-schedule",
-  //   subTitle: "タイムスケジュール",
-  //   text: "こちらでは本部企画のタイムスケジュールを掲載しております。日程、時間、場所が一目でわかる内容となっております。ご活用ください。",
-  //   title: "SCHEDULE",
-  // },
+  {
+    color: CardType.LightBlue,
+    link: "time-schedule",
+    subTitle: "タイムスケジュール",
+    text: "本部企画のタイムスケジュールを掲載しております。日程、時間、場所をまとめて掲載しています。",
+    title: "SCHEDULE",
+  },
   {
     color: CardType.Yellow,
     link: "map",
@@ -64,7 +64,7 @@ const cards: CardData[] = [
     color: CardType.Cyan,
     link: "pamphlet",
     subTitle: "パンフレット",
-    text: "常盤祭のパンフレットのダウンロードはこちらから！当日案内所でもパンフレットの配布をしております。ご活用ください！",
+    text: "常盤祭のパンフレットのダウンロードはこちらから！当日案内所でもパンフレットの配布をしております。",
     title: "PAMPHLET",
   },
   {
@@ -74,13 +74,13 @@ const cards: CardData[] = [
     text: "23常盤祭開催にあたり、多くの企業・団体の皆様からご協賛を頂きました。ご協賛頂きました皆様の一覧はこちら！",
     title: "SPONSORS",
   },
-  // {
-  //   color: CardType.LightBlue,
-  //   link: "faq",
-  //   subTitle: "よくある質問",
-  //   text: "こちらでは大学祭に関するよくある質問について掲載しております。大学祭当日のご来場に際してのご質問にお答えしております。ご参考ください。",
-  //   title: "FAQ",
-  // },
+  {
+    color: CardType.LightBlue,
+    link: "faq",
+    subTitle: "よくある質問",
+    text: "大学祭に関するよくある質問について掲載しております。",
+    title: "FAQ",
+  },
 ];
 </script>
 

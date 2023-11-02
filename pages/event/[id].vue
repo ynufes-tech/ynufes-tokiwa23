@@ -19,11 +19,13 @@ if (Number.isNaN(id)) {
   useRouter().push("/");
 }
 // fetch data from /api/events/:id
-const event = await useFetch(`/api/event/${id}`).then((res) => {
-  return res.data.value as Event;
-});
+const event = await useFetch(`/api/event/${id}`)
+  .then((res) => {
+    return res.data.value as Event;
+  })
+  .catch(() => null);
 if (!event) {
-  useRouter().push("/");
+  useRouter().push("/events");
 }
 useHead({
   title: `${event?.event_name ?? ""} | 23常盤祭公式HP~未来航路~`,
@@ -40,42 +42,12 @@ const urls: string[] = []; // swiperの複数の画像のURLを格納する配�
 for (let i = 1; i <= event?.activity_images; i++) {
   urls.push(
     "https://storage.googleapis.com/tokiwa23-assets/icons/" +
-      event.id +
+      event?.id +
       "-" +
       i,
   );
 }
-const area_id = event?.place_id ?? 0;
-
-const getArea = (area_id: string) => {
-  switch (area_id) {
-    case Area.A:
-      return "A";
-    case Area.B:
-      return "B";
-    case Area.C:
-      return "C";
-    case Area.D:
-      return "D";
-    case Area.E:
-      return "E";
-    case Area.F:
-      return "F";
-    case Area.Y:
-      return "Y";
-    case Area.BUSINESS:
-      return "経営";
-    case Area.CITY:
-      return "都市科学";
-    case Area.SCIENCE:
-      return "理工";
-    case Area.EDUCATION:
-      return "教育";
-    case Area.SPECIAL:
-      return "特別な場所";
-  }
-  return "";
-};
+const area_id = event?.area ?? 0;
 </script>
 
 <template>
@@ -89,27 +61,13 @@ const getArea = (area_id: string) => {
       <p class="group-name" v-text="event?.org_name ?? ''" />
       <p
         class="place"
-        v-text="
-          '企画場所: ' + placeToString(event?.area) + event.place_name ?? ''
-        "
+        v-text="'企画場所: ' + placeToString(area_id) + event?.place_name ?? ''"
       />
       <img
         :src="`https://storage.googleapis.com/tokiwa23-assets/icons/${id}`"
         class="event-image"
       />
       <SectionTitle text="企画説明" />
-      <div class="option-holder">
-        <div class="genre">
-          <p class="option-text">ジャンル：</p>
-          <EventTag :event-type="event?.event_genre ?? 0" class="EventTag" />
-        </div>
-        <div class="area">
-          <p class="option-text">企画場所：</p>
-          <div class="area-tag">
-            <p>{{ getArea(area_id) }} {{ event?.place_name }}</p>
-          </div>
-        </div>
-      </div>
       <p class="event-description" v-text="event?.event_description" />
       <div v-if="event?.org_description" class="org-description-sec">
         <SectionTitle text="企画団体紹介" />

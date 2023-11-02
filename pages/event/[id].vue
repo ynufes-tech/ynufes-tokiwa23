@@ -165,8 +165,10 @@ const getArea = (area_id: string) => {
           </a>
           <a
             v-if="event?.facebook_id"
-            :href="event.facebook_id"
+            :href="`https://instagram.com/${event.facebook_id}`"
             class="link-icon"
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <img alt="facebook" src="/images/icons/facebook-logo.webp" />
           </a>
@@ -343,6 +345,7 @@ const getArea = (area_id: string) => {
     }
   }
 }
+
 .back-to-home {
   margin: 2rem auto;
 }

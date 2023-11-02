@@ -25,12 +25,14 @@ export default defineEventHandler(async (event) => {
 });
 
 async function execUpdate() {
+  console.log("Fetching contest data");
   const resp = await $fetch(contest_url).catch(() => null);
   if (!resp) {
     console.error("Failed to fetch contest data");
     return;
   }
   rankingData = resp;
+  console.log("Contest data updated");
 }
 
 execUpdate();

@@ -78,7 +78,7 @@ html {
 }
 
 .inner-about-page {
-  width: min(1024px, 100svw);
+  width: min(1024px, 100vw);
   margin: 0 auto;
 }
 

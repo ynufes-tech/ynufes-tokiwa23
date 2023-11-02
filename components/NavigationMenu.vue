@@ -34,15 +34,12 @@ const toggle = () => {
             <NuxtLink to="/map" @click="toggle">マップ</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/pamphlet" @click="toggle"
-              >パンフレット
-            </NuxtLink>
+            <NuxtLink to="/pamphlet" @click="toggle">パンフレット </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/time-schedule" @click="toggle">タイムテーブル</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/sp" @click="toggle">本部企画一覧</NuxtLink>
+            <NuxtLink to="/time-schedule" @click="toggle"
+              >タイムテーブル</NuxtLink
+            >
           </li>
           <li>
             <NuxtLink to="/sponsors" @click="toggle"

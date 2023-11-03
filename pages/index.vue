@@ -26,6 +26,13 @@ interface CardData {
 
 const cards: CardData[] = [
   {
+    color: CardType.Green,
+    link: "/access",
+    subTitle: "電車でのアクセス",
+    text: "羽沢横浜国大駅・三ッ沢上町駅・和田町駅からのアクセスについてご案内しています。",
+    title: "ACCESS",
+  },
+  {
     color: CardType.Yellow,
     link: "/events",
     subTitle: "企画一覧",
@@ -136,6 +143,14 @@ gtag("event", "screen_view", {
           </NuxtLink>
           <NuxtLink to="/sp/comedian">
             <PreGuestEventButton text="芸人ゲスト企画詳細" />
+          </NuxtLink>
+        </div>
+      </div>
+      <div class="pre-guest-event">
+        <h1>企画コンテスト開催中!!</h1>
+        <div class="event-buttons-row">
+          <NuxtLink to="/sp/contest">
+            <PreGuestEventButton text="企画コンテスト詳細" />
           </NuxtLink>
         </div>
       </div>

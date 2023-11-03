@@ -2,7 +2,7 @@
 
 <template>
   <div class="back-to-home">
-    <NuxtLink to="/" class="back-to-home-button-border">
+    <NuxtLink to="/events" class="back-to-home-button-border">
       <div class="back-to-home-button">
         <div class="back-to-home-button-text">
           <p>企画一覧に戻る</p>

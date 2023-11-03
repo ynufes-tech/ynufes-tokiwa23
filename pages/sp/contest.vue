@@ -14,16 +14,18 @@ interface RankingData {
   UPDATED: string;
 }
 
-const rankingData = await useFetch("/api/contest").then((res) => {
-  if (
-    res.data.value.FOOD &&
-    res.data.value.EXHIBITION &&
-    res.data.value.PERFORMANCE
-  ) {
-    return res.data.value as RankingData;
-  }
-  return null;
-});
+const rankingData = await useFetch("/api/contest")
+  .then((res) => {
+    if (
+      res.data.value.FOOD &&
+      res.data.value.EXHIBITION &&
+      res.data.value.PERFORMANCE
+    ) {
+      return res.data.value as RankingData;
+    }
+    return null;
+  })
+  .catch(() => null);
 
 useHead({
   title: "企画コンテスト | 23常盤祭公式HP~未来航路~",

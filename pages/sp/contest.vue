@@ -3,6 +3,8 @@ interface RankingData {
   FOOD: number[];
   EXHIBITION: number[];
   PERFORMANCE: number[];
+  DRINK: number[];
+  VISUAL: number[];
 }
 
 // const rankingData = await useFetch("/api/contest").then((res) => {

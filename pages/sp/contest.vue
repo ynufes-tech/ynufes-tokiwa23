@@ -1,5 +1,9 @@
 <script lang="ts" setup>
 import ProjectCardCompact from "~/components/ProjectCardCompact.vue";
+import events from "~/assets/data/events.json";
+import type { EventSummary } from "~/model/event";
+
+// idに対応するcardを表示
 
 interface RankingData {
   FOOD: number[];
@@ -7,6 +11,10 @@ interface RankingData {
   PERFORMANCE: number[];
   DRINK: number[];
   VISUAL: number[];
+}
+
+const event = events.find((e) => e.id === ) as EventSummary =>{
+
 }
 
 const rankingData = await useFetch("/api/contest").then((res) => {
@@ -91,30 +99,7 @@ useHead({
                 }"
               />
             </td>
-            <td>
-              <ProjectCardCompact
-                :event-data="{
-                  id: 901,
-                  e_name: 'イベント名',
-                  e_genre: 2,
-                  o_name: '企画団体名',
-                  area: 2,
-                  p_name: '103',
-                }"
-              />
-            </td>
-            <td>
-              <ProjectCardCompact
-                :event-data="{
-                  id: 901,
-                  e_name: 'イベント名',
-                  e_genre: 2,
-                  o_name: '企画団体名',
-                  area: 2,
-                  p_name: '103',
-                }"
-              />
-            </td>
+            <td></td>
           </tr>
           <tr>
             <td>展示・物販</td>

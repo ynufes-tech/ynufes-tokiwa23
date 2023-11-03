@@ -41,7 +41,7 @@ async function execUpdate() {
   console.log("Contest data updated");
   console.log("resp.data", resp.data);
   console.log("rankingData", rankingData);
-  if (!rankingData.UPDATED) {
+  if (!resp.data.UPDATED) {
     rankingData = {
       message: "Contest data is not ready",
     };

@@ -92,8 +92,21 @@ function updateCountdown(elements: {
 .countdown-title {
   font-size: 35px;
   font-weight: bold;
-  padding: 15px 0 0 0;
+  padding: 30px 0 0 0;
   background-color: #8cb6de;
+  border-radius: 25px 25px 0 0;
+}
+.in-session {
+  font-size: 70px;
+  font-weight: bold;
+  padding: 40px 0 0 0;
+  border-radius: 25px 25px 0 0;
+}
+
+.finished{
+  font-size: 45px;
+  font-weight: bold;
+  padding: 50px 0 0 0;
   border-radius: 25px 25px 0 0;
 }
 

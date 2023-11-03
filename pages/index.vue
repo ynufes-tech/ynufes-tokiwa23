@@ -164,7 +164,7 @@ gtag("event", "screen_view", {
       </div>
       <!--      <PageTitle title="Service" />-->
       <div class="service-section home-column">
-        <Countdown />
+        <Countdown class="count-down"/>
         <HomeSNS />
       </div>
       <SponsorBannar />
@@ -280,17 +280,6 @@ gtag("event", "screen_view", {
   font-size: 3em;
 }
 
-#upcoming-notify {
-  margin: 0 auto;
-  padding: 0 1em 2em;
-  font-size: 1.5em;
-  line-height: 1.3;
-
-  span {
-    display: block;
-  }
-}
-
 .pre-guest-event {
   > h1 {
     text-align: center;
@@ -384,5 +373,10 @@ gtag("event", "screen_view", {
   //    transform: translateY(1em);
   //  }
   //}
+}
+@include md {
+.count-down{
+  display: none;
+}
 }
 </style>

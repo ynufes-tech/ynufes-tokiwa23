@@ -72,72 +72,62 @@ useHead({
         </ul>
         全企画が対象で見た目を観点に投票します。Xを用いて投票をお願いします。写真をたくさん撮ろう！
       </div>
-      <SponsorsListTitle text="結果発表" />
-      <div class="result-description">中間発表はこれから!!お楽しみに!!</div>
-      <div class="result-table-holder" v-if="rankingData">
-        <table class="result-table">
-          <tr>
-            <td>順位</td>
-            <td>第1位</td>
-            <td>第2位</td>
-            <td>第3位</td>
-          </tr>
-          <tr>
-            <td>飲食</td>
-            <td v-for="(e, index) in rankingData.FOOD" :key="index">
-              <ProjectCardCompact
-                :event-data="
-                  events.find((s: EventSummary) => s.id === e) ??
-                  new EventSummary()
-                "
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>展示・物販</td>
-            <td v-for="(e, index) in rankingData.EXHIBITION" :key="index">
-              <ProjectCardCompact
-                :event-data="
-                  events.find((s: EventSummary) => s.id === e) ??
-                  new EventSummary()
-                "
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>パフォーマンス</td>
-            <td v-for="(e, index) in rankingData.PERFORMANCE" :key="index">
-              <ProjectCardCompact
-                :event-data="
-                  events.find((s: EventSummary) => s.id === e) ??
-                  new EventSummary()
-                "
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>オリジナルドリンク</td>
-            <td v-for="(e, index) in rankingData.DRINK" :key="index">
-              <ProjectCardCompact
-                :event-data="
-                  events.find((s: EventSummary) => s.id === e) ??
-                  new EventSummary()
-                "
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>ビジュアル</td>
-            <td v-for="(e, index) in rankingData.VISUAL" :key="index">
-              <ProjectCardCompact
-                :event-data="
-                  events.find((s: EventSummary) => s.id === e) ??
-                  new EventSummary()
-                "
-              />
-            </td>
-          </tr>
-        </table>
+      <SponsorsListTitle text="中間結果発表" />
+      <div v-if="rankingData" class="result-table-section">
+        <h2>{{ rankingData.UPDATED }} 更新</h2>
+        <div class="result-table-holder">
+          <table class="result-table">
+            <tr>
+              <td>順位</td>
+              <td>第1位</td>
+              <td>第2位</td>
+              <td>第3位</td>
+            </tr>
+            <tr>
+              <td>飲食</td>
+              <td v-for="(e, index) in rankingData.FOOD" :key="index">
+                <ProjectCardCompact
+                  :event-data="events.find((s: EventSummary) => s.id === e)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>展示・物販</td>
+              <td v-for="(e, index) in rankingData.EXHIBITION" :key="index">
+                <ProjectCardCompact
+                  :event-data="events.find((s: EventSummary) => s.id === e)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>パフォーマンス</td>
+              <td v-for="(e, index) in rankingData.PERFORMANCE" :key="index">
+                <ProjectCardCompact
+                  :event-data="events.find((s: EventSummary) => s.id === e)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>オリジナルドリンク</td>
+              <td v-for="(e, index) in rankingData.DRINK" :key="index">
+                <ProjectCardCompact
+                  :event-data="events.find((s: EventSummary) => s.id === e)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>ビジュアル</td>
+              <td v-for="(e, index) in rankingData.VISUAL" :key="index">
+                <ProjectCardCompact
+                  :event-data="events.find((s: EventSummary) => s.id === e)"
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div v-else class="result-description">
+        中間発表はこれから!!お楽しみに!!
       </div>
     </div>
     <BackToHome />
@@ -209,8 +199,16 @@ useHead({
   text-align: center;
 }
 
+.result-table-section {
+  text-align: center;
+
+  > h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+  }
+}
+
 .result-table-holder {
-  padding: 2em 0;
   text-align: center;
   overflow-x: scroll;
 }

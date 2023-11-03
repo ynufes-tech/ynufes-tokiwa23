@@ -31,7 +31,7 @@ async function execUpdate() {
   const resp = await axios.get(contest_url).catch(() => null);
   if (!resp) {
     console.error("Failed to fetch contest data");
-    return;
+    return {};
   }
   rankingData = resp.data;
   console.log("Contest data updated");

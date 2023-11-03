@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import ProjectCardCompact from "~/components/ProjectCardCompact.vue";
 import events from "~/assets/data/events.json";
-import type { EventSummary } from "~/model/event";
+import type {EventSummary} from "~/model/event";
 
 // idに対応するcardを表示
 
@@ -14,15 +14,17 @@ interface RankingData {
   UPDATED: string;
 }
 
-const event = events.find((e) => e.id === ) as EventSummary =>{
+const event = events.find((e) => e.id ===) as EventSummary
+=>
+{
 
 }
 
 const rankingData = await useFetch("/api/contest").then((res) => {
   if (
-    res.data.value.FOOD &&
-    res.data.value.EXHIBITION &&
-    res.data.value.PERFORMANCE
+      res.data.value.FOOD &&
+      res.data.value.EXHIBITION &&
+      res.data.value.PERFORMANCE
   ) {
     return res.data.value as RankingData;
   }
@@ -35,7 +37,7 @@ useHead({
     {
       name: "description",
       content:
-        "全参加企画の頂点、今年も決めます!!企画部門別/オリジナルドリンク/ビジュアルの3部門で競います!!ぜひ投票しにお越し下さい!!",
+          "全参加企画の頂点、今年も決めます!!企画部門別/オリジナルドリンク/ビジュアルの3部門で競います!!ぜひ投票しにお越し下さい!!",
     },
   ],
 });
@@ -78,7 +80,7 @@ useHead({
       </div>
       <SponsorsListTitle text="結果発表" />
       <div class="result-description">中間発表はこれから!!お楽しみに!!</div>
-      <div class="result-table-holder">
+      <div class="result-table-holder" v-if="rankingData">
         <table class="result-table">
           <tr>
             <td>順位</td>
@@ -88,19 +90,11 @@ useHead({
           </tr>
           <tr>
             <td>飲食</td>
-            <td>
+            <td v-for="(e, index) in rankingData.FOOD" :key="index">
               <ProjectCardCompact
-                :event-data="{
-                  id: 901,
-                  e_name: 'イベント名',
-                  e_genre: 2,
-                  o_name: '企画団体名',
-                  area: 2,
-                  p_name: '103',
-                }"
+                :event-data="events.find((s: EventSummary) => s.id === e)"
               />
             </td>
-            <td></td>
           </tr>
           <tr>
             <td>展示・物販</td>

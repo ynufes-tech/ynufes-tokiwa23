@@ -17,7 +17,9 @@ export default defineEventHandler(async (event) => {
   if (!rankingData) {
     await execUpdate();
     updatedTime = timeNow;
-    return rankingData;
+    return {
+      message: "Contest data is not ready",
+    };
   }
   if (timeNow - updatedTime > 1000 * 60) {
     updatedTime = timeNow;
@@ -32,10 +34,20 @@ async function execUpdate() {
   const resp = await axios.get(contest_url).catch(() => null);
   if (!resp) {
     console.error("Failed to fetch contest data");
-    return {};
+    return {
+      message: "Contest data is not ready",
+    };
   }
-  rankingData = resp.data;
   console.log("Contest data updated");
+  console.log("resp.data", resp.data);
+  console.log("rankingData", rankingData);
+  if (!rankingData.UPDATED) {
+    rankingData = {
+      message: "Contest data is not ready",
+    };
+  } else {
+    rankingData = resp.data;
+  }
 }
 
 execUpdate();

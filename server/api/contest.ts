@@ -28,6 +28,7 @@ export default defineEventHandler(async (event) => {
 
 async function execUpdate() {
   console.log("Fetching contest data");
+  console.log(contest_url);
   const resp = await axios.get(contest_url).catch(() => null);
   if (!resp) {
     console.error("Failed to fetch contest data");

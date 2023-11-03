@@ -71,235 +71,239 @@ gtag("event", "screen_view", {
 </script>
 
 <template>
-  <div class="events">
+  <div class="page-root">
     <PageTitle title="EVENTS" />
-    <BreadCrumbsList />
-    <SectionTitle text="企画団体" />
-    <div class="card-wrapper-background">
-      <div class="filter">
-        <div id="filter-row">
-          <div
-            id="f-place"
-            :class="{ selected: showFilterPlace }"
-            @click="toggleFilterPlace"
-          >
-            場所
-          </div>
-          <div
-            id="f-genre"
-            @click="toggleFilterGenre"
-            :class="{ selected: showFilterGenre }"
-          >
-            ジャンル
-          </div>
-        </div>
-        <div class="menu menu-p" v-show="showFilterPlace">
-          <div>
-            <div class="outside frame">
-              <p>屋外エリア</p>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-A"
-                  v-model="placeSelections[Area.A]"
-                />
-                <label for="f-A">エリアA</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-B"
-                  v-model="placeSelections[Area.B]"
-                />
-                <label for="f-B">エリアB</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-C"
-                  v-model="placeSelections[Area.C]"
-                />
-                <label for="f-C">エリアC</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-D"
-                  v-model="placeSelections[Area.D]"
-                />
-                <label for="f-D">エリアD</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-E"
-                  v-model="placeSelections[Area.E]"
-                />
-                <label for="f-E">エリアE</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-F"
-                  v-model="placeSelections[Area.F]"
-                />
-                <label for="f-F">エリアF</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-Y"
-                  v-model="placeSelections[Area.Y]"
-                />
-                <label for="f-Y">エリアY</label>
-              </div>
+    <div class="inner-events">
+      <BreadCrumbsList />
+      <SectionTitle text="企画団体" />
+      <div class="card-wrapper-background">
+        <div class="filter">
+          <div id="filter-row">
+            <div
+              id="f-place"
+              :class="{ selected: showFilterPlace }"
+              @click="toggleFilterPlace"
+            >
+              場所
+            </div>
+            <div
+              id="f-genre"
+              @click="toggleFilterGenre"
+              :class="{ selected: showFilterGenre }"
+            >
+              ジャンル
             </div>
           </div>
-          <div>
-            <div class="building frame">
-              <p>講義棟</p>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-BUSINESS"
-                  v-model="placeSelections[Area.BUSINESS]"
-                />
-                <label for="f-BUSINESS">経済経営学部</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-CITY"
-                  v-model="placeSelections[Area.CITY]"
-                />
-                <label for="f-CITY">都市科学部</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-SCIENCE"
-                  v-model="placeSelections[Area.SCIENCE]"
-                />
-                <label for="f-SCIENCE">理工学部</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  id="f-EDUCATION"
-                  v-model="placeSelections[Area.EDUCATION]"
-                />
-                <label for="f-EDUCATION">教育学部</label>
+          <div class="menu menu-p" v-show="showFilterPlace">
+            <div>
+              <div class="outside frame">
+                <p>屋外エリア</p>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-A"
+                    v-model="placeSelections[Area.A]"
+                  />
+                  <label for="f-A">エリアA</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-B"
+                    v-model="placeSelections[Area.B]"
+                  />
+                  <label for="f-B">エリアB</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-C"
+                    v-model="placeSelections[Area.C]"
+                  />
+                  <label for="f-C">エリアC</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-D"
+                    v-model="placeSelections[Area.D]"
+                  />
+                  <label for="f-D">エリアD</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-E"
+                    v-model="placeSelections[Area.E]"
+                  />
+                  <label for="f-E">エリアE</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-F"
+                    v-model="placeSelections[Area.F]"
+                  />
+                  <label for="f-F">エリアF</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-Y"
+                    v-model="placeSelections[Area.Y]"
+                  />
+                  <label for="f-Y">エリアY</label>
+                </div>
               </div>
             </div>
-            <div class="checkbox-special">
+            <div>
+              <div class="building frame">
+                <p>講義棟</p>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-BUSINESS"
+                    v-model="placeSelections[Area.BUSINESS]"
+                  />
+                  <label for="f-BUSINESS">経済経営学部</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-CITY"
+                    v-model="placeSelections[Area.CITY]"
+                  />
+                  <label for="f-CITY">都市科学部</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-SCIENCE"
+                    v-model="placeSelections[Area.SCIENCE]"
+                  />
+                  <label for="f-SCIENCE">理工学部</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="f-EDUCATION"
+                    v-model="placeSelections[Area.EDUCATION]"
+                  />
+                  <label for="f-EDUCATION">教育学部</label>
+                </div>
+              </div>
+              <div class="checkbox-special">
+                <input
+                  type="checkbox"
+                  id="f-SPECIAL"
+                  v-model="placeSelections[Area.SPECIAL]"
+                />
+                <label for="f-SPECIAL">特別な場所</label>
+              </div>
+              <NuxtLink class="map-link"
+                >各エリア・場所<br />について👉</NuxtLink
+              >
+            </div>
+          </div>
+          <div class="menu menu-g" v-show="showFilterGenre">
+            <div id="selection-exhibition">
               <input
+                id="event_genre-1"
                 type="checkbox"
-                id="f-SPECIAL"
-                v-model="placeSelections[Area.SPECIAL]"
+                v-model="genreSelections[Genre.EXHIBITION]"
               />
-              <label for="f-SPECIAL">特別な場所</label>
+              <label class="c-form-input" for="event_genre-1"
+                >展示・体験・販売</label
+              >
             </div>
-            <NuxtLink class="map-link">各エリア・場所<br />について👉</NuxtLink>
-          </div>
-        </div>
-        <div class="menu menu-g" v-show="showFilterGenre">
-          <div id="selection-exhibition">
-            <input
-              id="event_genre-1"
-              type="checkbox"
-              v-model="genreSelections[Genre.EXHIBITION]"
-            />
-            <label class="c-form-input" for="event_genre-1"
-              >展示・体験・販売</label
-            >
-          </div>
-          <div id="selection-performance">
-            <input
-              id="event_genre-2"
-              type="checkbox"
-              v-model="genreSelections[Genre.PERFORMANCE]"
-            />
-            <label class="c-form-input" for="event_genre-2"
-              >パフォーマンス</label
-            >
-          </div>
-          <div id="selection-food">
-            <input
-              id="event_genre-3"
-              type="checkbox"
-              v-model="genreSelections[Genre.FOOD]"
-            />
-            <label class="c-form-input" for="event_genre-3">食事 </label>
-          </div>
-        </div>
-        <div class="order-adjust-row">
-          <div>
-            <button
-              id="grid"
-              @click="isGridView = true"
-              :class="{
-                active: isGridView,
-              }"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+            <div id="selection-performance">
+              <input
+                id="event_genre-2"
+                type="checkbox"
+                v-model="genreSelections[Genre.PERFORMANCE]"
+              />
+              <label class="c-form-input" for="event_genre-2"
+                >パフォーマンス</label
               >
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-              </svg>
-              <span>Grid</span>
-            </button>
-            <button
-              id="list"
-              :class="{
-                active: !isGridView,
-              }"
-              @click="isGridView = false"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <line x1="8" y1="6" x2="21" y2="6"></line>
-                <line x1="8" y1="12" x2="21" y2="12"></line>
-                <line x1="8" y1="18" x2="21" y2="18"></line>
-                <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                <line x1="3" y1="18" x2="3.01" y2="18"></line>
-              </svg>
-              <span>List</span>
-            </button>
+            </div>
+            <div id="selection-food">
+              <input
+                id="event_genre-3"
+                type="checkbox"
+                v-model="genreSelections[Genre.FOOD]"
+              />
+              <label class="c-form-input" for="event_genre-3">食事 </label>
+            </div>
           </div>
-          <!--          Toggle button for switching list view and item view-->
+          <div class="order-adjust-row">
+            <div>
+              <button
+                id="grid"
+                @click="isGridView = true"
+                :class="{
+                  active: isGridView,
+                }"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Grid</span>
+              </button>
+              <button
+                id="list"
+                :class="{
+                  active: !isGridView,
+                }"
+                @click="isGridView = false"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+                <span>List</span>
+              </button>
+            </div>
+            <!--          Toggle button for switching list view and item view-->
+          </div>
         </div>
-      </div>
-      <div class="card-wrapper">
-        <NuxtLink
-          v-for="event in filterEvents"
-          :key="event.id"
-          :to="`/event/${event.id}`"
-          class="card"
-        >
-          <ProjectCard v-if="isGridView" :event-data="event" />
-          <ProjectCardCompact v-else :event-data="event" />
-        </NuxtLink>
+        <div class="card-wrapper">
+          <NuxtLink
+            v-for="event in filterEvents"
+            :key="event.id"
+            :to="`/event/${event.id}`"
+            class="card"
+          >
+            <ProjectCard v-if="isGridView" :event-data="event" />
+            <ProjectCardCompact v-else :event-data="event" />
+          </NuxtLink>
+        </div>
       </div>
     </div>
     <BackToHome />
@@ -308,11 +312,21 @@ gtag("event", "screen_view", {
 
 <style lang="scss" scoped>
 @use "assets/scss/_breakpoint.scss" as *;
-
+.page-root {
+  display: flex;
+  flex-direction: column;
+}
 .section-title {
   max-width: 1024px;
   margin: 0 auto;
 }
+.inner-events {
+  max-width: 1024px;
+  align-self: center;
+}
+// .bread-crumbs-list {
+//   max-width: 1024px;
+// }
 
 .filter {
   max-width: 500px;

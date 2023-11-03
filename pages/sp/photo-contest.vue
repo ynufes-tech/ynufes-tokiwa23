@@ -15,8 +15,8 @@ useHead({
 const { gtag } = useGtag();
 
 gtag("event", "screen_view", {
-    app_name: useRuntimeConfig().public.app_name,
-    screen_name: "PhotoContest
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "PhotoContest",
 });
 </script>
 

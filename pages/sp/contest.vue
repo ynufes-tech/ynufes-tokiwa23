@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import ProjectCardCompact from "~/components/ProjectCardCompact.vue";
 import events from "~/assets/data/events.json";
-import type {EventSummary} from "~/model/event";
+import type { EventSummary } from "~/model/event";
 
 // idに対応するcardを表示
 
@@ -14,17 +14,11 @@ interface RankingData {
   UPDATED: string;
 }
 
-const event = events.find((e) => e.id ===) as EventSummary
-=>
-{
-
-}
-
 const rankingData = await useFetch("/api/contest").then((res) => {
   if (
-      res.data.value.FOOD &&
-      res.data.value.EXHIBITION &&
-      res.data.value.PERFORMANCE
+    res.data.value.FOOD &&
+    res.data.value.EXHIBITION &&
+    res.data.value.PERFORMANCE
   ) {
     return res.data.value as RankingData;
   }
@@ -37,7 +31,7 @@ useHead({
     {
       name: "description",
       content:
-          "全参加企画の頂点、今年も決めます!!企画部門別/オリジナルドリンク/ビジュアルの3部門で競います!!ぜひ投票しにお越し下さい!!",
+        "全参加企画の頂点、今年も決めます!!企画部門別/オリジナルドリンク/ビジュアルの3部門で競います!!ぜひ投票しにお越し下さい!!",
     },
   ],
 });
@@ -92,7 +86,9 @@ useHead({
             <td>飲食</td>
             <td v-for="(e, index) in rankingData.FOOD" :key="index">
               <ProjectCardCompact
-                :event-data="events.find((s: EventSummary) => s.id === e)"
+                :event-data="
+                  events.find((s: EventSummary) => s.id == e) as EventSummary
+                "
               />
             </td>
           </tr>

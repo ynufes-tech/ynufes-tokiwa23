@@ -173,8 +173,18 @@ gtag("event", "screen_view", {
       <!--        <span>常盤祭に関する最新情報は</span><span>随時公開されていきます</span>-->
       <!--      </p>-->
       <div class="home-cards">
-        <NuxtLink v-for="(card, index) in cards" :key="index" :to="card.link" class="card-link">
-          <TopCard :color="card.color" :subTitle="card.subTitle" :text="card.text" :title="card.title" />
+        <NuxtLink
+          v-for="(card, index) in cards"
+          :key="index"
+          :to="card.link"
+          class="card-link"
+        >
+          <TopCard
+            :color="card.color"
+            :subTitle="card.subTitle"
+            :text="card.text"
+            :title="card.title"
+          />
         </NuxtLink>
       </div>
     </div>
@@ -271,7 +281,7 @@ gtag("event", "screen_view", {
 }
 
 .pre-guest-event {
-  >h1 {
+  > h1 {
     text-align: center;
     padding-top: 1em;
     font-size: 2em;
@@ -284,7 +294,7 @@ gtag("event", "screen_view", {
     width: fit-content;
     text-decoration: none;
 
-    >a {
+    > a {
       text-decoration: none;
       color: #8cb6de;
       padding: 0 1em;
@@ -302,7 +312,7 @@ gtag("event", "screen_view", {
       flex-direction: column;
       margin: 0.7rem auto 0;
 
-      >a {
+      > a {
         margin-bottom: 1em;
       }
     }

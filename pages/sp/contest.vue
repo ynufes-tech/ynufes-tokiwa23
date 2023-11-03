@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import ProjectCardCompact from "~/components/ProjectCardCompact.vue";
+
 interface RankingData {
   FOOD: number[];
   EXHIBITION: number[];
@@ -7,16 +9,16 @@ interface RankingData {
   VISUAL: number[];
 }
 
-// const rankingData = await useFetch("/api/contest").then((res) => {
-//   if (
-//     res.data.value.FOOD &&
-//     res.data.value.EXHIBITION &&
-//     res.data.value.PERFORMANCE
-//   ) {
-//     return res.data.value as RankingData;
-//   }
-//   return null;
-// });
+const rankingData = await useFetch("/api/contest").then((res) => {
+  if (
+    res.data.value.FOOD &&
+    res.data.value.EXHIBITION &&
+    res.data.value.PERFORMANCE
+  ) {
+    return res.data.value as RankingData;
+  }
+  return null;
+});
 
 useHead({
   title: "企画コンテスト | 23常盤祭公式HP~未来航路~",
@@ -65,28 +67,73 @@ useHead({
         </ul>
         全企画が対象で見た目を観点に投票します。Xを用いて投票をお願いします。写真をたくさん撮ろう！
       </div>
-      <SectionTitle text="結果発表" />
+      <SponsorsListTitle text="結果発表" />
       <div class="result-description">中間発表はこれから!!お楽しみに!!</div>
-      <!--      <table class="result-table">-->
-      <!--        <tr>-->
-      <!--          <td>順位</td>-->
-      <!--          <td>飲食部門</td>-->
-      <!--          <td></td>-->
-      <!--          <td>縦方向のセルの並び</td>-->
-      <!--        </tr>-->
-      <!--        <tr>-->
-      <!--          <td>第1位</td>-->
-      <!--          <td>意味</td>-->
-      <!--        </tr>-->
-      <!--        <tr>-->
-      <!--          <td>第2位</td>-->
-      <!--          <td>表の中の１つ１つの項目</td>-->
-      <!--        </tr>-->
-      <!--        <tr>-->
-      <!--          <td>第3位</td>-->
-      <!--          <td>横方向のセルの並び</td>-->
-      <!--        </tr>-->
-      <!--      </table>-->
+      <div class="result-table-holder">
+        <table class="result-table">
+          <tr>
+            <td>順位</td>
+            <td>第1位</td>
+            <td>第2位</td>
+            <td>第3位</td>
+          </tr>
+          <tr>
+            <td>飲食</td>
+            <td>
+              <ProjectCardCompact
+                :event-data="{
+                  id: 901,
+                  e_name: 'イベント名',
+                  e_genre: 2,
+                  o_name: '企画団体名',
+                  area: 2,
+                  p_name: '103',
+                }"
+              />
+            </td>
+            <td>
+              <ProjectCardCompact
+                :event-data="{
+                  id: 901,
+                  e_name: 'イベント名',
+                  e_genre: 2,
+                  o_name: '企画団体名',
+                  area: 2,
+                  p_name: '103',
+                }"
+              />
+            </td>
+            <td>
+              <ProjectCardCompact
+                :event-data="{
+                  id: 901,
+                  e_name: 'イベント名',
+                  e_genre: 2,
+                  o_name: '企画団体名',
+                  area: 2,
+                  p_name: '103',
+                }"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>展示・物販</td>
+            <td>表の中の１つ１つの項目</td>
+          </tr>
+          <tr>
+            <td>パフォーマンス</td>
+            <td>横方向のセルの並び</td>
+          </tr>
+          <tr>
+            <td>オリジナルドリンク</td>
+            <td>表の中の１つ１つの項目</td>
+          </tr>
+          <tr>
+            <td>ビジュアル</td>
+            <td>表の中の１つ１つの項目</td>
+          </tr>
+        </table>
+      </div>
     </div>
     <BackToHome />
   </div>
@@ -152,21 +199,36 @@ useHead({
   }
 }
 
-.section-title {
-  align-self: center;
-  width: 500px !important;
-  font-size: 2em !important;
-  @include md {
-    align-self: flex-start;
-  }
-}
-
 .result-description {
   font-size: 1.3em;
   text-align: center;
 }
 
-.result-table {
+.result-table-holder {
+  padding: 2em 0;
+  text-align: center;
+  overflow-x: scroll;
+}
+
+tr {
+  td {
+    padding: 0.5em 1.5em 1.5em 0.5em;
+    border: 2px solid var(--thick-font-color);
+
+    &:first-child {
+      padding: 0;
+      vertical-align: middle;
+      min-width: 10em;
+    }
+  }
+
+  &:first-child {
+    td {
+      padding: 0;
+      vertical-align: middle;
+      line-height: 2em;
+    }
+  }
 }
 
 .back-button {

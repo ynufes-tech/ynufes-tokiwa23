@@ -95,41 +95,51 @@ gtag("event", "screen_view", {
             <tr>
               <td>飲食</td>
               <td v-for="(e, index) in rankingData.FOOD" :key="index">
-                <ProjectCardCompact
-                  :event-data="events.find((s: EventSummary) => s.id === e)"
-                />
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
               </td>
             </tr>
             <tr>
               <td>展示・物販</td>
               <td v-for="(e, index) in rankingData.EXHIBITION" :key="index">
-                <ProjectCardCompact
-                  :event-data="events.find((s: EventSummary) => s.id === e)"
-                />
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
               </td>
             </tr>
             <tr>
               <td>パフォーマンス</td>
               <td v-for="(e, index) in rankingData.PERFORMANCE" :key="index">
-                <ProjectCardCompact
-                  :event-data="events.find((s: EventSummary) => s.id === e)"
-                />
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
               </td>
             </tr>
             <tr>
               <td>オリジナルドリンク</td>
               <td v-for="(e, index) in rankingData.DRINK" :key="index">
-                <ProjectCardCompact
-                  :event-data="events.find((s: EventSummary) => s.id === e)"
-                />
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
               </td>
             </tr>
             <tr>
               <td>ビジュアル</td>
               <td v-for="(e, index) in rankingData.VISUAL" :key="index">
-                <ProjectCardCompact
-                  :event-data="events.find((s: EventSummary) => s.id === e)"
-                />
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
               </td>
             </tr>
           </table>

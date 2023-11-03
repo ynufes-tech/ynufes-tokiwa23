@@ -5,6 +5,7 @@ interface RankingData {
   PERFORMANCE: number[];
   DRINK: number[];
   VISUAL: number[];
+  UPDATED: string;
 }
 
 // const rankingData = await useFetch("/api/contest").then((res) => {

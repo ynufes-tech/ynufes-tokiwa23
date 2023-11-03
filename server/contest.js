@@ -58,6 +58,7 @@ function doGet(e) {
     PERFORMANCE: C,
     DRINK: D,
     VISUAL: E,
+    UPDATED: sheet[7][1],
   });
 }
 

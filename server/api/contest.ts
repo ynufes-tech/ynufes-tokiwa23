@@ -1,3 +1,5 @@
+import axios from "axios";
+
 let rankingData: any = null;
 
 let updatedTime = 0;
@@ -26,12 +28,12 @@ export default defineEventHandler(async (event) => {
 
 async function execUpdate() {
   console.log("Fetching contest data");
-  const resp = await $fetch(contest_url).catch(() => null);
+  const resp = await axios.get(contest_url).catch(() => null);
   if (!resp) {
     console.error("Failed to fetch contest data");
-    return;
+    return {};
   }
-  rankingData = resp;
+  rankingData = resp.data;
   console.log("Contest data updated");
 }
 

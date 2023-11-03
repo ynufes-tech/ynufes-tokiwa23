@@ -3,14 +3,17 @@ import { Genre, genreToString, getTagColor } from "~/model/genre";
 import { Area, placeToString } from "~/model/area";
 
 const props = defineProps<{
-  eventData: {
-    id: number;
-    e_name: string;
-    e_genre: Genre;
-    o_name: string;
-    area: Area;
-    p_name: string;
-  };
+  eventData:
+    | {
+        id: number;
+        e_name: string;
+        e_genre: Genre;
+        o_name: string;
+        area: Area;
+        p_name: string;
+      }
+    | null
+    | undefined;
 }>();
 const showNoImage = function (e: any) {
   e.target.src =
@@ -27,7 +30,7 @@ const eventTagStyle = (genre: Genre) => {
 </script>
 
 <template>
-  <div class="project-card">
+  <div class="project-card" v-if="props.eventData">
     <div class="incline-card">
       <img
         :src="iconURL"
@@ -39,7 +42,7 @@ const eventTagStyle = (genre: Genre) => {
         <p class="event-name">{{ props.eventData.e_name }}</p>
         <hr class="line" />
         <p class="org-name">{{ props.eventData.o_name }}</p>
-        <p class="genre" :style="eventTagStyle(props.eventData.e_genre)">
+        <p :style="eventTagStyle(props.eventData.e_genre)" class="genre">
           {{ genreToString(props.eventData.e_genre) }}
         </p>
         <p class="place">

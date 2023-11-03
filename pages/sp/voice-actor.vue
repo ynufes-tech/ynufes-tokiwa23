@@ -224,11 +224,16 @@ gtag("event", "screen_view", {
   height: 10vh;
 }
 .back-button {
+  display: block;
   align-self: center;
   justify-self: center;
   text-align: center;
   margin: 1em auto;
   text-decoration: unset;
   text-align: center;
+
+  .dark-button {
+    margin: 0 auto;
+  }
 }
 </style>

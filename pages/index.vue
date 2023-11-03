@@ -89,6 +89,13 @@ const cards: CardData[] = [
     title: "FAQ",
   },
 ];
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "TOP",
+});
 </script>
 
 <template>

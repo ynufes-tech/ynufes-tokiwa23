@@ -48,6 +48,13 @@ for (let i = 1; i <= event?.activity_images; i++) {
   );
 }
 const area_id = event?.area ?? 0;
+
+const { gtag } = useGtag();
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name:
+    "EventDetail - " + event?.id ?? "" + " - " + event?.event_name ?? "",
+});
 </script>
 
 <template>

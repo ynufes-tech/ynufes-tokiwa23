@@ -15,6 +15,13 @@ useHead({
 definePageMeta({
   layout: "voice-actor",
 });
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "VoiceActor",
+});
 </script>
 
 <template>
@@ -93,8 +100,8 @@ definePageMeta({
       />
     </div>
     <NuxtLink to="/" class="back-button">
-        <DarkButton text="⇐ ホームに戻る" />
-      </NuxtLink>
+      <DarkButton text="⇐ ホームに戻る" />
+    </NuxtLink>
     <div class="spacer"></div>
   </div>
 </template>
@@ -222,6 +229,6 @@ definePageMeta({
   text-align: center;
   margin: 1em auto;
   text-decoration: unset;
-  text-align:center;
+  text-align: center;
 }
 </style>

@@ -5,6 +5,13 @@ useHead({
   title: "FAQ | 23常盤祭公式HP~未来航路~",
   meta: [{ name: "description", content: "23常盤祭のFAQページです" }],
 });
+
+const { gtag } = useGtag();
+
+gtag("event", "screen_view", {
+  app_name: useRuntimeConfig().public.app_name,
+  screen_name: "FAQ",
+});
 </script>
 
 <template>

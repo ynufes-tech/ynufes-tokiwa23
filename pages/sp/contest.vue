@@ -87,26 +87,55 @@ useHead({
             <td v-for="(e, index) in rankingData.FOOD" :key="index">
               <ProjectCardCompact
                 :event-data="
-                  events.find((s: EventSummary) => s.id == e) as EventSummary
+                  events.find((s: EventSummary) => s.id === e) ??
+                  new EventSummary()
                 "
               />
             </td>
           </tr>
           <tr>
             <td>展示・物販</td>
-            <td>表の中の１つ１つの項目</td>
+            <td v-for="(e, index) in rankingData.EXHIBITION" :key="index">
+              <ProjectCardCompact
+                :event-data="
+                  events.find((s: EventSummary) => s.id === e) ??
+                  new EventSummary()
+                "
+              />
+            </td>
           </tr>
           <tr>
             <td>パフォーマンス</td>
-            <td>横方向のセルの並び</td>
+            <td v-for="(e, index) in rankingData.PERFORMANCE" :key="index">
+              <ProjectCardCompact
+                :event-data="
+                  events.find((s: EventSummary) => s.id === e) ??
+                  new EventSummary()
+                "
+              />
+            </td>
           </tr>
           <tr>
             <td>オリジナルドリンク</td>
-            <td>表の中の１つ１つの項目</td>
+            <td v-for="(e, index) in rankingData.DRINK" :key="index">
+              <ProjectCardCompact
+                :event-data="
+                  events.find((s: EventSummary) => s.id === e) ??
+                  new EventSummary()
+                "
+              />
+            </td>
           </tr>
           <tr>
             <td>ビジュアル</td>
-            <td>表の中の１つ１つの項目</td>
+            <td v-for="(e, index) in rankingData.VISUAL" :key="index">
+              <ProjectCardCompact
+                :event-data="
+                  events.find((s: EventSummary) => s.id === e) ??
+                  new EventSummary()
+                "
+              />
+            </td>
           </tr>
         </table>
       </div>

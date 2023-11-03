@@ -96,6 +96,7 @@ function updateCountdown(elements: {
   background-color: #8cb6de;
   border-radius: 25px 25px 0 0;
 }
+
 .in-session {
   font-size: 70px;
   font-weight: bold;
@@ -103,7 +104,7 @@ function updateCountdown(elements: {
   border-radius: 25px 25px 0 0;
 }
 
-.finished{
+.finished {
   font-size: 45px;
   font-weight: bold;
   padding: 50px 0 0 0;

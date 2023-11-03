@@ -98,10 +98,10 @@ const area_id = event?.area ?? 0;
             class="group-image"
           />
         </div>
-        <div
+        <SponsorsListTitle
+          text="各種リンク"
           v-if="event?.x_id || event?.instagram_id || event?.facebook_id"
-        ></div>
-        <SponsorsListTitle text="各種リンク" />
+        />
         <div class="link-icons">
           <a
             v-if="event?.x_id"

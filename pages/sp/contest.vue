@@ -14,18 +14,27 @@ interface RankingData {
   UPDATED: string;
 }
 
-const rankingData = await useFetch("/api/contest")
-  .then((res) => {
-    if (
-      res.data.value.FOOD &&
-      res.data.value.EXHIBITION &&
-      res.data.value.PERFORMANCE
-    ) {
-      return res.data.value as RankingData;
-    }
-    return null;
-  })
-  .catch(() => null);
+// const rankingData = await useFetch("/api/contest")
+//   .then((res) => {
+//     if (
+//       res.data.value.FOOD &&
+//       res.data.value.EXHIBITION &&
+//       res.data.value.PERFORMANCE
+//     ) {
+//       return res.data.value as RankingData;
+//     }
+//     return null;
+//   })
+//   .catch(() => null);
+
+const rankingData = {
+  FOOD: [113, 42, 97],
+  EXHIBITION: [83, 91, 45],
+  PERFORMANCE: [102, 10, 101],
+  DRINK: [29, 4, 12],
+  VISUAL: [49],
+  UPDATED: "11月4日(土)午前9時更新",
+} as RankingData;
 
 useHead({
   title: "企画コンテスト | 23常盤祭公式HP~未来航路~",

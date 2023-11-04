@@ -28,12 +28,12 @@ interface RankingData {
 //   .catch(() => null);
 
 const rankingData = {
-  FOOD: [113, 42, 97],
-  EXHIBITION: [83, 91, 45],
-  PERFORMANCE: [102, 10, 101],
-  DRINK: [29, 4, 12],
-  VISUAL: [49],
-  UPDATED: "11月4日(土)午前9時更新",
+  FOOD: [113, 42, 39],
+  EXHIBITION: [83, 45, 34],
+  PERFORMANCE: [102, 101, 10],
+  DRINK: [49, 4, 109],
+  VISUAL: [49, 45, 12],
+  UPDATED: "11月5日(日)午前9時",
 } as RankingData;
 
 useHead({

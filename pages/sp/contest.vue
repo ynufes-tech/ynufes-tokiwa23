@@ -239,6 +239,11 @@ gtag("event", "screen_view", {
 .result-table-holder {
   text-align: center;
   overflow-x: scroll;
+
+  a {
+    text-decoration: none;
+    color: unset;
+  }
 }
 
 tr {

@@ -28,13 +28,13 @@ interface RankingData {
 //   .catch(() => null);
 
 const rankingData = {
-  FOOD: [113, 42, 39],
-  EXHIBITION: [83, 45, 34],
+  FOOD: [113, 42, 97],
+  EXHIBITION: [45, 83, 34],
   PERFORMANCE: [102, 101, 10],
-  DRINK: [49, 4, 109],
-  VISUAL: [49, 45, 12],
-  UPDATED: "11月5日(日)午前9時",
-} as RankingData;
+  DRINK: [12, 49, 4],
+  VISUAL: [12, 45, 49],
+  UPDATED: "最終発表(5日14時更新)",
+};
 
 useHead({
   title: "企画コンテスト | 23常盤祭公式HP~未来航路~",
@@ -90,9 +90,9 @@ gtag("event", "screen_view", {
         </ul>
         全企画が対象で見た目を観点に投票します。Xを用いて投票をお願いします。写真をたくさん撮ろう！
       </div>
-      <SponsorsListTitle text="中間結果発表" />
+      <SponsorsListTitle text="結果発表" />
       <div v-if="rankingData" class="result-table-section">
-        <h2>{{ rankingData.UPDATED }} 更新</h2>
+        <h2>{{ rankingData.UPDATED }}</h2>
         <div class="result-table-holder">
           <table class="result-table">
             <tr>

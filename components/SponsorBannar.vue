@@ -3,10 +3,10 @@
 <template>
   <div class="sponsor-bannar">
     <a href="http://www.hazawa-kubotaganka.com/" target="_blank">
-      <img alt="羽沢くぼた眼科" src="/images/sponsors/bannar1.webp" />
+      <img alt="羽沢くぼた眼科" src="/images/sponsors/bannar2.webp" />
     </a>
     <a href="https://www.next-gears.net/" target="_blank">
-      <img alt="ネクストギアーズ" src="/images/sponsors/bannar2.webp" />
+      <img alt="ネクストギアーズ" src="/images/sponsors/bannar1.webp" />
     </a>
   </div>
 </template>
@@ -18,8 +18,13 @@
   justify-content: space-around;
   max-width: 800px;
 
-  img {
+  a {
     width: 40%;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 }
 </style>

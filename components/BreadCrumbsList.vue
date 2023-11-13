@@ -80,7 +80,7 @@ const resolveEvent = (p: Array<string>): Array<CrumbInfo> => {
   const event = events.find((e) => e.id === Number(id)) as EventSummary;
   console.log("found", event);
   return [
-    { name: "イベント", crumbPath: "/event" },
+    { name: "イベント", crumbPath: "/events" },
     { name: `${event?.e_name}`, crumbPath: `/event/${id}` },
   ];
 };

@@ -1,20 +1,40 @@
 <script lang="ts" setup>
+import ProjectCardCompact from "~/components/ProjectCardCompact.vue";
+import events from "~/assets/data/events.json";
+import type { EventSummary } from "~/model/event";
+
+// idに対応するcardを表示
+
 interface RankingData {
   FOOD: number[];
   EXHIBITION: number[];
   PERFORMANCE: number[];
+  DRINK: number[];
+  VISUAL: number[];
+  UPDATED: string;
 }
 
-// const rankingData = await useFetch("/api/contest").then((res) => {
-//   if (
-//     res.data.value.FOOD &&
-//     res.data.value.EXHIBITION &&
-//     res.data.value.PERFORMANCE
-//   ) {
-//     return res.data.value as RankingData;
-//   }
-//   return null;
-// });
+// const rankingData = await useFetch("/api/contest")
+//   .then((res) => {
+//     if (
+//       res.data.value.FOOD &&
+//       res.data.value.EXHIBITION &&
+//       res.data.value.PERFORMANCE
+//     ) {
+//       return res.data.value as RankingData;
+//     }
+//     return null;
+//   })
+//   .catch(() => null);
+
+const rankingData = {
+  FOOD: [113, 42, 97],
+  EXHIBITION: [45, 83, 34],
+  PERFORMANCE: [102, 101, 10],
+  DRINK: [12, 49, 4],
+  VISUAL: [12, 45, 49],
+  UPDATED: "最終発表(5日14時更新)",
+};
 
 useHead({
   title: "企画コンテスト | 23常盤祭公式HP~未来航路~",
@@ -70,28 +90,73 @@ gtag("event", "screen_view", {
         </ul>
         全企画が対象で見た目を観点に投票します。Xを用いて投票をお願いします。写真をたくさん撮ろう！
       </div>
-      <SectionTitle text="結果発表" />
-      <div class="result-description">中間発表はこれから!!お楽しみに!!</div>
-      <!--      <table class="result-table">-->
-      <!--        <tr>-->
-      <!--          <td>順位</td>-->
-      <!--          <td>飲食部門</td>-->
-      <!--          <td></td>-->
-      <!--          <td>縦方向のセルの並び</td>-->
-      <!--        </tr>-->
-      <!--        <tr>-->
-      <!--          <td>第1位</td>-->
-      <!--          <td>意味</td>-->
-      <!--        </tr>-->
-      <!--        <tr>-->
-      <!--          <td>第2位</td>-->
-      <!--          <td>表の中の１つ１つの項目</td>-->
-      <!--        </tr>-->
-      <!--        <tr>-->
-      <!--          <td>第3位</td>-->
-      <!--          <td>横方向のセルの並び</td>-->
-      <!--        </tr>-->
-      <!--      </table>-->
+      <SponsorsListTitle text="結果発表" />
+      <div v-if="rankingData" class="result-table-section">
+        <h2>{{ rankingData.UPDATED }}</h2>
+        <div class="result-table-holder">
+          <table class="result-table">
+            <tr>
+              <td>順位</td>
+              <td>第1位</td>
+              <td>第2位</td>
+              <td>第3位</td>
+            </tr>
+            <tr>
+              <td>飲食</td>
+              <td v-for="(e, index) in rankingData.FOOD" :key="index">
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
+              </td>
+            </tr>
+            <tr>
+              <td>展示・物販</td>
+              <td v-for="(e, index) in rankingData.EXHIBITION" :key="index">
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
+              </td>
+            </tr>
+            <tr>
+              <td>パフォーマンス</td>
+              <td v-for="(e, index) in rankingData.PERFORMANCE" :key="index">
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
+              </td>
+            </tr>
+            <tr>
+              <td>オリジナルドリンク</td>
+              <td v-for="(e, index) in rankingData.DRINK" :key="index">
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
+              </td>
+            </tr>
+            <tr>
+              <td>ビジュアル</td>
+              <td v-for="(e, index) in rankingData.VISUAL" :key="index">
+                <NuxtLink :to="`/event/${e}`">
+                  <ProjectCardCompact
+                    :event-data="events.find((s: EventSummary) => s.id === e)"
+                  />
+                </NuxtLink>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div v-else class="result-description">
+        中間発表はこれから!!お楽しみに!!
+      </div>
     </div>
     <BackToHome />
   </div>
@@ -157,21 +222,49 @@ gtag("event", "screen_view", {
   }
 }
 
-.section-title {
-  align-self: center;
-  width: 500px !important;
-  font-size: 2em !important;
-  @include md {
-    align-self: flex-start;
-  }
-}
-
 .result-description {
   font-size: 1.3em;
   text-align: center;
 }
 
-.result-table {
+.result-table-section {
+  text-align: center;
+
+  > h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+  }
+}
+
+.result-table-holder {
+  text-align: center;
+  overflow-x: scroll;
+
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+}
+
+tr {
+  td {
+    padding: 0.5em 1.5em 1.5em 0.5em;
+    border: 2px solid var(--thick-font-color);
+
+    &:first-child {
+      padding: 0;
+      vertical-align: middle;
+      min-width: 10em;
+    }
+  }
+
+  &:first-child {
+    td {
+      padding: 0;
+      vertical-align: middle;
+      line-height: 2em;
+    }
+  }
 }
 
 .back-button {

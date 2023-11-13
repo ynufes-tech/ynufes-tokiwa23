@@ -15,6 +15,14 @@ function doGet(e) {
   C[0] = sheet[4][1];
   C[1] = sheet[4][2];
   C[2] = sheet[4][3];
+  const D = [];
+  D[0] = sheet[5][1];
+  D[1] = sheet[5][2];
+  D[2] = sheet[5][3];
+  const E = [];
+  E[0] = sheet[6][1];
+  E[1] = sheet[6][2];
+  E[2] = sheet[6][3];
   // check validity
   if (
     !A[0] ||
@@ -25,7 +33,13 @@ function doGet(e) {
     !B[2] ||
     !C[0] ||
     !C[1] ||
-    !C[2]
+    !C[2] ||
+    !D[0] ||
+    !D[1] ||
+    !D[2] ||
+    !E[0] ||
+    !E[1] ||
+    !E[2]
   ) {
     return respond({});
   }
@@ -35,11 +49,16 @@ function doGet(e) {
     A[i] = resolveEventNum(A[i]);
     B[i] = resolveEventNum(B[i]);
     C[i] = resolveEventNum(C[i]);
+    D[i] = resolveEventNum(D[i]);
+    E[i] = resolveEventNum(E[i]);
   }
   return respond({
     FOOD: A,
     EXHIBITION: B,
     PERFORMANCE: C,
+    DRINK: D,
+    VISUAL: E,
+    UPDATED: sheet[7][1],
   });
 }
 

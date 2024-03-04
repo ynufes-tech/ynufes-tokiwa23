@@ -1,4 +1,4 @@
-FROM node:20-slim as builder
+FROM gplane/pnpm:node20-alpine as builder
 #nodeのイメージをベースにする
 
 ENV BASE_URL=/23/tokiwa/

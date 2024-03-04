@@ -1,4 +1,4 @@
-FROM node:20-slim as builder
+FROM gplane/pnpm:node20-alpine as builder
 #nodeのイメージをベースにする
 
 ENV BASE_URL=/23/tokiwa/
@@ -9,9 +9,9 @@ WORKDIR /app
 COPY ./ ./
 #ynu-fes...の下を/appの下にコピー
 
-RUN yarn install
+RUN pnpm install
 
-RUN yarn build
+RUN pnpm run build
 
 FROM node:20-slim as production
 

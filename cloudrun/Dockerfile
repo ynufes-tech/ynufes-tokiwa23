@@ -9,9 +9,9 @@ WORKDIR /app
 COPY ./ ./
 #ynu-fes...の下を/appの下にコピー
 
-RUN yarn install
+RUN pnpm install
 
-RUN yarn build
+RUN pnpm run build
 
 FROM node:20-slim as production
 

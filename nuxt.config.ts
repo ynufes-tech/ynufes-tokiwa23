@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     ],
   ],
   app: {
-    baseURL: process.env.BASE_URL ? process.env.BASE_URL : "/",
+    baseURL: process.env.NUXT_PUBLIC_BASE_URL ?? "/23/tokiwa/",
     head: {
       meta: [
         { charset: "utf-8" },

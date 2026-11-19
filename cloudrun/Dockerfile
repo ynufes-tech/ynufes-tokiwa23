@@ -1,34 +1,22 @@
-FROM gplane/pnpm:node20-alpine as builder
-#nodeのイメージをベースにする
-
-ENV BASE_URL=/23/tokiwa/
-
+FROM node:24.22.3-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS builder
 WORKDIR /app
-#作業ディレクトリの指定
-
-COPY ./ ./
-#ynu-fes...の下を/appの下にコピー
-
-RUN pnpm install
-
+ENV NUXT_TELEMETRY_DISABLED=1 HUSKY=0
+ENV BASE_URL=/23/tokiwa/ NUXT_PUBLIC_BASE_URL=/23/tokiwa/
+RUN npm install --global pnpm@10.13.1
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile --ignore-scripts
+COPY . .
 RUN pnpm run build
 
-FROM node:20-slim as production
-
+FROM node:24.22.3-alpine@sha256:116b800c3754b440ee0aa3ed2f20f5bf3d99a554bfd9adeea09ea8017f6e85f5 AS production
+# Apply OS security updates and omit build/package-management tools from the server.
+RUN apk upgrade --no-cache \
+    && rm -rf /usr/local/lib/node_modules /opt/yarn* \
+    && rm -f /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/yarn /usr/local/bin/yarnpkg /usr/local/bin/corepack
 WORKDIR /app
-
-COPY --from=builder /app/.output ./.output
-COPY --from=builder /app/.nuxt ./.nuxt
-#最小限のファイルをコピー
-
-ENV HOST=0.0.0.0
-
-ENV BASE_URL=/23/tokiwa/
-
-ENV PORT=8080
-#環境変数の設定
-
-CMD ["node" ,"./.output/server/index.mjs"]
-#--containerを作成するときに実行されるコマンド
-
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=8080
+ENV BASE_URL=/23/tokiwa/ NUXT_PUBLIC_BASE_URL=/23/tokiwa/
+COPY --from=builder --chown=node:node /app/.output ./.output
+USER node
 EXPOSE 8080
+CMD ["node", ".output/server/index.mjs"]

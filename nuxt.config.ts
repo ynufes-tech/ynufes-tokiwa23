@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  // Preserve the existing layout while using the patched Nuxt 4 runtime.
+  srcDir: ".",
+  dir: { app: "app" },
+  experimental: { defaults: { useAsyncData: { deep: true } } },
+  devtools: { enabled: false },
   css: ["@/assets/scss/variables.scss", "@/assets/css/reset.css"],
   modules: [
     [

@@ -1,66 +1,858 @@
 [
   {
-    "id": 900,
-    "e_name": "イベント名",
+    "id": 59,
+    "e_name": "横国フリマ2023AW",
     "e_genre": 1,
-    "o_name": "企画団体名",
+    "o_name": "古着HOLIC",
+    "area": 8,
+    "p_name": "100"
+  },
+  {
+    "id": 90,
+    "e_name": "いっぱいたべるキミがスキー部",
+    "e_genre": 3,
+    "o_name": "横浜国立大学体育会スキー部",
+    "area": 4,
+    "p_name": "03"
+  },
+  {
+    "id": 48,
+    "e_name": "オーケストラ・アラモード",
+    "e_genre": 2,
+    "o_name": "常盤祭オーケストラ",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 44,
+    "e_name": "CHOMORANMAS",
+    "e_genre": 3,
+    "o_name": "chomoranmas",
+    "area": 7,
+    "p_name": "04"
+  },
+  {
+    "id": 97,
+    "e_name": "LuckyDipのホットサンド屋さん",
+    "e_genre": 3,
+    "o_name": "LuckyDip",
+    "area": 3,
+    "p_name": "01"
+  },
+  {
+    "id": 87,
+    "e_name": "YNUSenBei",
+    "e_genre": 3,
+    "o_name": "横浜国立大学吹奏楽団 A",
+    "area": 1,
+    "p_name": "05"
+  },
+  {
+    "id": 32,
+    "e_name": "じょるののおいしいおでん",
+    "e_genre": 3,
+    "o_name": "giorno",
     "area": 2,
+    "p_name": "01"
+  },
+  {
+    "id": 85,
+    "e_name": "Potato Fly✈️",
+    "e_genre": 3,
+    "o_name": "横浜AEROSPACE",
+    "area": 7,
+    "p_name": "09"
+  },
+  {
+    "id": 43,
+    "e_name": "伝説のチャリカラ",
+    "e_genre": 3,
+    "o_name": "チャーリー・ブラウン",
+    "area": 4,
+    "p_name": "05"
+  },
+  {
+    "id": 14,
+    "e_name": "鹿肉の多い料理店",
+    "e_genre": 3,
+    "o_name": "川根本町プロジェクト",
+    "area": 4,
+    "p_name": "07"
+  },
+  {
+    "id": 86,
+    "e_name": "横浜国立大学国際問題研究会",
+    "e_genre": 1,
+    "o_name": "横浜国立大学国際問題研究会",
+    "area": 8,
+    "p_name": "207"
+  },
+  {
+    "id": 51,
+    "e_name": "揚げ物だいすきクラブ",
+    "e_genre": 3,
+    "o_name": "BACKDOOR A",
+    "area": 5,
+    "p_name": "05"
+  },
+  {
+    "id": 52,
+    "e_name": "キャンプ飯！",
+    "e_genre": 3,
+    "o_name": "BACKDOOR B",
+    "area": 5,
+    "p_name": "06"
+  },
+  {
+    "id": 56,
+    "e_name": "建築学生が窯から作るトルコピザ",
+    "e_genre": 3,
+    "o_name": "PPP-pendentiveでピザ窯PJ",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 39,
+    "e_name": "水泳部のキーマカレー",
+    "e_genre": 3,
+    "o_name": "体育会水泳部",
+    "area": 7,
+    "p_name": "03"
+  },
+  {
+    "id": 99,
+    "e_name": "やきとり屋台「ときわ」",
+    "e_genre": 3,
+    "o_name": "LaPaume40th",
+    "area": 6,
+    "p_name": "12"
+  },
+  {
+    "id": 10,
+    "e_name": "お笑いサークルわかばネタライブ",
+    "e_genre": 2,
+    "o_name": "お笑いサークルわかば",
+    "area": 9,
+    "p_name": "103"
+  },
+  {
+    "id": 53,
+    "e_name": "ゲーミングわたあめ",
+    "e_genre": 3,
+    "o_name": "浜games学祭支部",
+    "area": 6,
+    "p_name": "10"
+  },
+  {
+    "id": 110,
+    "e_name": "A VENUE FOR MUSICKING",
+    "e_genre": 3,
+    "o_name": "Y-GSC彦江ゼミ",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 80,
+    "e_name": "カラサーチュロス",
+    "e_genre": 3,
+    "o_name": "横国カラオケサークル",
+    "area": 2,
+    "p_name": "03"
+  },
+  {
+    "id": 1,
+    "e_name": "アコースティックライブ",
+    "e_genre": 2,
+    "o_name": "アコースティックスタイル",
+    "area": 9,
+    "p_name": "204"
+  },
+  {
+    "id": 34,
+    "e_name": "謎解きゲーム",
+    "e_genre": 1,
+    "o_name": "人狼ボドゲサークルルーガルー B",
+    "area": 10,
+    "p_name": "110"
+  },
+  {
+    "id": 33,
+    "e_name": "謎解き宝探しゲーム",
+    "e_genre": 1,
+    "o_name": "人狼ボドゲサークルルーガルー A",
+    "area": 11,
+    "p_name": "102"
+  },
+  {
+    "id": 61,
+    "e_name": "BaySound Jazz Orchestra",
+    "e_genre": 2,
+    "o_name": "BaySound Jazz Orchestra A",
+    "area": 9,
+    "p_name": "201"
+  },
+  {
+    "id": 36,
+    "e_name": "常盤祭アカペラライブ",
+    "e_genre": 2,
+    "o_name": "Stairways A",
+    "area": 11,
+    "p_name": "101"
+  },
+  {
+    "id": 21,
+    "e_name": "CoConuts",
+    "e_genre": 3,
+    "o_name": "CoConuts",
+    "area": 5,
+    "p_name": "10"
+  },
+  {
+    "id": 82,
+    "e_name": "詠むきりん",
+    "e_genre": 1,
+    "o_name": "横国短歌・詩サークルきりん",
+    "area": 8,
+    "p_name": "204"
+  },
+  {
+    "id": 30,
+    "e_name": "写真部写真展",
+    "e_genre": 1,
+    "o_name": "写真部",
+    "area": 10,
+    "p_name": "109"
+  },
+  {
+    "id": 104,
+    "e_name": "Lumos Lightning Talk!",
+    "e_genre": 2,
+    "o_name": "Lumos <Online Tech Club>",
+    "area": 10,
+    "p_name": "301"
+  },
+  {
+    "id": 17,
+    "e_name": "劇団三日月座 特別公演",
+    "e_genre": 2,
+    "o_name": "劇団三日月座",
+    "area": 9,
+    "p_name": "202"
+  },
+  {
+    "id": 96,
+    "e_name": "ライブハウスfrom1",
+    "e_genre": 2,
+    "o_name": "ライブハウスfrom1",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 112,
+    "e_name": "もっくんのわくわくドリンク",
+    "e_genre": 3,
+    "o_name": "わくわくサタデー",
+    "area": 6,
+    "p_name": "08"
+  },
+  {
+    "id": 94,
+    "e_name": "ドレミファヤシライス",
+    "e_genre": 3,
+    "o_name": "40長老会",
+    "area": 7,
+    "p_name": "02"
+  },
+  {
+    "id": 83,
+    "e_name": "横国ネコサークル展",
+    "e_genre": 1,
+    "o_name": "横国ネコサークル",
+    "area": 10,
+    "p_name": "306"
+  },
+  {
+    "id": 106,
+    "e_name": "ロバートジョンソン研究会",
+    "e_genre": 2,
+    "o_name": "ロバートジョンソン研究会",
+    "area": 9,
+    "p_name": "207"
+  },
+  {
+    "id": 11,
+    "e_name": "アンモナイト こはく堂",
+    "e_genre": 1,
+    "o_name": "化石愛好会",
+    "area": 10,
+    "p_name": "304"
+  },
+  {
+    "id": 23,
+    "e_name": "コスプレ百鬼夜行",
+    "e_genre": 1,
+    "o_name": "コスプレサークルChameleon",
+    "area": 10,
+    "p_name": "307"
+  },
+  {
+    "id": 63,
+    "e_name": "ソフトボール大会",
+    "e_genre": 2,
+    "o_name": "ペルソナーズ",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 20,
+    "e_name": "Are you チキン？",
+    "e_genre": 3,
+    "o_name": "硬式野球部",
+    "area": 3,
+    "p_name": "02"
+  },
+  {
+    "id": 113,
+    "e_name": "俺たちの「ましまし亭」",
+    "e_genre": 3,
+    "o_name": "ワダマチジロリアン",
+    "area": 6,
+    "p_name": "07"
+  },
+  {
+    "id": 62,
+    "e_name": "BaySound Jazz Orchestra",
+    "e_genre": 2,
+    "o_name": "BaySound Jazz Orchestra B",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 68,
+    "e_name": "milEN Cafe",
+    "e_genre": 3,
+    "o_name": "milEN",
+    "area": 3,
+    "p_name": "06"
+  },
+  {
+    "id": 71,
+    "e_name": "M's Burger",
+    "e_genre": 3,
+    "o_name": "MareProfondo",
+    "area": 6,
+    "p_name": "09"
+  },
+  {
+    "id": 98,
+    "e_name": "うさぎ屋",
+    "e_genre": 3,
+    "o_name": "ラビッシュラビッツ",
+    "area": 7,
+    "p_name": "06"
+  },
+  {
+    "id": 50,
+    "e_name": "Harvest",
+    "e_genre": 1,
+    "o_name": "Harvest",
+    "area": 10,
+    "p_name": "108"
+  },
+  {
+    "id": 60,
+    "e_name": "文芸サークル伽藍堂",
+    "e_genre": 1,
+    "o_name": "文芸サークル伽藍堂",
+    "area": 8,
+    "p_name": "206"
+  },
+  {
+    "id": 38,
+    "e_name": "焼き鳥屋武蔵",
+    "e_genre": 3,
+    "o_name": "体育会剣道部",
+    "area": 1,
+    "p_name": "01"
+  },
+  {
+    "id": 88,
+    "e_name": "すごい餃子屋さん",
+    "e_genre": 3,
+    "o_name": "横浜国立大学吹奏楽団 B",
+    "area": 5,
+    "p_name": "04"
+  },
+  {
+    "id": 3,
+    "e_name": "TAIYAKI",
+    "e_genre": 3,
+    "o_name": "E.S.S.",
+    "area": 6,
+    "p_name": "02"
+  },
+  {
+    "id": 84,
+    "e_name": "ふれあい牧場 よここく",
+    "e_genre": 1,
+    "o_name": "横国ヤギ部",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 72,
+    "e_name": "森のマルシェ よここく",
+    "e_genre": 1,
+    "o_name": "森のマルシェ よここく",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 45,
+    "e_name": "てっけん！",
+    "e_genre": 1,
+    "o_name": "鉄道旅行研究会",
+    "area": 10,
+    "p_name": "101"
+  },
+  {
+    "id": 57,
+    "e_name": "にこにこ☆工房",
+    "e_genre": 1,
+    "o_name": "美術科・建築科合同企画",
+    "area": 10,
+    "p_name": "305"
+  },
+  {
+    "id": 77,
+    "e_name": "UNITE",
+    "e_genre": 1,
+    "o_name": "UNITE",
+    "area": 10,
+    "p_name": "303"
+  },
+  {
+    "id": 18,
+    "e_name": "仮設建築展示",
+    "e_genre": 1,
+    "o_name": "建築学科１年",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 102,
+    "e_name": "R3ude",
+    "e_genre": 2,
+    "o_name": "R3ude A",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 27,
+    "e_name": "茶道研究会の本格抹茶ラテ",
+    "e_genre": 3,
+    "o_name": "茶道研究会",
+    "area": 2,
+    "p_name": "02"
+  },
+  {
+    "id": 13,
+    "e_name": "がや's kitchen",
+    "e_genre": 3,
+    "o_name": "がやっこ探検隊",
+    "area": 7,
+    "p_name": "07"
+  },
+  {
+    "id": 49,
+    "e_name": "「都市は揺れている」",
+    "e_genre": 3,
+    "o_name": "都市科学部都市社会共生学科有志",
+    "area": 4,
+    "p_name": "04"
+  },
+  {
+    "id": 105,
+    "e_name": "胎教Vol.12",
+    "e_genre": 2,
+    "o_name": "ロック研究会",
+    "area": 9,
+    "p_name": "105"
+  },
+  {
+    "id": 7,
+    "e_name": "おけら屋A",
+    "e_genre": 3,
+    "o_name": "おけら屋 A",
+    "area": 2,
+    "p_name": "04"
+  },
+  {
+    "id": 95,
+    "e_name": "らぽ貴族",
+    "e_genre": 3,
+    "o_name": "La Paume",
+    "area": 6,
+    "p_name": "01"
+  },
+  {
+    "id": 79,
+    "e_name": "あの日ノスタルジアゲリラライブ",
+    "e_genre": 2,
+    "o_name": "横国アイドル研究会",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 28,
+    "e_name": "よここくの森 ヒミツの里山工房",
+    "e_genre": 1,
+    "o_name": "里山コミュニティデザインPJ",
+    "area": 8,
+    "p_name": "205"
+  },
+  {
+    "id": 73,
+    "e_name": "みんけん焼き",
+    "e_genre": 3,
+    "o_name": "みんけん(民謡研究会合唱団)",
+    "area": 1,
+    "p_name": "06"
+  },
+  {
+    "id": 64,
+    "e_name": "昆虫標本製作体験",
+    "e_genre": 1,
+    "o_name": "変温動物愛好会",
+    "area": 6,
+    "p_name": "05"
+  },
+  {
+    "id": 91,
+    "e_name": "ポケラバーズの会",
+    "e_genre": 1,
+    "o_name": "横浜国立大学ポケモンサークル",
+    "area": 9,
+    "p_name": "102"
+  },
+  {
+    "id": 78,
+    "e_name": "ポップコーン専門店よこ☆てん",
+    "e_genre": 3,
+    "o_name": "よこ☆てん",
+    "area": 7,
+    "p_name": "01"
+  },
+  {
+    "id": 67,
+    "e_name": "ぽてぽてぽてと",
+    "e_genre": 3,
+    "o_name": "Potato Chips",
+    "area": 5,
+    "p_name": "11"
+  },
+  {
+    "id": 40,
+    "e_name": "いっぷく庵 とんとん",
+    "e_genre": 3,
+    "o_name": "耕すプロジェクト",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 31,
+    "e_name": "書道サークルSepia",
+    "e_genre": 1,
+    "o_name": "書道サークルSepia",
+    "area": 10,
+    "p_name": "208"
+  },
+  {
+    "id": 101,
+    "e_name": "Liz 2023",
+    "e_genre": 2,
+    "o_name": "Liz B",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 35,
+    "e_name": "遊び場ルーガルー",
+    "e_genre": 1,
+    "o_name": "人狼ボドゲサークルルーガルー C",
+    "area": 5,
+    "p_name": "07"
+  },
+  {
+    "id": 22,
+    "e_name": "小次郎のチーズボール",
+    "e_genre": 3,
+    "o_name": "小次郎",
+    "area": 1,
+    "p_name": "04"
+  },
+  {
+    "id": 25,
+    "e_name": "青春を取り戻せサイテッカー",
+    "e_genre": 1,
+    "o_name": "SCITEX",
+    "area": 8,
+    "p_name": "103"
+  },
+  {
+    "id": 109,
+    "e_name": "クリームソーダ研究所",
+    "e_genre": 3,
+    "o_name": "YNUCC",
+    "area": 4,
+    "p_name": "01"
+  },
+  {
+    "id": 29,
+    "e_name": "100円創作しらたま∞ドリンク♪",
+    "e_genre": 3,
+    "o_name": "Sea of Red Ink",
+    "area": 4,
+    "p_name": "06"
+  },
+  {
+    "id": 16,
+    "e_name": "軽音常盤ライブ2023",
+    "e_genre": 2,
+    "o_name": "軽音楽部",
+    "area": 9,
+    "p_name": "101"
+  },
+  {
+    "id": 37,
+    "e_name": "アカペラストリートライブ",
+    "e_genre": 2,
+    "o_name": "Stairways B",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 89,
+    "e_name": "常盤祭コンサート",
+    "e_genre": 2,
+    "o_name": "横浜国立大学吹奏楽団 C",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 69,
+    "e_name": "カナコレ",
+    "e_genre": 3,
+    "o_name": "真鍋ゼミ×TXCOM",
+    "area": 1,
+    "p_name": "08"
+  },
+  {
+    "id": 75,
+    "e_name": "モダンジャズ研究会",
+    "e_genre": 2,
+    "o_name": "モダンジャズ研究会",
+    "area": 9,
+    "p_name": "107"
+  },
+  {
+    "id": 93,
+    "e_name": "奇跡ノ中華伝統美食",
+    "e_genre": 3,
+    "o_name": "横浜地区中国人留学生学友会",
+    "area": 4,
+    "p_name": "02"
+  },
+  {
+    "id": 19,
+    "e_name": "たこやきんぐ",
+    "e_genre": 3,
+    "o_name": "硬式庭球部",
+    "area": 3,
+    "p_name": "05"
+  },
+  {
+    "id": 47,
+    "e_name": "電子音楽研究会Bon9ra",
+    "e_genre": 2,
+    "o_name": "電子音楽研究会Bon9ra",
+    "area": 9,
+    "p_name": "205"
+  },
+  {
+    "id": 4,
+    "e_name": "俺のレモネード",
+    "e_genre": 3,
+    "o_name": "ウィンドサーフィン部",
+    "area": 5,
+    "p_name": "09"
+  },
+  {
+    "id": 26,
+    "e_name": "スープスタンドSoB",
+    "e_genre": 3,
+    "o_name": "Sounds on Beach",
+    "area": 3,
+    "p_name": "03"
+  },
+  {
+    "id": 107,
+    "e_name": "ロボットの展示",
+    "e_genre": 1,
+    "o_name": "Robotism",
+    "area": 5,
+    "p_name": "02"
+  },
+  {
+    "id": 111,
+    "e_name": "フォレストサイドサルーン",
+    "e_genre": 3,
+    "o_name": "YDK:横国ディズニーサークル",
+    "area": 7,
+    "p_name": "05"
+  },
+  {
+    "id": 74,
+    "e_name": "空飛ぶモッフル・モンスター教",
+    "e_genre": 3,
+    "o_name": "MOSQUITO",
+    "area": 1,
+    "p_name": "09"
+  },
+  {
+    "id": 2,
+    "e_name": "APPLESの美味しいオムそば",
+    "e_genre": 3,
+    "o_name": "APPLES",
+    "area": 5,
+    "p_name": "03"
+  },
+  {
+    "id": 81,
+    "e_name": "横国げんしけん",
+    "e_genre": 2,
+    "o_name": "横国げんしけん",
+    "area": 10,
+    "p_name": "201"
+  },
+  {
+    "id": 54,
+    "e_name": "串焼き屋 鳥桃",
+    "e_genre": 3,
+    "o_name": "Peach Sherbet",
+    "area": 7,
+    "p_name": "08"
+  },
+  {
+    "id": 46,
+    "e_name": "☆みんな de わたがし☆",
+    "e_genre": 3,
+    "o_name": "てらこやみなとみらい",
+    "area": 1,
+    "p_name": "07"
+  },
+  {
+    "id": 41,
+    "e_name": "たこ焼き屋さん",
+    "e_genre": 3,
+    "o_name": "蛸焼卍研究會卍卍",
+    "area": 1,
+    "p_name": "10"
+  },
+  {
+    "id": 70,
+    "e_name": "君たちはどう潰すか",
+    "e_genre": 3,
+    "o_name": "Mariners",
+    "area": 2,
+    "p_name": "05"
+  },
+  {
+    "id": 6,
+    "e_name": "Fc ケバブ",
+    "e_genre": 3,
+    "o_name": "Over Drive",
+    "area": 1,
+    "p_name": "02"
+  },
+  {
+    "id": 58,
+    "e_name": "Art shop Eyebrows",
+    "e_genre": 1,
+    "o_name": "美術部EyeBrows;",
+    "area": 6,
+    "p_name": "11"
+  },
+  {
+    "id": 92,
+    "e_name": "三日雀荘",
+    "e_genre": 1,
+    "o_name": "横浜国立大学麻雀部",
+    "area": 8,
+    "p_name": "ロビー"
+  },
+  {
+    "id": 5,
+    "e_name": "étoice",
+    "e_genre": 3,
+    "o_name": "étoile",
+    "area": 2,
+    "p_name": "06"
+  },
+  {
+    "id": 12,
+    "e_name": "cafe&bar YUZURIHA",
+    "e_genre": 3,
+    "o_name": "cafe&bar YUZURIHA",
+    "area": 5,
+    "p_name": "01"
+  },
+  {
+    "id": 66,
+    "e_name": "ベリーエキサイティングラジオ",
+    "e_genre": 2,
+    "o_name": "放送研究会 B",
+    "area": 12,
+    "p_name": ""
+  },
+  {
+    "id": 8,
+    "e_name": "おけら屋B&津軽三味線 悠久音",
+    "e_genre": 2,
+    "o_name": "おけら屋 B",
+    "area": 9,
     "p_name": "203"
   },
   {
-    "id": 901,
-    "e_name": "イベント名",
-    "e_genre": 2,
-    "o_name": "企画団体名",
-    "area": 3,
-    "p_name": "103"
+    "id": 55,
+    "e_name": "B2U関西お好み焼き支部",
+    "e_genre": 3,
+    "o_name": "B2U",
+    "area": 6,
+    "p_name": "06"
   },
   {
-    "id": 901,
-    "e_name": "イベント名",
-    "e_genre": 2,
-    "o_name": "企画団体名",
-    "area": 4,
-    "p_name": "103"
-  },
-  {
-    "id": 901,
-    "e_name": "イベント名",
+    "id": 108,
+    "e_name": "ナゾトキゲーム WHYNU",
     "e_genre": 1,
-    "o_name": "企画団体名",
-    "area": 1,
-    "p_name": "103"
+    "o_name": "WHYNU",
+    "area": 10,
+    "p_name": "104"
   },
   {
-    "id": 901,
-    "e_name": "イベント名",
-    "e_genre": 2,
-    "o_name": "企画団体名",
-    "area": 2,
-    "p_name": "103"
-  },
-  {
-    "id": 901,
-    "e_name": "イベント名",
-    "e_genre": 2,
-    "o_name": "企画団体名",
+    "id": 76,
+    "e_name": "山岡ゼミの徹クレープ",
+    "e_genre": 3,
+    "o_name": "山岡ゼミ",
     "area": 3,
-    "p_name": "103"
+    "p_name": "04"
   },
   {
-    "id": 901,
-    "e_name": "イベント名",
-    "e_genre": 2,
-    "o_name": "企画団体名",
-    "area": 2,
-    "p_name": "103"
-  },
-  {
-    "id": 901,
-    "e_name": "イベント名",
-    "e_genre": 2,
-    "o_name": "企画団体名",
-    "area": 2,
-    "p_name": "103"
+    "id": 42,
+    "e_name": "ダムカレー専門店",
+    "e_genre": 3,
+    "o_name": "ダムカレー2023",
+    "area": 5,
+    "p_name": "08"
   }
 ]
